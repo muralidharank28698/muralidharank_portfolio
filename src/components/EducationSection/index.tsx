@@ -5,35 +5,14 @@ import "./Education.css";
 export default function Education() {
   return (
     <motion.section
-      // ref={myRef}
       className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12 px-4"
-      // initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
-      // transition={{ delay: 0.175 }}
-      // transition={{
-      //   type: "tween",
-      //   duration: 0.2,
-      // }}
       initial="hidden"
       variants={fadeIn("bottom", 0.3)}
       whileInView={"show"}
       viewport={{ once: false, amount: 0.7 }}
     >
       <div className="pt-12">
-        {/* <h1 className="text-3xl font-bold pb-12">Education</h1> */}
-        {/* <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-          dolores a quis, nesciunt, aliquid similique eligendi voluptate autem
-          neque ab minima veniam dolorum error perferendis aspernatur voluptates
-          assumenda. Sint, tenetur. Fuga quod, nostrum mollitia adipisci nemo ex
-          perferendis. Provident ex quos nemo, consequatur ipsum totam, autem
-          officia obcaecati similique ut minus repellendus sint, a asperiores
-          ullam explicabo rem saepe. Nesciunt? Officia, aut minima quo ipsam
-          nisi? Provident quasi repellendus autem error blanditiis veniam
-          explicabo incidunt culpa perferendis cumque doloribus pariatur
-          laboriosam modi consequatur aspernatur, fugit obcaecati soluta ut
-          nihil assumenda adipisci totam suscipit ex libero. Maxime.
-        </p> */}
         <section
           id="features"
           className="section bg-fixed bg-cover"
@@ -93,7 +72,6 @@ export default function Education() {
                       <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                         MCA
                       </h4>
-                      {/* <p className="text-gray-600 text-sm dark:text-gray-400 text-center"> */}
                       <p className="text-gray-600 text-[0.9rem] dark:text-gray-400 text-center">
                         Puducherry Technological University
                       </p>
@@ -132,13 +110,11 @@ export default function Education() {
 
                 {/* Center Image */}
                 <div className="w-full lg:w-1/3 flex items-center justify-center mb-8 lg:mb-0">
-                  {/* <div className="centerImage"> */}
                   <img
                     src={require("../../assets/readImage.png")}
                     alt=""
                     className="w-2/3 lg:w-1/2 max-w-sm max-h-48 rounded-lg object-contain border-b-2"
                   />
-                  {/* </div> */}
                 </div>
 
                 {/* Right Column */}
@@ -166,7 +142,6 @@ export default function Education() {
                       <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                         BCA
                       </h4>
-                      {/* <p className="text-gray-600 text-sm dark:text-gray-400 text-center"> */}
                       <p className="text-gray-600 text-[0.9rem] dark:text-gray-400 text-center">
                         Saradha Gangadharan Arts & Science College
                       </p>

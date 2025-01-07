@@ -6,7 +6,6 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 export default function Contact() {
   return (
     <motion.section
-      // ref={myRef}
       className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
