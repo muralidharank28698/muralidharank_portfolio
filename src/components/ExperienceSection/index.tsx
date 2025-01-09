@@ -1,88 +1,3 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import "./Experience.css";
-
-// interface CardContent {
-//   title: string;
-//   description: string;
-//   buttonText: string;
-//   backgroundImage: string;
-// }
-
-// const cardData: CardContent[] = [
-//   {
-//     title: "FocusCraft Tech Private Limited",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-//     buttonText: "Explore",
-//     backgroundImage:
-//       "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-//   },
-//   {
-//     title: "ConvergePoint India Private Limited",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-//     buttonText: "Explore",
-//     backgroundImage:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-//   },
-// ];
-
-// export default function Experience() {
-//   return (
-//     <motion.section
-//       className="max-w-4xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
-//       initial={{ opacity: 0, y: 100 }}
-//       animate={{ opacity: 1, y: 0 }}
-//       transition={{ delay: 0.175 }}
-//     >
-//       <div className="pt-12">
-//         <div className="flex justify-center pb-12">
-//           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
-//             <div className="section-title text-center">
-//               <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2">
-//                 Services
-//               </h6>
-//               <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
-//                 Professional <span>services</span>
-//               </h4>
-//             </div>
-//           </div>
-//         </div>
-//         <div className="flex flex-wrap justify-center gap-6">
-//           {cardData.map((card, index) => (
-//             <div
-//               key={index}
-//               className="relative w-full max-w-[18rem] mx-auto bg-cover bg-center rounded-lg shadow-lg overflow-hidden group"
-//               style={{ backgroundImage: `url(${card.backgroundImage})` }}
-//             >
-//               <div className="relative flex flex-col justify-between h-full bg-black bg-opacity-50 p-6 text-white transition-transform duration-300 group-hover:scale-105">
-//                 {/* Content Overlay */}
-//                 <div>
-//                   <h3 className="text-lg font-bold">{card.title}</h3>
-//                   <p className="text-sm mt-2">{card.description}</p>
-//                 </div>
-//                 <div className="mt-6 flex items-center justify-between">
-//                   <span className="flex items-center justify-center w-12 h-12 text-lg font-extrabold bg-white text-black rounded-full shadow-lg transition-transform duration-300 group-hover:scale-110">
-//                     0{index + 1}
-//                   </span>
-//                   <a
-//                     href="#"
-//                     className="text-sm font-medium underline transition-opacity duration-300 hover:opacity-75"
-//                   >
-//                     {card.buttonText}
-//                   </a>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </motion.section>
-//   );
-// }
-
-// ------------------------------------------------------------------------------------
 import React from "react";
 import { motion } from "framer-motion";
 import "./Experience.css";
@@ -159,9 +74,7 @@ export default function Experience() {
         <section id="process" className="process-section pt-18 pb-24">
           <div className="container mx-auto px-4 relative">
             {/* Vertical Line */}
-            {/* <div className="absolute top-0 left-1/2 h-full w-1 bg-indigo-300 transform -translate-x-1/2 hidden lg:block"></div> */}
             <div className="-translate-x-1/2 absolute bg-gray-300 h-full hidden left-1/2 lg:block top-0 transform w-[1px]"></div>
-
             {/* Timeline */}
             <div className="timeline relative">
               {/* First Timeline Item */}
@@ -213,26 +126,10 @@ export default function Experience() {
                         }}
                         className="inline-block"
                       >
-                        {/* <a
-                          href="/new-page"
-                          className="text-blue-600 flex items-center gap-2 font-medium"
-                        >
-                          View More
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            className="h-4 w-4"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M5 12h14m-7-7l7 7-7 7" />
-                          </svg>
-                        </a> */}
                          <Link
-                          // to="/allProjects"
                           to={`/professionalExperience`}
                           className="text-blue-600 flex items-center gap-2 font-medium"
                           state={{ sectionId: "ConvergePoint" }}
-                          // className="inline-flex items-center px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300"
                         >
                           View more
                           <svg
@@ -353,31 +250,13 @@ export default function Experience() {
                       <motion.div
                         whileHover={{
                           scale: 1.05,
-                          // backgroundColor: "rgba(59,130,246,0.2)",
                         }}
                         className="inline-block"
                       >
-                        {/* <a
-                          href="/design-page"
-                          className="text-blue-600 flex items-center gap-2 font-medium"
-                        >
-                          View more
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="currentColor"
-                            className="h-4 w-4"
-                            viewBox="0 0 24 24"
-                          >
-                            <path d="M5 12h14m-7-7l7 7-7 7" />
-                          </svg>
-                        </a> */}
                         <Link
-                          // to="/allProjects"
                           to={`/professionalExperience`}
                           className="text-blue-600 flex items-center gap-2 font-medium"
                           state={{ sectionId: "FocusCraftTech" }}
-                          // state={{ sectionId: tabContent[activeTab] }}
-                          // className="inline-flex items-center px-4 py-2 text-white bg-blue-500 rounded-md shadow-md hover:bg-blue-600 hover:shadow-lg transition-all duration-300"
                         >
                           View more
                           <svg
