@@ -14,10 +14,18 @@ export default function Contact() {
       <section>
         <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
           <div className="flex justify-center mt-8 space-x-6">
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a
+              href="https://www.linkedin.com/in/muralidharank280698/"
+              className="text-gray-400 hover:text-gray-500"
+              target="_blank"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="#" className="text-gray-400 hover:text-gray-500">
+            <a
+              href="https://github.com/muralidharank28698"
+              className="text-gray-400 hover:text-gray-500"
+              target="_blank"
+            >
               <FaGithub />
             </a>
             <a href="#" className="text-gray-400 hover:text-gray-500">

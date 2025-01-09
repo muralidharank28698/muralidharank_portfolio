@@ -44,7 +44,6 @@ export default function Experience() {
     hidden: { opacity: 0, y: 50 }, // Start from below with reduced opacity
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }, // Animate to original position
   };
-  
 
   return (
     <motion.section
@@ -60,9 +59,16 @@ export default function Experience() {
               <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2">
                 Services
               </h6>
-              <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
+              {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
                 Professional <span>services</span>
-              </h4>
+              </h4> */}
+              <h2 className="text-3xl font-bold capitalize text-center text-gray-800 dark:text-gray-200">
+                Professional{" "}
+                <span className="text-blue-600 dark:text-blue-400">
+                  services
+                </span>
+              </h2>
+              <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
               <p className="mt-4 text-gray-600 animate-fadeInUp delay-600">
                 Worked across two organizations, gaining expertise in frontend
                 development and delivering efficient solutions using modern
@@ -126,7 +132,7 @@ export default function Experience() {
                         }}
                         className="inline-block"
                       >
-                         <Link
+                        <Link
                           to={`/professionalExperience`}
                           className="text-blue-600 flex items-center gap-2 font-medium"
                           state={{ sectionId: "ConvergePoint" }}
@@ -166,7 +172,10 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <motion.div className="w-full lg:w-5/12" variants={fadeInBottomToTop}>
+                <motion.div
+                  className="w-full lg:w-5/12"
+                  variants={fadeInBottomToTop}
+                >
                   <div className="flex justify-center rounded-lg">
                     <img
                       src={require("../../assets/ExperienceImages/experience.jpg")}
@@ -185,7 +194,10 @@ export default function Experience() {
                 whileInView="visible"
                 viewport={{ once: true }}
               >
-                <motion.div className="w-full lg:w-5/12" variants={fadeInBottomToTop}>
+                <motion.div
+                  className="w-full lg:w-5/12"
+                  variants={fadeInBottomToTop}
+                >
                   <div className="flex justify-center rounded-lg">
                     <img
                       src={require("../../assets/ExperienceImages/experience.jpg")}
@@ -216,7 +228,10 @@ export default function Experience() {
                   </div>
                 </div>
 
-                <motion.div className="w-full lg:w-5/12" variants={fadeInBottomToTop}>
+                <motion.div
+                  className="w-full lg:w-5/12"
+                  variants={fadeInBottomToTop}
+                >
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start mb-4">
                       <span className="mt-2 inline-flex items-center justify-center text-4xl text-blue-600 bg-blue-100 rounded-full border border-blue-200 p-2">

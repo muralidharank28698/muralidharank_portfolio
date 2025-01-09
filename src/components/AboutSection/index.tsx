@@ -8,10 +8,20 @@ export default function About() {
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
+      // transition={{
+      //   type: "tween",
+      //   duration: 0.2,
+      // }}
+      // initial="hidden"
+      // variants={fadeIn("up", 0.2)}
+      // whileInView={"show"}
+      // viewport={{ once: false, amount: 0.7 }}
     >
-      <h2 className="text-3xl font-medium capitalize mb-8 text-center pt-12">
-        Profile Summary
+      <h2 className="text-3xl font-bold capitalize text-center pt-12 text-gray-800 dark:text-gray-200">
+        Profile{" "}
+        <span className="text-blue-600 dark:text-blue-400">Summary</span>
       </h2>
+      <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
       <p className="mb-3">
         I am a professional{" "}
         <span className="font-medium">Software Developer</span> with over 3

@@ -87,8 +87,7 @@ export default function Introduction() {
             to="#contact"
             className="group bg-gray-900 text-white px-5 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
             onClick={() => {
-              // setActiveSection("Contact");
-              // setTimeOfLastClick(Date.now());
+              window.scrollTo(0, document.body.scrollHeight);
             }}
           >
             Contact me here{" "}

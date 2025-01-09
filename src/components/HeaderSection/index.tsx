@@ -166,7 +166,10 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Menu Button for Mobile */}
           <div className="md:hidden">
-            <Link to="/" aria-label="Home">
+            <Link to="#Home" aria-label="Home" onClick={() => {
+              setActiveSection("Home");
+              handleScrollToSection("Home");
+            }}>
               <div className="h-10 w-10 rounded-full p-0.5 border border-indigo-200 dark:ring-white/10">
                 <img
                   alt="Logo"

@@ -35,17 +35,17 @@ export const ProjectsDetails: React.FC = () => {
       </button>
       {sectionId?.id === "policy-management" && (
         <h1 className="text-3xl font-bold">
-          This is Content 1 for Policy Management.
+          This is Content 1 for SP Policy Center.
         </h1>
       )}
       {sectionId?.id === "contract-management" && (
         <h1 className="text-3xl font-bold">
-          This is Content 2 for Contract Management.
+          This is Content 2 for SP Contract Portal.
         </h1>
       )}
       {sectionId?.id === "incident-management" && (
         <h1 className="text-3xl font-bold">
-          This is Content 3 for Incident Management.
+          This is Content 3 for SP Incident Tracker.
         </h1>
       )}
     </div>
