@@ -1,21 +1,13 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <motion.section
       className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
-      initial={{ opacity: 0, y: 100 }}
+      initial= {{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
-      // transition={{
-      //   type: "tween",
-      //   duration: 0.2,
-      // }}
-      // initial="hidden"
-      // variants={fadeIn("up", 0.2)}
-      // whileInView={"show"}
-      // viewport={{ once: false, amount: 0.7 }}
     >
       <h2 className="text-3xl font-bold capitalize text-center pt-12 text-gray-800 dark:text-gray-200">
         Profile{" "}
@@ -43,7 +35,6 @@ export default function About() {
         integrate <span className="font-medium">Azure AI services</span> to
         enhance functionality and drive innovation.
       </p>
-
       <p className="mb-3">
         With an <span className="font-medium">MCA degree</span> from Pondicherry
         Engineering College, I am passionate about translating business

@@ -76,3 +76,86 @@
   .tools_content-box .tools_see-more:hover {
     transform: translate3d(0px, 0px, 60px);
   }
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg); /* Increase translateX */
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg); /* Increase translateX */
+  }
+}
+
+@keyframes orbit-reverse {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg); /* Increase translateX */
+  }
+  100% {
+    transform: rotate(-360deg) translateX(120px) rotate(360deg); /* Increase translateX */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profileCard_container {
+  position: relative;
+  width: 320px; /* Increase width */
+  height: 320px; /* Increase height */
+  padding: 20px; /* Add padding to ensure icons do not touch the border */
+  border-radius: 50%; /* Make the parent div a proper circle */
+  overflow: visible; /* Ensure icons are visible */
+  animation: fadeIn 1s ease-in-out; /* Add fade-in animation */
+}
+
+.orbit-animation {
+  position: absolute;
+  top: 45%; /* Move icons slightly to the top */
+  left: 43%; /* Move icons slightly more to the left */
+  transform-origin: center center;
+  width: 0; /* Remove width to ensure proper rotation */
+  height: 0; /* Remove height to ensure proper rotation */
+}
+
+.orbit-animation:nth-child(1) {
+  animation: orbit 8s linear infinite;
+  transform: rotate(45deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(2) {
+  animation: orbit-reverse 10s linear infinite;
+  transform: rotate(135deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(3) {
+  animation: orbit 12s linear infinite;
+  transform: rotate(225deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(4) {
+  animation: orbit-reverse 14s linear infinite;
+  transform: rotate(315deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(5) {
+  animation: orbit 16s linear infinite;
+  transform: rotate(90deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(6) {
+  animation: orbit 18s linear infinite;
+  transform: rotate(180deg); /* Start from a random direction */
+}
+
+.orbit-animation:nth-child(7) {
+  animation: orbit-reverse 20s linear infinite;
+  transform: rotate(270deg); /* Start from a random direction */
+}
