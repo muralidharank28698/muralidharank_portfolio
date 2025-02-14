@@ -48,16 +48,15 @@ export const ProfessionalExperience: React.FC = () => {
               <p className="text-lg mb-2 text-black dark:text-white"><span className="font-semibold">Duration:</span> January 2020 - December 2021</p>
               <p className="text-lg mb-2 text-black dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
             </div>
-            <div className="md:w-1/3 p-4 flex justify-center items-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWA2lZlPteB0isY0ENXGIUadRcj1I3niOYZSMr5O5F4S2gOZjrK-1v_SwcpJpdbppHK0&usqp=CAU" alt="ConvergePoint" className="rounded-lg transform transition-transform duration-500 hover:scale-105" />
-              <img src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg" />
+            // rc="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg" />
             </div>
           </div>
         </div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
             <div>
-              <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white">
-                Software Developer | SharePoint Developer
+              <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white flex justify-between">
+                <div> Software Developer | SharePoint Developer</div>
+                <div>Feb 2024 - Present</div>
               </h2>
               <h2
                 className="text-4xl font-bold text-gray-900 text-3xl font-bold mb-4 text-black dark:text-white"
@@ -104,14 +103,14 @@ export const ProfessionalExperience: React.FC = () => {
                 processes.
               </p>
             </div>
-            <div className="flex flex-col space-y-4">
-              {/* <div className="md:w-full p-4 flex justify-center items-center">
-                <img
+            <div className="flex flex-col space-y-4 p-2">
+              <div className="md:w-full flex justify-center items-center">
+                {/* <img
                   src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
                   className="w-full h-auto object-cover"
-                />
-              </div> */}
-              <p className="text-2xl font-medium text-blue-600">Skill Used</p>
+                /> */}
+              </div>
+                <p className="text-2xl font-medium text-blue-600">Technologies Used</p>
               <div className="flex items-center space-x-4 p-4 border rounded-lg">
                 {/* hover:bg-gray-100 */}
                 {/* <FiArrowLeft className="text-blue-500" /> */}
@@ -204,104 +203,113 @@ export const ProfessionalExperience: React.FC = () => {
         //     </button>
         //   </div>
         // </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
-          <div>
-            <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white">
-              Software Developer | Frontend Developer
-            </h2>
-            <h2
-              className="text-4xl font-bold text-gray-900 text-3xl font-bold mb-4 text-black dark:text-white"
-              style={{ maxWidth: "500px" }}
-            >
-              Focuscraft Tech{" "}
-              <span className="text-blue-600">Private Limited</span>
-            </h2>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Developed UI components per design specs, integrated third-party
-              APIs, and maintained bug-free performance. Collaborated with teams
-              to create responsive, user-friendly web applications.
-            </p>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Utilized React.js for interactive web elements, enhancing user
-              experience. Ensured API correctness using Swagger UI.
-            </p>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Leveraged Storybook for UI development, creating reusable UI
-              packages. Managed state with Redux and Redux Toolkit, using Redux
-              DevTools for debugging.
-            </p>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Built applications with microservices architecture using React.
-              Ensured application reliability with Jest automated testing.
-            </p>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Designed reusable components with customization capabilities.
-              Troubleshot and debugged front-end issues, ensuring cross-browser
-              compatibility.
-            </p>
-            <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
-              <span className="mr-2">•</span>
-              Enhanced website performance by optimizing load times and page
-              speed. Managed projects from initiation to completion, ensuring
-              timely delivery.
-            </p>
-          </div>
-          <div className="flex flex-col space-y-4">
-            {/* <div className="md:w-full p-4 flex justify-center items-center">
-            <img
-              src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
-              className="w-full h-auto object-cover"
-            />
-          </div> */}
-            <p className="text-2xl font-medium text-blue-600">Skill Used</p>
-            <div className="flex items-center space-x-4 p-4 border rounded-lg">
-              {/* hover:bg-gray-100 */}
-              {/* <FiArrowLeft className="text-blue-500" /> */}
-              <div>
-                <div className="flex flex-wrap gap-2">
-                  {[
-                    "Git",
-                    "Redux Thunk",
-                    "CSS3",
-                    "Swagger API",
-                    "Storybooks",
-                    "Jira",
-                    "Redux.js",
-                    "Front-End Development",
-                    "React-Router-DOM",
-                    "Material-UI",
-                    "Yarn",
-                    "GraphQL",
-                    "React Hooks",
-                    "JavaScript",
-                    "React.js",
-                    "Jest",
-                    "React Native",
-                    "Postman API",
-                    "React Testing Library",
-                    "HTML5",
-                    "npm",
-                    "TypeScript",
-                    "i18next",
-                    "Bitbucket",
-                  ].map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 border rounded-md text-sm text-gray-600"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
+            <div>
+              <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white flex justify-between">
+                <div>Software Developer | Frontend Developer</div>
+                <div>Nov 2021 - Dec 2023</div>
+              </h2>
+              <h2
+                className="text-4xl font-bold text-gray-900 text-3xl font-bold mb-4 text-black dark:text-white"
+                style={{ maxWidth: "500px" }}
+              >
+                Focuscraft Tech{" "}
+                <span className="text-blue-600">Private Limited</span>
+              </h2>
+              <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
+                Roles and Responsibilities:
+              </h3>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Developed UI components per design specs, integrated third-party
+                APIs, and maintained bug-free performance. Collaborated with
+                teams to create responsive, user-friendly web applications.
+              </p>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Utilized React.js for interactive web elements, enhancing user
+                experience. Ensured API correctness using Swagger UI.
+              </p>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Leveraged Storybook for UI development, creating reusable UI
+                packages. Managed state with Redux and Redux Toolkit, using
+                Redux DevTools for debugging.
+              </p>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Built applications with microservices architecture using React.
+                Ensured application reliability with Jest automated testing.
+              </p>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Designed reusable components with customization capabilities.
+                Troubleshot and debugged front-end issues, ensuring
+                cross-browser compatibility.
+              </p>
+              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+                <span className="mr-2">•</span>
+                Enhanced website performance by optimizing load times and page
+                speed. Managed projects from initiation to completion, ensuring
+                timely delivery.
+              </p>
+            </div>
+            <div className="flex flex-col space-y-4 p-2">
+              <div className="md:w-fullflex justify-center items-center">
+                {/* <img
+                  src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                  className="w-full h-auto object-cover"
+                /> */}
+              </div>
+              <p className="text-2xl font-medium text-blue-600">
+                Technologies Used
+              </p>
+              <div className="flex items-center space-x-4 p-4 border rounded-lg">
+                {/* hover:bg-gray-100 */}
+                {/* <FiArrowLeft className="text-blue-500" /> */}
+                <div>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      "Git",
+                      "Redux Thunk",
+                      "CSS3",
+                      "Swagger API",
+                      "Storybooks",
+                      "Jira",
+                      "Redux.js",
+                      "Front-End Development",
+                      "React-Router-DOM",
+                      "Material-UI",
+                      "Yarn",
+                      "GraphQL",
+                      "React Hooks",
+                      "JavaScript",
+                      "React.js",
+                      "Jest",
+                      "React Native",
+                      "Postman API",
+                      "React Testing Library",
+                      "HTML5",
+                      "npm",
+                      "TypeScript",
+                      "i18next",
+                      "Bitbucket",
+                    ].map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 border rounded-md text-sm text-gray-600 dark:text-white"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          <div></div>
+        </>
       )}
     </div>
   );

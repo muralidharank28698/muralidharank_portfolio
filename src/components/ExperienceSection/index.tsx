@@ -177,9 +177,15 @@ export default function Experience() {
                   variants={fadeInBottomToTop}
                 >
                   <div className="flex justify-center rounded-lg">
-                    <img
+                    {/* <img
                       src={require("../../assets/ExperienceImages/experience.jpg")}
                       alt="Timeline Image"
+                      className="rounded-lg object-cover"
+                      style={{ width: "373px", height: "203px" }}
+                    /> */}
+                    <img
+                      src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      // className="w-full h-auto object-cover"
                       className="rounded-lg object-cover"
                       style={{ width: "373px", height: "203px" }}
                     />

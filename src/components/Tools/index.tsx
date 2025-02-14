@@ -78,7 +78,7 @@ export default function Tools() {
             </button>
           </div>
 
-          <div className="orbit-animation">
+          {/* <div className="orbit-animation">
             <button className="profile_item rounded-full bg-cover cursor-pointer border active:scale-95 hover:scale-105 transition-all duration-500 flex items-center justify-center">
               <span className="block w-[40px] h-[40px] transition-all duration-500 rounded-full z-[2] bg-white p-1 flex items-center justify-center hover:bg-gray-200 hover:shadow-lg transform hover:rotate-12">
               <DeviconReact />
@@ -92,7 +92,7 @@ export default function Tools() {
               <DeviconReact />
               </span>
             </button>
-          </div>
+          </div> */}
 
           <div
             id="tooltip-hover"
