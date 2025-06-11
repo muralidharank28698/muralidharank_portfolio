@@ -56,7 +56,8 @@ export default function Experience() {
         <div className="flex justify-center pb-12">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <div className="section-title text-center">
-              <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2">
+              {/* <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2"> */}
+              <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 dark:text-gray-300 pb-2">
                 Services
               </h6>
               {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
@@ -69,7 +70,7 @@ export default function Experience() {
                 </span>
               </h2>
               <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
-              <p className="mt-4 text-gray-600 animate-fadeInUp delay-600">
+              <p className="mt-4 text-gray-800 dark:text-gray-200 animate-fadeInUp delay-600">
                 Worked across two organizations, gaining expertise in frontend
                 development and delivering efficient solutions using modern
                 technologies.
@@ -111,19 +112,19 @@ export default function Experience() {
                         </svg>
                       </span>
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-800 lg:text-gray-700">
+                    <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 lg:text-gray-700 dark:lg:text-gray-300">
                       Software Developer
                     </h4>
-                    <small className="text-sm text-gray-500">
+                    <small className="text-sm text-gray-800 dark:text-gray-200">
                       ConvergePoint India Private Limited
                     </small>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
                       SharePoint Developer | SPFx Framework | SharePoint list
                       and libraries
                     </p>
 
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-400 text-sm">
+                      <span className="text-gray-500 text-sm">
                         feb 2024 - current
                       </span>
                       <motion.div
@@ -134,7 +135,7 @@ export default function Experience() {
                       >
                         <Link
                           to={`/professionalExperience`}
-                          className="text-blue-600 flex items-center gap-2 font-medium"
+                          className="text-orange-500 flex items-center gap-2 font-medium"
                           state={{ sectionId: "ConvergePoint" }}
                         >
                           View more
@@ -255,17 +256,17 @@ export default function Experience() {
                         </svg>
                       </span>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-700 lg:text-gray-600">
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                       Software Developer
                     </h4>
-                    <small className="text-sm text-gray-500">
+                    <small className="text-sm text-gray-800 dark:text-gray-200">
                       Focuscraft Tech Private Limited
                     </small>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
                       React | TypeScript | React Native | Redux | Story Book
                     </p>
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-400 text-sm">
+                      <span className="text-gray-500 text-sm">
                         nov 2021 - dec 2023
                       </span>
                       <motion.div
@@ -276,7 +277,7 @@ export default function Experience() {
                       >
                         <Link
                           to={`/professionalExperience`}
-                          className="text-blue-600 flex items-center gap-2 font-medium"
+                          className="text-orange-500 flex items-center gap-2 font-medium"
                           state={{ sectionId: "FocusCraftTech" }}
                         >
                           View more

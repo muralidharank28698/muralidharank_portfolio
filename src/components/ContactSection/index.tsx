@@ -32,8 +32,8 @@ export default function Contact() {
               <FaTwitter />
             </a>
           </div>
-          <p className="mt-8 text-base leading-6 text-center text-gray-400">
-            © 2024 designed by muralidharan. All rights reserved.
+          <p className="mt-8 text-base leading-6 text-center text-gray-800 dark:text-gray-200">
+            © 2024 designed by Muralidharan. All rights reserved.
           </p>
         </div>
       </section>
