@@ -79,10 +79,10 @@ export default function Introduction() {
           </Fade>
 
           <Fade duration={3000} delay={500} damping={0.1}>
-            <div className="flex flex-wrap justify-center md:justify-start gap-4 w-full">
+            <div className="flex flex-row sm:flex-row flex-wrap justify-center sm:justify-start gap-4 w-full">
               <a
                 href={require("../../assets/Resume/Resume.pdf")}
-                className="bg-gray-900 text-white flex justify-center gap-2 items-center mx-auto text-base sm:text-lg md:text-xl dark:bg-gray-900 backdrop-blur-md lg:font-semibold isolation-auto border-gray-300 dark:border-gray-400 relative z-10 px-5 overflow-hidden rounded-full group"
+                className="bg-gray-900 text-white flex justify-center gap-2 items-center mx-auto text-base sm:text-lg md:text-xl dark:bg-gray-900 backdrop-blur-md lg:font-semibold isolation-auto border-gray-300 dark:border-gray-400 relative z-10 px-3 py-3 overflow-hidden rounded-full group"
                 download
               >
                 <span className="text-xs sm:text-sm font-normal">
@@ -99,23 +99,13 @@ export default function Introduction() {
                   ></path>
                 </svg>
               </a>
-              {/* <Link
-                to="#contact"
-                className="group bg-gray-900 text-white px-5 py-3 flex items-center gap-2 rounded-full focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
-                onClick={() => window.scrollTo(0, document.body.scrollHeight)}
-              >
-                Contact me here{" "}
-                <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
-              </Link> */}
-              <button className="group relative inline-flex items-center text-black dark:text-white text-base font-semibold leading-6 px-4 py-3 bg-transparent border-0 outline-none">
-                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-gray-800 dark:bg-gray-200 w-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:w-12"></span>
-                <span className="ml-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:ml-10">
+              <button className="group relative inline-flex items-center text-black dark:text-white text-base font-semibold leading-6 px-3 py-2 bg-transparent border-0 outline-none">
+                <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[2px] bg-gray-800 dark:bg-gray-200 w-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:w-8"></span>
+                <span className="ml-0 transition-all duration-500 ease-[cubic-bezier(0.25,0.8,0.25,1)] group-hover:ml-6">
                   <Link
                     to="#contact"
-                    className="text-black dark:text-white font-semibold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 rounded-full px-4 py-2 transition-colors duration-300"
-                    onClick={() =>
-                      window.scrollTo(0, document.body.scrollHeight)
-                    }
+                    className="text-black dark:text-white font-semibold border border-transparent hover:border-gray-200 dark:hover:border-gray-700 rounded-full px-3 py-1 transition-colors duration-300"
+                    onClick={() => window.scrollTo(0, document.body.scrollHeight)}
                   >
                     Contact me
                   </Link>
