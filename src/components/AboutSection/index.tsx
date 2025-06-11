@@ -16,7 +16,7 @@ export default function About() {
       <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
       <p className="mb-3">
         I am a professional{" "}
-        <span className="font-medium">Software Developer</span> with over 3
+        <span className="font-medium">Software Developer</span> with over 3.6
         years of experience specializing in{" "}
         <span className="font-medium">front-end development</span>. My expertise
         lies in JavaScript UI frameworks, particularly{" "}
