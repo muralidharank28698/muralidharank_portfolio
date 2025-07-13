@@ -4,12 +4,13 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <motion.section
+      // className="max-w-4xl leading-8 sm:mb-0 scroll-mt-28 pt-12"
       className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
-      initial= {{ opacity: 0, y: 100 }}
+      initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h2 className="text-3xl font-bold capitalize text-center pt-12 text-gray-800 dark:text-gray-200">
+      <h2 className="text-3xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
         Profile{" "}
         <span className="text-blue-600 dark:text-blue-400">Summary</span>
       </h2>

@@ -60,16 +60,16 @@ const MainComponent: React.FC = () => {
       {/* </Headroom> */}
       <section
         ref={introductionRef}
-        className="flex flex-col items-center pt-32 px-2"
+        className="flex flex-col items-center pt-24 px-5"
       >
         <Introduction />
       </section>
-      <section ref={aboutRef} className="flex flex-col items-center px-4 pt-2">
+      <section ref={aboutRef} className="flex flex-col items-center px-5 pt-2">
         <About />
       </section>
-      <section ref={skillsRef} className="flex flex-col items-center px-4">
+      <section ref={skillsRef} className="flex flex-col items-center px-5">
         <Skills />
-        <Tools />
+        {/* <Tools /> */}
       </section>
       <section
         ref={educationRef}

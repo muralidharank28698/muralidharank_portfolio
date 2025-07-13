@@ -31,7 +31,7 @@ export default function Introduction() {
               alt="Muralidharan K"
               width="172"
               height="172"
-              className="h-40 w-40 rounded-full object-cover border-b-2 border-white shadow-xl"
+              className="h-56 w-56 rounded-full object-cover border-b-2 border-white shadow-xl"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{
@@ -58,7 +58,7 @@ export default function Introduction() {
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-start justify-between w-full gap-6 px-4">
+      <div className="flex flex-col md:flex-row items-start justify-between w-full gap-6">
         {/* Left Column - Vertical Name */}
         <div className="w-full md:w-[10%] flex md:justify-start md:items-start">
           <Fade duration={3000} delay={300} damping={0.1} direction="up">
