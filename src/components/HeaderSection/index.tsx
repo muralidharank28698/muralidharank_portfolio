@@ -110,10 +110,10 @@ const Header: React.FC<HeaderProps> = ({
       
       className={clsx(
         "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 mx-4",
-        {
-          "transform translate-y-0": isVisible, // Menu is visible when scrolling up
-          "transform -translate-y-full": !isVisible, // Menu is hidden when scrolling down
-        }
+        // {
+        //   "transform translate-y-0": isVisible, // Menu is visible when scrolling up
+        //   "transform -translate-y-full": !isVisible, // Menu is hidden when scrolling down
+        // }
       )}
       >
         <div className="flex items-center justify-between h-16 pt-5">

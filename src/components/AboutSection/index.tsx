@@ -10,40 +10,45 @@ export default function About() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h2 className="text-3xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
         Profile{" "}
-        <span className="text-blue-600 dark:text-blue-400">Summary</span>
+        <span className="text-[#57d5ff] dark:text-[#57d5ff]">Summary</span>
       </h2>
-      <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
+      <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
       <p className="mb-3">
-        I am a professional{" "}
-        <span className="font-medium">Software Developer</span> with over 3.6
-        years of experience specializing in{" "}
-        <span className="font-medium">front-end development</span>. My expertise
-        lies in JavaScript UI frameworks, particularly{" "}
-        <span className="font-medium">React</span>, with a focus on creating
-        exceptional user experiences. I have strong skills in building mobile
-        applications using <span className="font-medium">React Native</span> and
-        am experienced in{" "}
+        With <span className="font-medium">3+ years</span> of professional
+        experience, I specialize in{" "}
+        <span className="font-medium">front-end development</span> using modern
+        JavaScript frameworks, particularly{" "}
+        <span className="font-medium">React.js</span>, to build engaging and
+        high-performance web applications. I have strong expertise in developing{" "}
+        <span className="font-medium">cross-platform mobile apps</span> with{" "}
+        <span className="font-medium">React Native</span> and extensive
+        experience in{" "}
+        <span className="font-medium">Microsoft SharePoint 365</span>{" "}
+        development, leveraging{" "}
         <span className="font-medium">
-          Microsoft SharePoint 365 development
-        </span>
-        , utilizing{" "}
-        <span className="font-medium">SPFx Framework, PnP JS, CAML Query</span>,
-        and developing SharePoint{" "}
-        <span className="font-medium">SPFx libraries</span> for integration and
-        consumption in our products, for high-quality solutions. I also
-        integrate <span className="font-medium">Azure AI services</span> to
-        enhance functionality and drive innovation.
+          SPFx Framework, PnP JS, CAML Query, and Fluent UI
+        </span>{" "}
+        to deliver scalable enterprise solutions. Additionally, I am skilled in{" "}
+        <span className="font-medium">Microsoft Power Automate</span>, creating
+        automated workflows that streamline processes and enhance productivity.
+        My work includes developing{" "}
+        <span className="font-medium">SharePoint SPFx lists and libraries</span>{" "}
+        for seamless integration, ensuring efficiency and exceptional user
+        experiences. I also integrate{" "}
+        <span className="font-medium">Azure AI services</span> to enhance
+        functionality and drive innovation.
       </p>
+
       <p className="mb-3">
-        With an <span className="font-medium">MCA degree</span> from Pondicherry
-        Engineering College, I am passionate about translating business
-        requirements into technical solutions and launching new projects using
-        diverse tech stacks. I am always eager to stay updated on industry
-        trends and dedicated to continuous learning. I'm excited about
-        collaborating with fellow professionals to contribute to innovative,
-        impactful projects.
+        Beyond front-end expertise, I integrate Azure AI services to deliver
+        intelligent, innovative solutions that add measurable business value. I
+        am passionate about transforming complex business requirements into
+        practical, robust technical solutions and excel in collaborative,
+        fast-paced environments. Dedicated to continuous learning and staying
+        ahead of industry trends, I strive to contribute to impactful projects
+        that combine cutting-edge technology with outstanding user experience.
       </p>
     </motion.section>
   );
