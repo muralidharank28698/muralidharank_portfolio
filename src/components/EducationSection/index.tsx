@@ -12,7 +12,7 @@ export default function Education() {
       whileInView={"show"}
       viewport={{ once: false, amount: 0.7 }}
     >
-      <div className="pt-12">
+      <div className="pt-2">
         <section
           id="features"
           className="section bg-fixed bg-cover"
@@ -29,14 +29,14 @@ export default function Education() {
           >
             <div className="container mx-auto px-4">
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
+                <h2 className="text-2xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
                   Career{" "}
-                  <span className="text-blue-600 dark:text-blue-400">
+                  <span className="text-[#57d5ff] dark:text-[#57d5ff]">
                     Journey
                   </span>
                 </h2>
 
-                <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
+                <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
                 <p className="text-gray-600 text-sm md:text-base dark:text-gray-300">
                   My educational background includes a Master of Computer
                   Applications (MCA) and a Bachelor of Computer Applications

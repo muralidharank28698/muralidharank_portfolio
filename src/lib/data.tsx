@@ -18,6 +18,8 @@ import {
   SkillIconsTailwindcssLight,
   TablerBrandReactNative,
   VscodeIconsFileTypeStorybook,
+  SkillIconsBitbucket,
+  SimpleIconsMicrosoftpowerautomate,
 } from "../assets/icons";
 
 export const links = [
@@ -152,10 +154,6 @@ export const TechnologyStack: ILibrariesAndFramework[] = [
     icon: <DeviconBootstrap />,
   },
   {
-    name: "Git",
-    icon: <SkillIconsGit />,
-  },
-  {
     name: "PNP JS",
     icon: <LucideFileJson2 />,
   },
@@ -164,16 +162,20 @@ export const TechnologyStack: ILibrariesAndFramework[] = [
 export const MicrosoftSharePointSPFXTechnologyStack: ILibrariesAndFramework[] =
   [
     {
-      name: "SPFX Framework",
-      icon: <MdiMicrosoftSharepoint />,
-    },
-    {
       name: "SPFX Webpart",
       icon: <LucideFileJson2 />,
     },
     {
+      name: "SPFX List",
+      icon: <SimpleIconsLibrariesdotio />,
+    },
+    {
       name: "SPFX Libraries",
       icon: <SimpleIconsLibrariesdotio />,
+    },
+    {
+      name: "Power Automate",
+      icon: <SimpleIconsMicrosoftpowerautomate />,
     },
     {
       name: "Azure AI services",
@@ -181,15 +183,28 @@ export const MicrosoftSharePointSPFXTechnologyStack: ILibrariesAndFramework[] =
     },
   ];
 
-export const EditorTools: IEditorTools[] =
-  [
-    {
-      name: "Visual Studio Code",
-      icon: <MdiMicrosoftSharepoint />,
-    },
-    {
-      name: "VS Code",
-      icon: <AkarIconsCssFill />,
-    },
-   
-  ];
+export const EditorTools: IEditorTools[] = [
+  {
+    name: "Visual Studio Code",
+    icon: <MdiMicrosoftSharepoint />,
+  },
+  {
+    name: "VS Code",
+    icon: <AkarIconsCssFill />,
+  },
+];
+
+export const versionControlTools: IEditorTools[] = [
+  {
+    name: "Git",
+    icon: <SkillIconsGit />,
+  },
+  {
+    name: "GitHub",
+    icon: <SkillIconsGit />,
+  },
+  {
+    name: "Bitbucket",
+    icon: <SkillIconsBitbucket />,
+  },
+];

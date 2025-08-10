@@ -52,24 +52,32 @@ export default function Experience() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <div className="pt-12">
+      <div className="pt-8">
         <div className="flex justify-center pb-12">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <div className="section-title text-center">
               {/* <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2"> */}
-              <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 dark:text-gray-300 pb-2">
+              <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 dark:text-gray-300">
                 Services
               </h6>
               {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
                 Professional <span>services</span>
               </h4> */}
-              <h2 className="text-3xl font-bold capitalize text-center text-gray-800 dark:text-gray-200">
+              {/* <h2 className="text-3xl font-bold capitalize text-center text-gray-800 dark:text-gray-200">
                 Professional{" "}
                 <span className="text-blue-600 dark:text-blue-400">
                   services
                 </span>
               </h2>
-              <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" />
+              <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" /> */}
+              <h2 className="text-2xl font-bold capitalize pt-4 text-gray-800 dark:text-gray-200">
+                Professional{" "}
+                <span className="text-[#57d5ff] dark:text-[#57d5ff]">
+                  services
+                </span>
+              </h2>
+              <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
+
               <p className="mt-4 text-gray-800 dark:text-gray-200 animate-fadeInUp delay-600">
                 Worked across two organizations, gaining expertise in frontend
                 development and delivering efficient solutions using modern

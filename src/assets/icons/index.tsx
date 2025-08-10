@@ -559,6 +559,63 @@ export function SkillIconsGit(props: SVGProps<SVGSVGElement>) {
     </svg>
   );
 }
+export function SkillIconsBitbucket(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={48}
+      height={48}
+      viewBox="0 0 256 256"
+      {...props}
+    >
+      <g fill="none">
+        <rect width={256} height={256} fill="#2684FF" rx={60}></rect>
+        <g clipPath="url(#skillIconsBitbucket0)">
+          <path
+            fill="#fff"
+            d="M54.6 62.7c.7-2.1 2.7-3.6 4.9-3.6h137c2.2 0 4.2 1.5 4.9 3.6l27.7 130.6c.6 2.7-1.4 5.3-4.2 5.3H31.1c-2.8 0-4.8-2.6-4.2-5.3zm73.4 109.6c-13.2 0-24-10.7-24-24c0-13.2 10.8-24 24-24c13.2 0 24 10.8 24 24c0 13.3-10.8 24-24 24"
+          ></path>
+          <path
+            fill="#0052CC"
+            d="M128 152.3c-9.9 0-17.9-8-17.9-17.9c0-9.9 8-17.9 17.9-17.9c9.9 0 17.9 8 17.9 17.9c0 9.9-8 17.9-17.9 17.9m-92.2 51.7c.7 2.1 2.7 3.6 4.9 3.6h202.6c2.2 0 4.2-1.5 4.9-3.6l27.7-130.6c.6-2.7-1.4-5.3-4.2-5.3H31.1c-2.8 0-4.8 2.6-4.2 5.3z"
+            opacity=".2"
+          ></path>
+        </g>
+        <defs>
+          <clipPath id="skillIconsBitbucket0">
+            <rect
+              width={200}
+              height={200}
+              x={28}
+              y={28}
+              fill="#fff"
+              rx={0}
+            ></rect>
+          </clipPath>
+        </defs>
+      </g>
+    </svg>
+  );
+}
+
+export function SimpleIconsMicrosoftpowerautomate(
+  props: SVGProps<SVGSVGElement>
+) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={48}
+      height={48}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        fill="#0066ff"
+        d="M2.25 17.25a.75.75 0 0 1-.53-1.28l7.5-7.5a.75.75 0 0 1 .53-.22h6.44a.75.75 0 0 1 .53 1.28l-7.5 7.5a.75.75 0 0 1-.53.22zm13.06 0a.75.75 0 0 1-.53-1.28l3.19-3.19a.75.75 0 0 1 1.06 1.06l-3.19 3.19a.75.75 0 0 1-.53.22zm4.44 0a.75.75 0 0 1-.53-1.28l1.19-1.19a.75.75 0 1 1 1.06 1.06l-1.19 1.19a.75.75 0 0 1-.53.22z"
+      />
+    </svg>
+  );
+}
 
 export function LucideFileJson2(props: SVGProps<SVGSVGElement>) {
   return (

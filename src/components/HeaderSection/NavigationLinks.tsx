@@ -17,7 +17,7 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
 }) => {
   return (
     <ul className="py-1 flex space-x-4 rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-      {links.map((link:any, index:any) => (
+      {links.map((link: any, index: any) => (
         <li key={index}>
           <Link
             to={`#${link.name}`} // Navigate to the section with the corresponding ID
@@ -25,11 +25,11 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
             className={clsx(
               "relative block px-3 py-2 transition",
               {
-                "text-teal-500 dark:text-teal-400 bg-gradient-to-r":
+                "text-[#57d5ff] dark:text-[#57d5ff] bg-gradient-to-r":
                   activeSection === link.name,
               },
               {
-                "hover:text-teal-500 dark:hover:text-teal-400":
+                "hover:text-[#57d5ff] dark:hover:text-[#57d5ff]":
                   activeSection !== link.name,
               }
             )}
@@ -40,7 +40,7 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
           >
             {link.name}
             {activeSection === link.name && (
-              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0"></span>
+              <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-[#57d5ff]/0 via-[#57d5ff]/40 to-[#57d5ff]/0 dark:from-[#57d5ff]/0 dark:via-[#57d5ff]/40 dark:to-[#57d5ff]/0"></span>
             )}
           </Link>
         </li>

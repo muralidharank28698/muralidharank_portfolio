@@ -12,7 +12,7 @@ export default function Introduction() {
       id="home"
       className="max-w-4xl sm:text-left leading-8 sm:mb-0 scroll-mt-28 pt-12"
     >
-      {/* Profile Image */} 
+      {/* Profile Image */}
       {/* Added the comment */}
       <div className="flex items-center justify-center mb-8">
         <div className="relative">
@@ -84,14 +84,13 @@ export default function Introduction() {
         {/* Middle Column - Main Content */}
         <div className="w-full md:w-[80%] items-center md:items-start">
           <Fade duration={2000} delay={200} damping={0.1}>
-            <p className="mb-6 text-base font-normal leading-relaxed sm:text-lg text-left">
+            <p className="mb-6 text-base font-normal leading-relaxed text-left">
               I'm a passionate developer who thrives oninnovation, excellence,
               and crafting high-quality digital experiences through continuous
               growth and dedication. I believe in writing clean, scalable code
               that drives real impact.
             </p>
           </Fade>
-
           <a
             href={require("../../assets/Resume/Resume.pdf")}
             download

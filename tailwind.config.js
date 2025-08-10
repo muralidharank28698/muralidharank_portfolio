@@ -4,12 +4,15 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'bounce-on-hover': 'bounce 1.5s infinite',
+        "bounce-on-hover": "bounce 1.5s infinite",
+      },
+      fontFamily: {
+        // sans: ["Manrope", "sans-serif"], // make Manrope the default sans
       },
       keyframes: {
         bounce: {
-          '0%, 100%': { transform: 'translateY(-5%)' },
-          '50%': { transform: 'translateY(0)' },
+          "0%, 100%": { transform: "translateY(-5%)" },
+          "50%": { transform: "translateY(0)" },
         },
       },
     },

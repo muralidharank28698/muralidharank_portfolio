@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @layer base {
+  html {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 400;
+  }
+} */
+
 html {
   --line-color: #e5e7eb;
   scroll-behavior: smooth;
