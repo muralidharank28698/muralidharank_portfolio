@@ -143,8 +143,8 @@ export default function Experience() {
                       >
                         <Link
                           to={`/professionalExperience`}
-                          className="text-orange-500 flex items-center gap-2 font-medium"
-                          state={{ sectionId: "ConvergePoint" }}
+                          className="text-[#57d5ff] dark:text-[#57d5ff] flex items-center gap-2 font-medium"
+                          state={{ sectionId: "FocusCraftTech" }}
                         >
                           View more
                           <svg
@@ -285,7 +285,7 @@ export default function Experience() {
                       >
                         <Link
                           to={`/professionalExperience`}
-                          className="text-orange-500 flex items-center gap-2 font-medium"
+                          className="text-[#57d5ff] dark:text-[#57d5ff] flex items-center gap-2 font-medium"
                           state={{ sectionId: "FocusCraftTech" }}
                         >
                           View more
