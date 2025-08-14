@@ -33,17 +33,17 @@ export const ProjectsDetails: React.FC = () => {
         </svg>
         {/* <span className="">Back</span> */}
       </button>
-      {sectionId?.id === "policy-management" && (
+      {sectionId === "policy-management" && (
         <h1 className="text-3xl font-bold">
           This is Content 1 for SP Policy Center.
         </h1>
       )}
-      {sectionId?.id === "contract-management" && (
+      {sectionId === "contract-management" && (
         <h1 className="text-3xl font-bold">
           This is Content 2 for SP Contract Portal.
         </h1>
       )}
-      {sectionId?.id === "incident-management" && (
+      {sectionId === "incident-management" && (
         <h1 className="text-3xl font-bold">
           This is Content 3 for SP Incident Tracker.
         </h1>

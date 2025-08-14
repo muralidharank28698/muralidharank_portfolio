@@ -78,13 +78,23 @@ const MainComponent: React.FC = () => {
         <Education />
       </section>
 
-      <section ref={projectsRef} className="flex flex-col items-center px-4">
-        <Projects />
+      <section
+        ref={projectsRef}
+        className="flex flex-col items-center px-4 w-full"
+      >
+        <div className="w-full sm:max-w-4xl">
+          {/* full width on mobile, max 4xl on desktop */}
+          <Projects />
+        </div>
       </section>
+
       <section ref={experienceRef} className="flex flex-col items-center px-4">
         <Experience />
       </section>
-      <section ref={contactRef} className="flex flex-col items-center px-4 shadow-inner">
+      <section
+        ref={contactRef}
+        className="flex flex-col items-center px-4 shadow-inner"
+      >
         <Contact />
       </section>
     </>
@@ -93,8 +103,8 @@ const MainComponent: React.FC = () => {
 
 export default MainComponent;
 
-
-{/* <section
+{
+  /* <section
 ref={introductionRef}
 className="introduction min-h-screen relative overflow-hidden"
 >
@@ -140,4 +150,5 @@ className="introduction min-h-screen relative overflow-hidden"
     />
   </g>
 </svg>
-</section> */}
+</section> */
+}
