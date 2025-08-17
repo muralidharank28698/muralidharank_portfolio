@@ -23,28 +23,28 @@ const blogPosts: BlogPost[] = [
   {
     id: "policy-management",
     title: "SP Policy Center",
-    description: `Microsoft 365 SharePoint for streamlined, scalable policy Center.`,
+    description: `Microsoft 365 SharePoint for streamlined, scalable, secure Policy Center.`,
     image:
       "https://compass365.com/wp-content/uploads/2024/04/Top-3-Insights-from-the-2024-Gartner-Digital-Workplace-Summit.jpg",
   },
   {
     id: "contract-management",
     title: "SP Contract Portal",
-    description: `SharePoint contract portal automating the lifecycle from request to signature.`,
+    description: `SharePoint contract portal streamlining and automating the lifecycle from request to signature.`,
     image:
       "https://images.squarespace-cdn.com/content/v1/5ab688b21aef1d55f061696c/1607122679047-TBVGSN5XW5IN2UHLLQJA/shutterstock_1818362339.jpg",
   },
   {
     id: "incident-management",
     title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint incident Tracker for streamlined reporting, compliance, and collaboration.`,
+    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
     image:
       "https://www.hospitalmanagementasia.com/wp-content/uploads/2023/11/Apollo-2.jpg",
   },
   {
     id: "contract-management",
     title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint incident Tracker for streamlined reporting, compliance, and collaboration.`,
+    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
     image:
       "https://media.istockphoto.com/id/1350606689/photo/business-woman-using-a-laptop-with-digital-graph-to-document-management-software-online.jpg?s=612x612&w=0&k=20&c=vV2qXwIybbg-eJBCmIlGkTA-V5nB1xjDWveXEKXVK-g=",
   },
@@ -119,7 +119,7 @@ const Projects: React.FC = () => {
                 <img
                   src={post.image}
                   alt={post.title}
-                  className="w-full sm:h-60 object-cover"
+                  className="w-full sm:h-60 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
                 />
                 <div className="p-4">
                   <div className="flex flex-col items-start gap-2">
@@ -137,7 +137,7 @@ const Projects: React.FC = () => {
                     </h3>
                   </div>
 
-                  <p className="text-sm sm:text-base text-neutral-500">
+                  <p className="text-xs sm:text-sm text-[#8b949e] pt-2">
                     {post.description}
                   </p>
                 </div>

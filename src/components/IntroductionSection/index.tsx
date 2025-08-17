@@ -65,16 +65,17 @@ export default function Introduction() {
           <Fade duration={3000} delay={300} damping={0.1} direction="up">
             {/* Desktop: Vertical Name */}
             <div className="hidden md:flex md:-rotate-90 md:origin-left md:translate-y-[40%] text-md font-semibold whitespace-nowrap items-center justify-center h-full">
-              <span className="text-base font-normal leading-relaxed sm:text-lg text-black dark:text-white">
+              <span className="text-base font-normal leading-relaxed sm:text-lg">
                 &lt; muralidharan / &gt;
               </span>
             </div>
             {/* Mobile: Big Name + Subtitle */}
             <div className="flex flex-col md:hidden items-start justify-center w-full text-left">
-              <span className="text-4xl font-bold text-gray-900 dark:text-white tracking-wider">
+              <span className="text-4xl font-bold text-gray-900 dark:text-white">
                 Muralidharan
               </span>
-              <span className="text-base font-normal mt-1 tracking-wide border-t border-gray-200 dark:border-gray-700 pt-2">
+              <hr className="w-16 h-1 my-3 bg-[#57d5ff] border-0" />
+              <span className="text-base font-normal mt-1 tracking-wide border-gray-200 dark:border-gray-700 pt-2">
                 &lt; Software Developer / &gt;
               </span>
             </div>

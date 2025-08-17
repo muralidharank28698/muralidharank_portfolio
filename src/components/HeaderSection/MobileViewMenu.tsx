@@ -83,12 +83,10 @@ export const MobileViewMenu: React.FC<MobileViewMenuProps> = ({
                   className={clsx(
                     "relative block px-3 py-2 transition",
                     {
-                      "text-teal-500 dark:text-teal-400":
-                        activeSection === link.name,
+                      "text-[#57d5ff]": activeSection === link.name,
                     },
                     {
-                      "hover:text-teal-500 dark:hover:text-teal-400":
-                        activeSection !== link.name,
+                      "hover:text-[#57d5ff]": activeSection !== link.name,
                     }
                   )}
                   onClick={() => {
