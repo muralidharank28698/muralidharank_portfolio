@@ -37,7 +37,7 @@ export default function Skills() {
           </h2>
           <span className="w-6 h-px bg-gray-300"></span>
         </div>
-        <ul className="flex flex-wrap justify-center gap-2 text-base text-gray-800 pt-6">
+        <ul className="flex flex-wrap justify-center gap-2 text-base pt-6">
           {TechnologyStack?.map(
             (item: ILibrariesAndFramework, index: number) => (
               <motion.li
@@ -49,12 +49,12 @@ export default function Skills() {
                 custom={index}
               >
                 <div className="flex relative items-center justify-center w-full">
-                  <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-xs border border-transparent hover:border-blue-300 transition-all duration-500">
+                  <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-sm border border-transparent hover:border-[0.5px] hover:border-[rgb(87,213,255)] transition-all duration-500">
                     <div className="icon text-gray-500 dark:text-gray-300 transition-all text-base sm:text-lg">
                       {item?.icon}
                     </div>
                     <div className="transition-all duration-500">
-                      <span className="text-gray-700 dark:text-gray-100 text-xs sm:text-sm">
+                      <span className="text-[#8b949e] text-xs sm:text-sm">
                         {item?.name}
                       </span>
                     </div>
@@ -68,17 +68,17 @@ export default function Skills() {
       <div className="pt-8">
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8 pt-6">
           {/* Left Box: SharePoint SPFx Development Expertise */}
-          <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 flex flex-col items-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+          <div className="rounded-xl shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 p-4 sm:p-5 md:p-6 flex flex-col items-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
             <div className="flex flex-col items-center justify-center py-2 w-full">
               <div className="flex items-center justify-center gap-4 w-full">
                 <span className="w-6 h-px bg-gray-300"></span>
-                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words text-gray-800 dark:text-gray-200">
+                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words">
                   Version Control Tools
                 </h2>
                 <span className="w-6 h-px bg-gray-300"></span>
               </div>
             </div>
-            <ul className="flex flex-wrap justify-center gap-2 text-sm sm:text-base text-gray-800 pt-2 sm:pt-4">
+            <ul className="flex flex-wrap justify-center gap-2 text-sm sm:text-base pt-2 sm:pt-4">
               {versionControlTools?.map(
                 (item: ILibrariesAndFramework, index: number) => (
                   <motion.li
@@ -90,13 +90,13 @@ export default function Skills() {
                     custom={index}
                   >
                     <div className="flex relative items-center justify-center w-full">
-                      <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-xs border border-transparent hover:border-blue-300 transition-all duration-500">
+                      <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-sm border border-transparent hover:border-[0.5px] hover:border-[rgb(87,213,255)] transition-all duration-500">
                         <div className="icon text-gray-500 dark:text-gray-300 transition-all text-base sm:text-lg">
                           {item?.icon}
                         </div>
                         <div className="transition-all duration-500">
                           <div className="transition-all duration-500">
-                            <span className="text-gray-700 dark:text-gray-100 text-xs sm:text-sm">
+                            <span className="text-[#8b949e] text-xs sm:text-sm">
                               {item?.name}
                             </span>
                           </div>
@@ -109,18 +109,21 @@ export default function Skills() {
             </ul>
           </div>
           {/* Right Box: You can add another box here for grid layout */}
-          <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
-            {/* Add your second box content here */}
+          {/* <article className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 overflow-hidden"> */}
+
+          {/* <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto"> */}
+          {/* Add your second box content here */}
+          <div className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
             <div className="flex flex-col items-center justify-center py-2 w-full">
               <div className="flex items-center justify-center gap-4 w-full">
                 <span className="w-6 h-px bg-gray-300"></span>
-                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words text-gray-800 dark:text-gray-200">
+                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words">
                   SharePoint SPFx
                 </h2>
                 <span className="w-6 h-px bg-gray-300"></span>
               </div>
             </div>
-            <ul className="flex flex-wrap justify-center gap-2 text-sm sm:text-base text-gray-800 pt-2 sm:pt-4">
+            <ul className="flex flex-wrap justify-center gap-2 text-sm sm:text-base pt-2 sm:pt-4">
               {MicrosoftSharePointSPFXTechnologyStack?.map(
                 (item: ILibrariesAndFramework, index: number) => (
                   <motion.li
@@ -132,12 +135,12 @@ export default function Skills() {
                     custom={index}
                   >
                     <div className="flex relative items-center justify-center w-full">
-                      <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-xs border border-transparent hover:border-blue-300 transition-all duration-500">
+                      <div className="card rounded-xl overflow-hidden relative text-center p-2 group items-center flex flex-col w-20 sm:w-24 md:w-28 max-w-xs shadow-sm border border-transparent hover:border-[0.5px] hover:border-[rgb(87,213,255)] transition-all duration-500">
                         <div className="icon text-gray-500 dark:text-gray-300 transition-all text-base sm:text-lg">
                           {item?.icon}
                         </div>
                         <div className="transition-all duration-500">
-                          <span className="text-gray-700 dark:text-gray-100 text-xs sm:text-sm">
+                          <span className="text-[#8b949e] text-xs sm:text-sm">
                             {item?.name}
                           </span>
                         </div>
