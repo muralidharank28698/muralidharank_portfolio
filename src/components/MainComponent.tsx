@@ -80,7 +80,7 @@ const MainComponent: React.FC = () => {
 
       <section
         ref={projectsRef}
-        className="flex flex-col items-center px-4 w-full"
+        className="flex flex-col items-center w-full"
       >
         <div className="w-full sm:max-w-4xl">
           {/* full width on mobile, max 4xl on desktop */}
@@ -93,7 +93,13 @@ const MainComponent: React.FC = () => {
       </section>
       <section
         ref={contactRef}
-        className="flex flex-col items-center px-4 shadow-inner"
+        // className="flex flex-col items-center w-full
+        //      border border-gray-200 dark:border-gray-700
+        //      py-10 px-4 rounded-t-[4rem]"
+        className="flex flex-col items-center w-full 
+             border border-neutral-200/40 dark:border-neutral-700/40 
+             py-10 px-4 rounded-t-[4rem] 
+             shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40"
       >
         <Contact />
       </section>
