@@ -19,7 +19,7 @@ export default function Contact() {
         className="bg-gray-900 text-white py-20 px-6 relative overflow-hidden rounded-3xl"
       >
         {/* Background Image */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 opacity-15">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 md:left-0 md:translate-x-0">
           <img
             src={require("../../assets/Profile/Footer.png")}
             alt="Laptop Illustration"
@@ -71,31 +71,46 @@ export default function Contact() {
                 <FaSearchLocation className="text-[#57d5ff] dark:text-[#57d5ff]" />
                 Based in: Chennai, India
               </p>
-              <p className="flex items-center gap-2">
-                <FaLaptopCode className="text-[#57d5ff]" />
-                Open to: Freelance, Remote & Full-time opportunities
+              <p className="flex items-start gap-2">
+                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
+                <span className="leading-snug">
+                  Open to: Freelance, Remote & Full-time opportunities
+                </span>
               </p>
-              {/* <p className="flex items-center gap-2">
-                <FaBriefcase className="text-[#57d5ff]" />
-                Open to: Freelance, Remote & Full-time opportunities
-              </p> */}
               <p className="flex items-center gap-2">
                 <MdEmail className="text-[#57d5ff]" />
                 muralidharank28698@gmail.com
               </p>
+              {/* <p className="flex items-start gap-2">
+                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
+                <span className="leading-snug">
+                  Open to: Freelance, Remote & Full-time opportunities
+                </span>
+              </p>
+
+              <p className="flex items-start gap-2">
+                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
+                <span className="leading-snug">Based in: Chennai, India</span>
+              </p>
+
+              <p className="flex items-start gap-2">
+                <MdEmail className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
+                <span className="leading-snug">muralidharan@example.com</span>
+              </p> */}
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white text-gray-900 rounded-3xl shadow-lg p-8">
+          <div className="bg-white text-gray-900 rounded-3xl shadow-lg p-4 sm:p-6 md:p-8">
             <form action="#" method="POST" className="space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <input
                   type="text"
                   name="firstname"
                   placeholder="First name*"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 
+                   focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
                 />
 
                 <input
@@ -103,7 +118,8 @@ export default function Contact() {
                   name="lastname"
                   placeholder="Last name*"
                   required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 
+                   focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
                 />
               </div>
 
@@ -113,7 +129,7 @@ export default function Contact() {
                 placeholder="Your email*"
                 required
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 
-             focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
               />
 
               <input
@@ -121,23 +137,8 @@ export default function Contact() {
                 name="company"
                 placeholder="Company / Project name"
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 
-             focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
               />
-
-              {/* <select
-                name="projectType"
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 
-             focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
-              >
-                <option value="" disabled selected>
-                  What type of project do you need help with?
-                </option>
-                <option>Portfolio Website</option>
-                <option>Landing Page</option>
-                <option>Web Application</option>
-                <option>UI/UX Implementation</option>
-                <option>Other</option>
-              </select> */}
 
               <textarea
                 name="message"
@@ -145,13 +146,13 @@ export default function Contact() {
                 required
                 rows={4}
                 className="w-full px-4 py-3 rounded-xl border border-gray-300 
-             focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
               ></textarea>
 
               <button
                 type="submit"
                 className="w-full py-3 px-6 text-white font-semibold rounded-xl shadow-md transition 
-             focus:outline-none focus:ring-0 active:outline-none active:ring-0"
+                 focus:outline-none focus:ring-0 active:outline-none active:ring-0"
                 style={{ backgroundColor: "#57d5ff" }}
               >
                 Send Message
