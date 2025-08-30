@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Experience.css";
 import { Link } from "react-router-dom";
+import { TiSocialLinkedin } from "react-icons/ti";
+import { RiComputerLine } from "react-icons/ri";
 
 interface CardContent {
   title: string;
@@ -18,6 +20,14 @@ const cardData: CardContent[] = [
     buttonText: "Explore",
     backgroundImage:
       "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
+  },
+  {
+    title: "ConvergePoint India Private Limited",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
+    buttonText: "Explore",
+    backgroundImage:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
   },
   {
     title: "ConvergePoint India Private Limited",
@@ -100,30 +110,106 @@ export default function Experience() {
                 viewport={{ once: true }}
               >
                 <motion.div
+                  className="w-full lg:w-5/12"
+                  variants={fadeInBottomToTop}
+                >
+                  <div className="flex justify-center rounded-lg">
+                    <img
+                      src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      // className="w-full h-auto object-cover"
+                      className="rounded-lg object-cover"
+                      style={{ width: "373px", height: "203px" }}
+                    />
+                  </div>
+                </motion.div>
+                <div className="w-full lg:w-2/12 relative">
+                  <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center leading-none group">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="#57d5ff"
+                      className="block h-4 w-4 flex-none transform transition-transform duration-300 ease-out group-hover:scale-150"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M15 8A7 7 0 1 0 1 8a7 7 0 0 0 14 0ZM4.75 7.25a.75.75 0 0 0 0 1.5h4.69L8.22 9.97a.75.75 0 1 0 1.06 1.06l2.5-2.5a.75.75 0 0 0 0-1.06l-2.5-2.5a.75.75 0 0 0-1.06 1.06l1.22 1.22H4.75Z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <motion.div
+                  className="w-full lg:w-5/12"
+                  variants={fadeInBottomToTop}
+                >
+                  <div className="lg:text-left lg:pl-8 text-left">
+                    <div className="flex items-center justify-start lg:justify-start mb-4">
+                      <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
+                        <RiComputerLine size={18} />
+                      </span>
+                    </div>
+                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                      Software Developer
+                    </h4>
+                    <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
+                      Cognizant Technology Solutions India Private Limited
+                    </small>
+                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+                      SharePoint Developer | SPFx Framework | SharePoint list
+                      and libraries
+                    </p>
+                    <div className="flex justify-between items-center mt-2">
+                      <span className="text-gray-500 text-sm">
+                        jul 2025 - present
+                      </span>
+                      <motion.div
+                        whileHover={{
+                          scale: 1.05,
+                        }}
+                        className="inline-block"
+                      >
+                        <Link
+                          to={`/professionalExperience`}
+                          className="text-[#57d5ff] dark:text-[#57d5ff] flex items-center gap-2 font-medium"
+                          state={{ sectionId: "FocusCraftTech" }}
+                        >
+                          View more
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor"
+                            className="h-4 w-4"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M5 12h14m-7-7l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </motion.div>
+                    </div>
+                  </div>
+                </motion.div>
+              </motion.div>
+              {/* Second Timeline Item */}
+              <motion.div
+                className="flex flex-wrap items-center mb-12 relative"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              >
+                <motion.div
                   className="w-full lg:w-5/12 order-last lg:order-first"
                   variants={fadeInBottomToTop}
                 >
                   <div className="lg:text-right lg:pr-8 text-left">
                     <div className="flex items-center justify-start lg:justify-end mb-4">
-                      <span className="mt-2 inline-flex items-center justify-center text-4xl text-blue-600 bg-blue-100 rounded-full border border-blue-200 p-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                          className="h-4 w-4"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M2 4.25A2.25 2.25 0 0 1 4.25 2h7.5A2.25 2.25 0 0 1 14 4.25v5.5A2.25 2.25 0 0 1 11.75 12h-1.312c.1.128.21.248.328.36a.75.75 0 0 1 .234.545v.345a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-.345a.75.75 0 0 1 .234-.545c.118-.111.228-.232.328-.36H4.25A2.25 2.25 0 0 1 2 9.75v-5.5Zm2.25-.75a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h7.5a.75.75 0 0 0 .75-.75v-4.5a.75.75 0 0 0-.75-.75h-7.5Z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
+                        <RiComputerLine size={18} />
                       </span>
                     </div>
                     <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 lg:text-gray-700 dark:lg:text-gray-300">
                       Software Developer
                     </h4>
-                    <small className="text-sm text-gray-800 dark:text-gray-200">
+                    <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       ConvergePoint India Private Limited
                     </small>
                     <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
@@ -133,7 +219,7 @@ export default function Experience() {
 
                     <div className="flex justify-between items-center mt-2">
                       <span className="text-gray-500 text-sm">
-                        feb 2024 - current
+                        feb 2024 - jul 2025
                       </span>
                       <motion.div
                         whileHover={{
@@ -161,16 +247,12 @@ export default function Experience() {
                   </div>
                 </motion.div>
                 <div className="w-full lg:w-2/12 relative">
-                  <div className="hidden lg:block h-12 w-12 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border flex items-center justify-center transition-all duration-300 hover:bg-blue-100 hover:shadow-md">
+                  <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center transition-all duration-300 group">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="h-6 w-6 text-blue-600"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                      }}
+                      fill="#57d5ff"
+                      className="h-4 w-4 text-blue-600 transform transition-transform duration-300 ease-out group-hover:scale-150"
                     >
                       <path
                         fillRule="evenodd"
@@ -202,7 +284,7 @@ export default function Experience() {
                 </motion.div>
               </motion.div>
 
-              {/* Second Timeline Item */}
+              {/* Third Timeline Item */}
               <motion.div
                 className="flex flex-wrap items-center mb-12 relative"
                 initial="hidden"
@@ -223,16 +305,12 @@ export default function Experience() {
                   </div>
                 </motion.div>
                 <div className="w-full lg:w-2/12 relative">
-                  <div className="hidden lg:block h-12 w-12 bg-white rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 border flex items-center justify-center transition-all duration-300 hover:bg-blue-100 hover:shadow-md">
+                  <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center leading-none group">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
-                      fill="currentColor"
-                      className="h-6 w-6 text-blue-600"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                      }}
+                      fill="#57d5ff"
+                      className="block h-4 w-4 flex-none transform transition-transform duration-300 ease-out group-hover:scale-150"
                     >
                       <path
                         fillRule="evenodd"
@@ -249,25 +327,14 @@ export default function Experience() {
                 >
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start mb-4">
-                      <span className="mt-2 inline-flex items-center justify-center text-4xl text-blue-600 bg-blue-100 rounded-full border border-blue-200 p-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 16 16"
-                          fill="currentColor"
-                          className="h-4 w-4"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M2 4.25A2.25 2.25 0 0 1 4.25 2h7.5A2.25 2.25 0 0 1 14 4.25v5.5A2.25 2.25 0 0 1 11.75 12h-1.312c.1.128.21.248.328.36a.75.75 0 0 1 .234.545v.345a.75.75 0 0 1-.75.75h-4.5a.75.75 0 0 1-.75-.75v-.345a.75.75 0 0 1 .234-.545c.118-.111.228-.232.328-.36H4.25A2.25 2.25 0 0 1 2 9.75v-5.5Zm2.25-.75a.75.75 0 0 0-.75.75v4.5c0 .414.336.75.75.75h7.5a.75.75 0 0 0 .75-.75v-4.5a.75.75 0 0 0-.75-.75h-7.5Z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
+                      <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
+                        <RiComputerLine size={18} />
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
                       Software Developer
                     </h4>
-                    <small className="text-sm text-gray-800 dark:text-gray-200">
+                    <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       Focuscraft Tech Private Limited
                     </small>
                     <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
