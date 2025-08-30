@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
-import { BrowserRouter } from "react-router-dom";
+// import { BrowserRouter } from "react-router-dom";
 import { useActiveSectionContext } from "../context/active-section-context";
-import { useSectionInView } from "../lib/hooks";
+// import { useSectionInView } from "../lib/hooks";
 import Header from "./HeaderSection";
 import Introduction from "./IntroductionSection";
 import About from "./AboutSection";
@@ -11,7 +11,8 @@ import Education from "./EducationSection";
 import Projects from "./ProjectsSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
-import Tools from "./Tools";
+// import Tools from "./Tools";
+// import TestimonialSection from "./EducationSection";
 // import "./MainComponent.css";
 
 const MainComponent: React.FC = () => {
@@ -78,10 +79,7 @@ const MainComponent: React.FC = () => {
         <Education />
       </section>
 
-      <section
-        ref={projectsRef}
-        className="flex flex-col items-center w-full"
-      >
+      <section ref={projectsRef} className="flex flex-col items-center w-full">
         <div className="w-full sm:max-w-4xl">
           {/* full width on mobile, max 4xl on desktop */}
           <Projects />

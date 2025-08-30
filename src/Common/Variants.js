@@ -17,3 +17,28 @@ export const fadeIn = (direction, delay) => {
     },
   };
 };
+
+
+// motionVariants.js
+
+// Container variant for staggered children
+export const staggerContainer = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3, // delay between cards
+    },
+  },
+};
+
+// Card animation
+export const cardFadeUp = {
+  hidden: { opacity: 0, y: 40, scale: 0.95 },
+  show: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};

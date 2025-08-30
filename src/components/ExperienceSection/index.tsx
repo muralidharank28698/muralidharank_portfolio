@@ -47,7 +47,7 @@ export default function Experience() {
 
   return (
     <motion.section
-      className="max-w-4xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
+      className="max-w-4xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-16"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
