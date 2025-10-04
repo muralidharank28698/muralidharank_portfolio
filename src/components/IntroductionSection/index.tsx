@@ -71,9 +71,7 @@ export default function Introduction() {
             </div>
             {/* Mobile: Big Name + Subtitle */}
             <div className="flex flex-col md:hidden items-start justify-center w-full text-left">
-              <span className="text-4xl font-bold">
-                Muralidharan
-              </span>
+              <span className="text-4xl font-bold">Muralidharan</span>
               <hr className="w-16 h-1 my-3 bg-[#57d5ff] border-0" />
               <span className="text-base font-normal mt-1 tracking-wide border-gray-200 dark:border-gray-700 pt-2">
                 &lt; Software Developer / &gt;
@@ -95,17 +93,16 @@ export default function Introduction() {
           <a
             href={require("../../assets/Resume/Resume.pdf")}
             download
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0A0D2D] text-white font-semibold shadow-xl border border-gray-400 transition-all duration-300 group relative overflow-hidden dark:bg-white dark:text-black"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden"
           >
             Download CV
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 19"
-              className="w-6 h-6 bg-gray-50 text-gray-800 rounded-full border border-gray-400 p-1 ml-1 group-hover:rotate-90 transition-transform duration-300
-      dark:bg-black dark:text-[rgb(230,250,255)]"
+              className="w-6 h-6 bg-gray-50 text-gray-800 rounded-full border border-gray-400 p-1 ml-1 group-hover:rotate-90 transition-transform duration-300"
             >
               <path
-                className="fill-gray-800 dark:fill-[rgb(230,250,255)]"
+                className="fill-gray-800"
                 d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
               ></path>
             </svg>
