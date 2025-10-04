@@ -61,7 +61,7 @@ export default function SegmentedTabs() {
             key={tab}
             onClick={() => setActiveTab(index)}
             onMouseDown={(e) => e.preventDefault()}
-            className={`px-6 py-2 rounded-3xl text-sm font-medium transition-colors duration-150
+            className={`px-3 py-2 rounded-3xl text-sm font-medium transition-colors duration-150
             ${
               activeTab === index
                 ? "text-[rgb(87,213,255)]"
