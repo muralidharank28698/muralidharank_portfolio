@@ -50,13 +50,13 @@ export default function Education() {
     <section id="education" className="py-12 text-center">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Heading */}
-        <h2 className="text-2xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
+        <h2 className="text-2xl font-bold capitalize pt-12">
           Career
           <span className="text-[#57d5ff] dark:text-[#57d5ff]">Journey</span>
         </h2>
         <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
 
-        <p className="text-gray-600 dark:text-[rgb(209,213,219)] mb-10 max-w-2xl mx-auto">
+        <p className="mb-10 max-w-2xl mx-auto">
           A quick look at my educational journey, from school to post
           graduation.
         </p>
@@ -100,7 +100,7 @@ export default function Education() {
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
                     {edu.grade}
                   </p>
-                  <p className="text-sm leading-relaxed text-gray-600 dark:text-[rgb(209,213,219)]">
+                  <p className="text-sm leading-relaxed">
                     {edu.desc}
                   </p>
                 </div>

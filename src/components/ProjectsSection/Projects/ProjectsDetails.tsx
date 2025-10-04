@@ -15,7 +15,7 @@ export const ProjectsDetails: React.FC = () => {
     <div className="p-10">
       <button
         onClick={handleBack}
-        className="flex items-center mb-4 text-blue-500 hover:text-blue-700 transition-all duration-300"
+        className="flex items-center mb-4 transition-all duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

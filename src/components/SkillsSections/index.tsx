@@ -24,7 +24,7 @@ const fadeInAnimationVariants = {
 export default function Skills() {
   return (
     <section className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12">
-      <h2 className="text-2xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl font-bold capitalize pt-12">
         Professional{" "}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Skillset</span>
       </h2>

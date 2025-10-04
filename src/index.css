@@ -14,7 +14,7 @@ html {
   scroll-behavior: smooth;
   background: linear-gradient(
     90deg,
-    rgb(225, 241, 250) 0%,
+    rgb(236, 248, 254) 0%,
     rgb(255, 255, 255) 35%,
     rgb(255, 255, 255) 100%
   ); 
@@ -30,11 +30,11 @@ html.dark {
   /* background-color: hsl(0deg 0% 1.96%); */
   background: linear-gradient(
     90deg,
-    rgb(3, 15, 22) 0%,
+    rgb(1, 9, 13) 0%,
     rgba(1, 8, 11, 1) 35%,
-    rgb(1, 5, 6) 100%
+    rgb(1, 10, 12) 100%
   );
-  color: hsl(0deg 0% 100% / 85%); /* Text color for dark mode */
+  color: hsl(215, 15%, 75%); /* Text color for dark mode */
 }
 /* html.dark .borderBlack {
   @apply border-white/20; 

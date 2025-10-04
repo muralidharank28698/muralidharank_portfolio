@@ -20,7 +20,7 @@ export const ProfessionalExperience: React.FC = () => {
     <div className="p-10">
       <button
         onClick={handleBack}
-        className="flex items-center mb-4 text-blue-500 hover:text-blue-700 transition-all duration-300"
+        className="flex items-center mb-4 transition-all duration-300"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,49 +54,49 @@ export const ProfessionalExperience: React.FC = () => {
         </div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
             <div>
-              <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white flex justify-between">
+              <h2 className="text-sm font-medium text-3xl font-bold mb-2 flex justify-between">
                 <div> Software Developer | SharePoint Developer</div>
                 <div>Feb 2024 - Present</div>
               </h2>
               <h2
-                className="text-4xl font-bold text-gray-900 text-3xl font-bold mb-4 text-black dark:text-white"
+                className="text-4xl font-bold text-3xl font-bold mb-4"
                 style={{ maxWidth: "500px" }}
               >
                 ConvergePoint India{" "}
-                <span className="text-blue-600">Private Limited</span>
+                <span className="text-[#57d5ff] dark:text-[#57d5ff]">Private Limited</span>
               </h2>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Developed custom SharePoint web parts using SPFx (SharePoint
                 Framework) with React.js, translating complex Figma designs into
                 functional components to enhance user experience.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Leveraged modern web development techniques including TypeScript
                 and SASS within the SPFx ecosystem, ensuring robust, scalable,
                 and performance-optimized SharePoint solutions.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Created and managed SharePoint lists and libraries tailored to
                 product requirements, integrating CAML query and PnP JS to
                 interact with SharePoint APIs, enabling efficient retrieval and
                 updates.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Integrated AI capabilities using Azure AI services, developing a
                 standalone AI container library that seamlessly integrates with
                 SharePoint to enhance functionality.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Developed reusable web part components based on design
                 specifications, ensuring consistency and efficiency across
                 different products.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Created and packaged custom SharePoint libraries for deployment,
                 integrating them into products to streamline development
@@ -110,7 +110,7 @@ export const ProfessionalExperience: React.FC = () => {
                   className="w-full h-auto object-cover"
                 /> */}
               </div>
-                <p className="text-2xl font-medium text-blue-600">Technologies Used</p>
+                <p className="text-2xl font-medium text-[#57d5ff] dark:text-[#57d5ff]">Technologies Used</p>
               <div className="flex items-center space-x-4 p-4 border rounded-lg">
                 {/* hover:bg-gray-100 */}
                 {/* <FiArrowLeft className="text-blue-500" /> */}
@@ -150,7 +150,7 @@ export const ProfessionalExperience: React.FC = () => {
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 border rounded-md text-sm text-gray-600"
+                        className="px-2 py-1 border rounded-md text-sm"
                       >
                         {tech}
                       </span>
@@ -206,49 +206,49 @@ export const ProfessionalExperience: React.FC = () => {
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
             <div>
-              <h2 className="text-sm font-medium text-gray-500 text-3xl font-bold mb-2 text-black dark:text-white flex justify-between">
+              <h2 className="text-sm font-medium text-3xl font-bold mb-2 flex justify-between">
                 <div>Software Developer | Frontend Developer</div>
                 <div>Nov 2021 - Dec 2023</div>
               </h2>
               <h2
-                className="text-4xl font-bold text-gray-900 text-3xl font-bold mb-4 text-black dark:text-white"
+                className="text-4xl font-bold text-3xl font-bold mb-4"
                 style={{ maxWidth: "500px" }}
               >
                 Focuscraft Tech{" "}
-                <span className="text-blue-600">Private Limited</span>
+                <span className="text-[#57d5ff] dark:text-[#57d5ff]">Private Limited</span>
               </h2>
-              <h3 className="text-xl font-semibold mb-2 text-black dark:text-white">
+              <h3 className="text-xl font-semibold mb-2">
                 Roles and Responsibilities:
               </h3>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Developed UI components per design specs, integrated third-party
                 APIs, and maintained bug-free performance. Collaborated with
                 teams to create responsive, user-friendly web applications.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Utilized React.js for interactive web elements, enhancing user
                 experience. Ensured API correctness using Swagger UI.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Leveraged Storybook for UI development, creating reusable UI
                 packages. Managed state with Redux and Redux Toolkit, using
                 Redux DevTools for debugging.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Built applications with microservices architecture using React.
                 Ensured application reliability with Jest automated testing.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Designed reusable components with customization capabilities.
                 Troubleshot and debugged front-end issues, ensuring
                 cross-browser compatibility.
               </p>
-              <p className="text-md mb-2 text-black dark:text-white text-justify flex items-start">
+              <p className="text-md mb-2 text-justify flex items-start">
                 <span className="mr-2">•</span>
                 Enhanced website performance by optimizing load times and page
                 speed. Managed projects from initiation to completion, ensuring
@@ -262,7 +262,7 @@ export const ProfessionalExperience: React.FC = () => {
                   className="w-full h-auto object-cover"
                 /> */}
               </div>
-              <p className="text-2xl font-medium text-blue-600">
+              <p className="text-2xl font-medium text-[#57d5ff] dark:text-[#57d5ff]">
                 Technologies Used
               </p>
               <div className="flex items-center space-x-4 p-4 border rounded-lg">
@@ -298,7 +298,7 @@ export const ProfessionalExperience: React.FC = () => {
                     ].map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 border rounded-md text-sm text-gray-600 dark:text-white"
+                        className="px-2 py-1 border rounded-md text-sm"
                       >
                         {tech}
                       </span>

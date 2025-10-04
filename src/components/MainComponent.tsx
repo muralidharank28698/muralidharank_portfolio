@@ -11,6 +11,8 @@ import Education from "./EducationSection";
 import Projects from "./ProjectsSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
+import MyServices from "./MyServices";
+import StickyTabs from "./MyServices/StickyTabs";
 // import Tools from "./Tools";
 // import TestimonialSection from "./EducationSection";
 // import "./MainComponent.css";
@@ -83,8 +85,14 @@ const MainComponent: React.FC = () => {
         <div className="w-full sm:max-w-4xl">
           {/* full width on mobile, max 4xl on desktop */}
           <Projects />
+          <StickyTabs />
         </div>
       </section>
+      {/* <section ref={projectsRef} className="flex flex-col items-center w-full">
+        <div className="w-full sm:max-w-4xl">
+          <StickyTabs />
+        </div>
+      </section> */}
 
       <section ref={experienceRef} className="flex flex-col items-center px-4">
         <Experience />
