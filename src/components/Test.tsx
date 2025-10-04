@@ -76,7 +76,7 @@ export default function Projects() {
           <div className="flex justify-center">
             <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
               <div className="section-title text-center">
-                <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2">
+                <h6 className="sub-title text-sm font-semibold uppercase pb-2">
                   Projects works
                 </h6>
                 <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">

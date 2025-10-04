@@ -16,7 +16,7 @@ export default function Contact() {
     >
       <section
         id="contact"
-        className="bg-gray-900 text-white py-20 px-6 relative overflow-hidden rounded-3xl"
+        className="bg-gray-900 text-[hsl(215,15%,75%)] py-20 px-6 relative overflow-hidden rounded-3xl"
       >
         {/* Background Image */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 md:left-0 md:translate-x-0">
@@ -36,7 +36,7 @@ export default function Contact() {
                 together
               </span>
             </h2>
-            <p className="text-gray-300 max-w-md">
+            <p className="max-w-md">
               I’m{" "}
               <span className="text-[#57d5ff] dark:text-[#57d5ff]">
                 Muralidharan
@@ -197,7 +197,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <p className="mt-4 text-base leading-6 text-center text-gray-400">
+          <p className="mt-4 text-base leading-6 text-center">
             © 2025 Designed & Built by{" "}
             <span className="text-[#57d5ff] dark:text-[#57d5ff]">
               Muralidharan

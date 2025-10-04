@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h2 className="text-2xl text-center  font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl text-center  font-bold capitalize pt-12">
         Projects{" "}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Works</span>
       </h2>

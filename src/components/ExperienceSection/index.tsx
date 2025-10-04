@@ -67,7 +67,7 @@ export default function Experience() {
           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <div className="section-title text-center">
               {/* <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2"> */}
-              <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 dark:text-gray-300">
+              <h6 className="sub-title text-sm font-semibold uppercase">
                 Services
               </h6>
               {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
@@ -80,7 +80,7 @@ export default function Experience() {
                 </span>
               </h2>
               <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" /> */}
-              <h2 className="text-2xl font-bold capitalize pt-4 text-gray-800 dark:text-gray-200">
+              <h2 className="text-2xl font-bold capitalize pt-4">
                 Professional{" "}
                 <span className="text-[#57d5ff] dark:text-[#57d5ff]">
                   services
@@ -88,7 +88,7 @@ export default function Experience() {
               </h2>
               <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
 
-              <p className="mt-4 text-gray-800 dark:text-gray-200 animate-fadeInUp delay-600">
+              <p className="mt-4 animate-fadeInUp delay-600">
                 Worked across two organizations, gaining expertise in frontend
                 development and delivering efficient solutions using modern
                 technologies.
@@ -144,18 +144,18 @@ export default function Experience() {
                   variants={fadeInBottomToTop}
                 >
                   <div className="lg:text-left lg:pl-8 text-left">
-                    <div className="flex items-center justify-start lg:justify-start mb-4">
+                    <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
                         <RiComputerLine size={18} />
                       </span>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                    <h4 className="text-lg font-semibold">
                       Software Developer
                     </h4>
                     <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       Cognizant Technology Solutions India Private Limited
                     </small>
-                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+                    <p className="leading-relaxed">
                       SharePoint Developer | SPFx Framework | SharePoint list
                       and libraries
                     </p>
@@ -172,7 +172,7 @@ export default function Experience() {
                         <Link
                           to={`/professionalExperience`}
                           className="text-[#57d5ff] dark:text-[#57d5ff] flex items-center gap-2 font-medium"
-                          state={{ sectionId: "FocusCraftTech" }}
+                          state={{ sectionId: "Cognizant" }}
                         >
                           View more
                           <svg
@@ -201,18 +201,18 @@ export default function Experience() {
                   variants={fadeInBottomToTop}
                 >
                   <div className="lg:text-right lg:pr-8 text-left">
-                    <div className="flex items-center justify-start lg:justify-end mb-4">
+                    <div className="flex items-center justify-start lg:justify-end my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
                         <RiComputerLine size={18} />
                       </span>
                     </div>
-                    <h4 className="text-xl font-semibold text-gray-800 dark:text-gray-200 lg:text-gray-700 dark:lg:text-gray-300">
+                    <h4 className="text-xl font-semibold">
                       Software Developer
                     </h4>
                     <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       ConvergePoint India Private Limited
                     </small>
-                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+                    <p className="leading-relaxed">
                       SharePoint Developer | SPFx Framework | SharePoint list
                       and libraries
                     </p>
@@ -230,7 +230,7 @@ export default function Experience() {
                         <Link
                           to={`/professionalExperience`}
                           className="text-[#57d5ff] dark:text-[#57d5ff] flex items-center gap-2 font-medium"
-                          state={{ sectionId: "FocusCraftTech" }}
+                          state={{ sectionId: "ConvergePoint" }}
                         >
                           View more
                           <svg
@@ -326,18 +326,18 @@ export default function Experience() {
                   variants={fadeInBottomToTop}
                 >
                   <div className="lg:text-left lg:pl-8 text-left">
-                    <div className="flex items-center justify-start lg:justify-start mb-4">
+                    <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
                         <RiComputerLine size={18} />
                       </span>
                     </div>
-                    <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                    <h4 className="text-lg font-semibold ">
                       Software Developer
                     </h4>
                     <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       Focuscraft Tech Private Limited
                     </small>
-                    <p className="text-gray-800 dark:text-gray-200 leading-relaxed">
+                    <p className="leading-relaxed">
                       React | TypeScript | React Native | Redux | Story Book
                     </p>
                     <div className="flex justify-between items-center mt-2">

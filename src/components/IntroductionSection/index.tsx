@@ -71,7 +71,7 @@ export default function Introduction() {
             </div>
             {/* Mobile: Big Name + Subtitle */}
             <div className="flex flex-col md:hidden items-start justify-center w-full text-left">
-              <span className="text-4xl font-bold text-gray-900 dark:text-white">
+              <span className="text-4xl font-bold">
                 Muralidharan
               </span>
               <hr className="w-16 h-1 my-3 bg-[#57d5ff] border-0" />

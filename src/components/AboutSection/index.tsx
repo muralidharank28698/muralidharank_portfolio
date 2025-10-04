@@ -10,7 +10,7 @@ export default function About() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h2 className="text-2xl font-bold capitalize pt-12 text-gray-800 dark:text-gray-200">
+      <h2 className="text-2xl font-bold capitalize pt-12">
         Profile{" "}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Summary</span>
       </h2>
