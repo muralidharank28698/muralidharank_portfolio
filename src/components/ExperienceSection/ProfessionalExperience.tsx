@@ -1,6 +1,146 @@
 import React, { useLayoutEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi"; // Using react-icons for the back arrow
+import { IoArrowBackCircleOutline } from "react-icons/io5";
+import ExpertiseSection from "./ExpertiseSection";
+
+const expertiseItems = ["Work History", "Tech", "My Contributions"];
+
+const FctData = {
+  Tech: [
+    { name: "Git" },
+    { name: "Redux Thunk" },
+    { name: "CSS3" },
+    { name: "Swagger API" },
+    { name: "Storybooks" },
+    { name: "Jira" },
+    { name: "Redux.js" },
+    { name: "Front-End Development" },
+    { name: "React-Router-DOM" },
+    { name: "Material-UI" },
+    { name: "Yarn" },
+    { name: "GraphQL" },
+    { name: "React Hooks" },
+    { name: "JavaScript" },
+    { name: "React.js" },
+    { name: "Jest" },
+    { name: "React Native" },
+    { name: "Postman API" },
+    { name: "React Testing Library" },
+    { name: "HTML5" },
+    { name: "npm" },
+    { name: "TypeScript" },
+    { name: "i18next" },
+    { name: "Bitbucket" },
+  ],
+  companyDetails: {
+    name: "Focuscraft Tech",
+    role: "Software Developer | Frontend Developer",
+    duration: "Nov 2021 - Dec 2023",
+  },
+  content: [
+    "Developed UI components per design specs, integrated third-party APIs, and maintained bug-free performance. Collaborated with teams to create responsive, user-friendly web applications.",
+    "Utilized React.js for interactive web elements, enhancing user experience. Ensured API correctness using Swagger UI.",
+    "Leveraged Storybook for UI development, creating reusable UI packages. Managed state with Redux and Redux Toolkit, using Redux DevTools for debugging.",
+    "Built applications with microservices architecture using React. Ensured application reliability with Jest automated testing.",
+    "Designed reusable components with customization capabilities. Troubleshot and debugged front-end issues, ensuring cross-browser compatibility.",
+    "Enhanced website performance by optimizing load times and page speed. Managed projects from initiation to completion, ensuring timely delivery.",
+  ],
+} as any;
+
+const ConvergePointData = {
+  Tech: [
+    { name: "Git" },
+    { name: "CSS3" },
+    { name: "Swagger API" },
+    { name: "RTK Query" },
+    { name: "Sharepoint Framework (SPFx)" },
+    { name: "React-Router-DOM" },
+    { name: "PNP Js" },
+    { name: "Sharepoint Libraries" },
+    { name: "React Hooks" },
+    { name: "JavaScript" },
+    { name: "LangString" },
+    { name: "Azure Devops" },
+    { name: "Bootstrap (Framework)" },
+    { name: "Redux" },
+    { name: "React.js" },
+    { name: "Postman API" },
+    { name: "Fluent UI" },
+    { name: "REST APIs" },
+    { name: "Azure DevOps Services" },
+    { name: "HTML5" },
+    { name: "npm" },
+    { name: "Chart.js" },
+    { name: "TypeScript" },
+    { name: "Sharepoint Lists" },
+    { name: "Griffel.js" },
+    { name: "CAML Query" },
+    { name: "Redux Toolkit" },
+    { name: "UI Components" },
+    { name: "Microsoft Sharepoint 365" },
+    { name: "PdfHighlighter" },
+    { name: "Power Automate" },
+  ],
+  companyDetails: {
+    name: "ConvergePoint India",
+    role: "Software Developer | Frontend Developer",
+    duration: "Feb 2024 - Jul 2025",
+  },
+  content: [
+    "Developed custom SharePoint web parts using SPFx (SharePoint Framework) with React.js, translating complex Figma designs into functional components to enhance user experience.",
+    "Leveraged modern web development techniques including TypeScript and SASS within the SPFx ecosystem, ensuring robust, scalable, and performance-optimized SharePoint solutions.",
+    "Created and managed SharePoint lists and libraries tailored to product requirements, integrating CAML query and PnP JS to interact with SharePoint APIs, enabling efficient retrieval and updates.",
+    "Integrated AI capabilities using Azure AI services, developing a standalone AI container library that seamlessly integrates with SharePoint to enhance functionality.",
+    "Developed reusable web part components based on design specifications, ensuring consistency and efficiency across different products.",
+    "Created and packaged custom SharePoint libraries for deployment, integrating them into products to streamline development processes.",
+  ],
+} as any;
+
+const CognizantData = {
+  Tech: [
+    { name: "Git" },
+    { name: "CSS3" },
+    { name: "Swagger API" },
+    { name: "RTK Query" },
+    { name: "Sharepoint Framework (SPFx)" },
+    { name: "React-Router-DOM" },
+    { name: "PNP Js" },
+    { name: "Sharepoint Libraries" },
+    { name: "React Hooks" },
+    { name: "JavaScript" },
+    { name: "Azure Devops" },
+    { name: "Bootstrap (Framework)" },
+    { name: "Redux" },
+    { name: "React.js" },
+    { name: "Postman API" },
+    { name: "Fluent UI" },
+    { name: "REST APIs" },
+    { name: "Azure DevOps Services" },
+    { name: "HTML5" },
+    { name: "npm" },
+    { name: "TypeScript" },
+    { name: "Sharepoint Lists" },
+    { name: "CAML Query" },
+    { name: "Redux Toolkit" },
+    { name: "Microsoft Sharepoint 365" },
+    { name: "Power Apps" },
+    { name: "Power Automate" },
+  ],
+  companyDetails: {
+    name: "Cognizant Technology Solutions India",
+    role: "Associate Software Developer | Frontend Developer",
+    duration: "July 2025 - Present",
+  },
+  content: [
+    "Developed custom SharePoint web parts using SPFx (SharePoint Framework) with React.js, translating complex Figma designs into functional components to enhance user experience.",
+    "Leveraged modern web development techniques including TypeScript and SASS within the SPFx ecosystem, ensuring robust, scalable, and performance-optimized SharePoint solutions.",
+    "Created and managed SharePoint lists and libraries tailored to product requirements, integrating CAML query and PnP JS to interact with SharePoint APIs, enabling efficient retrieval and updates.",
+    "Integrated AI capabilities using Azure AI services, developing a standalone AI container library that seamlessly integrates with SharePoint to enhance functionality.",
+    "Developed reusable web part components based on design specifications, ensuring consistency and efficiency across different products.",
+    "Created and packaged custom SharePoint libraries for deployment, integrating them into products to streamline development processes.",
+  ],
+} as any;
 
 export const ProfessionalExperience: React.FC = () => {
   const location = useLocation();
@@ -17,299 +157,35 @@ export const ProfessionalExperience: React.FC = () => {
   };
 
   return (
-    <div className="p-10">
-      <button
+    <div className="p-10 p-4 md:p-10">
+      <IoArrowBackCircleOutline
         onClick={handleBack}
-        className="flex items-center mb-4 transition-all duration-300"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m11.25 9-3 3m0 0 3 3m-3-3h7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+        size={32}
+        color="rgb(87 213 255)"
+      />
+      {sectionId === "Cognizant" && (
+        <>
+          <ExpertiseSection
+            companyData={CognizantData}
+            expertiseItems={expertiseItems}
           />
-        </svg>
-      </button>
+        </>
+      )}
       {sectionId === "ConvergePoint" && (
         <>
-          {/* <div className="bg-cover bg-center relative" style={{ backgroundImage: "url('/path/to/cover-image.jpg')" }}>
-            <div className="p-0 md:p-10 rounded-lg flex flex-col md:flex-row">
-            <div className="md:w-2/3 p-4">
-              <h1 className="text-3xl font-bold mb-4 text-black dark:text-white">ConvergePoint India Private</h1>
-              <p className="text-lg mb-2 text-black dark:text-white"><span className="font-semibold">Roles and Responsibilities:</span> Managed the development and deployment of SharePoint solutions, collaborated with cross-functional teams, and ensured project deliverables met quality standards.</p>
-              <p className="text-lg mb-2 text-black dark:text-white"><span className="font-semibold">Technologies Used:</span> React, Redux, Node.js, SharePoint SPFx framework, PnP JS, CAML Query, Tailwind CSS, HTML, CSS, JavaScript, TypeScript, Git, GitHub, Microsoft Teams, Agile methodology, Scrum.</p>
-              <p className="text-lg mb-2 text-black dark:text-white"><span className="font-semibold">Duration:</span> January 2020 - December 2021</p>
-              <p className="text-lg mb-2 text-black dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-            </div>
-            // rc="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg" />
-            </div>
-          </div>
-        </div> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
-            <div>
-              <h2 className="text-sm font-medium text-3xl font-bold mb-2 flex justify-between">
-                <div> Software Developer | SharePoint Developer</div>
-                <div>Feb 2024 - Present</div>
-              </h2>
-              <h2
-                className="text-4xl font-bold text-3xl font-bold mb-4"
-                style={{ maxWidth: "500px" }}
-              >
-                ConvergePoint India{" "}
-                <span className="text-[#57d5ff] dark:text-[#57d5ff]">Private Limited</span>
-              </h2>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Developed custom SharePoint web parts using SPFx (SharePoint
-                Framework) with React.js, translating complex Figma designs into
-                functional components to enhance user experience.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Leveraged modern web development techniques including TypeScript
-                and SASS within the SPFx ecosystem, ensuring robust, scalable,
-                and performance-optimized SharePoint solutions.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Created and managed SharePoint lists and libraries tailored to
-                product requirements, integrating CAML query and PnP JS to
-                interact with SharePoint APIs, enabling efficient retrieval and
-                updates.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Integrated AI capabilities using Azure AI services, developing a
-                standalone AI container library that seamlessly integrates with
-                SharePoint to enhance functionality.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Developed reusable web part components based on design
-                specifications, ensuring consistency and efficiency across
-                different products.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Created and packaged custom SharePoint libraries for deployment,
-                integrating them into products to streamline development
-                processes.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4 p-2">
-              <div className="md:w-full flex justify-center items-center">
-                {/* <img
-                  src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
-                  className="w-full h-auto object-cover"
-                /> */}
-              </div>
-                <p className="text-2xl font-medium text-[#57d5ff] dark:text-[#57d5ff]">Technologies Used</p>
-              <div className="flex items-center space-x-4 p-4 border rounded-lg">
-                {/* hover:bg-gray-100 */}
-                {/* <FiArrowLeft className="text-blue-500" /> */}
-                <div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Git",
-                      "CSS3",
-                      "Swagger API",
-                      "RTK Query",
-                      "Sharepoint Framework (SPFx)",
-                      "React-Router-DOM",
-                      "PNP Js",
-                      "Sharepoint Libraries",
-                      "React Hooks",
-                      "JavaScript",
-                      "LangString",
-                      "Azure Devops",
-                      "Bootstrap (Framework)",
-                      "Redux",
-                      "React.js",
-                      "Postman API",
-                      "Fluent UI",
-                      "REST APIs",
-                      "Azure DevOps Services",
-                      "HTML5",
-                      "npm",
-                      "Chart.js",
-                      "TypeScript",
-                      "Sharepoint Lists",
-                      "Griffel.js",
-                      "CAML Query",
-                      "Redux Toolkit",
-                      "UI Components",
-                      "Microsoft Sharepoint 365",
-                      "PdfHighlighter",
-                    ].map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 border rounded-md text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <ExpertiseSection
+            companyData={ConvergePointData}
+            expertiseItems={expertiseItems}
+          />
         </>
       )}
       {sectionId === "FocusCraftTech" && (
-        // <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        //   <div>
-        //     <h2 className="text-sm font-medium text-gray-500">
-        //       Design resources
-        //     </h2>
-        //     <h2
-        //       className="text-4xl font-bold text-gray-900"
-        //       style={{ maxWidth: "500px" }}
-        //     >
-        //       Enhance your{" "}
-        //       <span className="text-blue-600">design workflow</span>
-        //     </h2>
-        //     <p className="text-lg text-gray-700">
-        //       Reach out for the Figma Design Kit and the Sync plugin to bridge
-        //       the gap between development and design when using Material UI.
-        //     </p>
-        //   </div>
-        //   <div className="flex flex-col space-y-4">
-        //     <button className="flex items-center space-x-4 p-4 border rounded-lg hover:bg-gray-100">
-        //       <FiArrowLeft className="text-blue-500" />
-        //       <div>
-        //         <p className="text-lg font-medium text-gray-900">Design Kit</p>
-        //         <p className="text-sm text-gray-600">
-        //           Get many Material UI components with states, variations,
-        //           colors, typography, and icons on your preferred design tool.
-        //         </p>
-        //       </div>
-        //     </button>
-        //     <button className="flex items-center space-x-4 p-4 border rounded-lg hover:bg-gray-100">
-        //       <FiArrowLeft className="text-blue-500" />
-        //       <div>
-        //         <p className="text-lg font-medium text-gray-900">Sync plugin</p>
-        //         <p className="text-sm text-gray-600">
-        //           Quickly generate a Material UI theme file with token and
-        //           component customizations done on Figma.
-        //         </p>
-        //       </div>
-        //     </button>
-        //   </div>
-        // </div>
-        <>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-4">
-            <div>
-              <h2 className="text-sm font-medium text-3xl font-bold mb-2 flex justify-between">
-                <div>Software Developer | Frontend Developer</div>
-                <div>Nov 2021 - Dec 2023</div>
-              </h2>
-              <h2
-                className="text-4xl font-bold text-3xl font-bold mb-4"
-                style={{ maxWidth: "500px" }}
-              >
-                Focuscraft Tech{" "}
-                <span className="text-[#57d5ff] dark:text-[#57d5ff]">Private Limited</span>
-              </h2>
-              <h3 className="text-xl font-semibold mb-2">
-                Roles and Responsibilities:
-              </h3>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Developed UI components per design specs, integrated third-party
-                APIs, and maintained bug-free performance. Collaborated with
-                teams to create responsive, user-friendly web applications.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Utilized React.js for interactive web elements, enhancing user
-                experience. Ensured API correctness using Swagger UI.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Leveraged Storybook for UI development, creating reusable UI
-                packages. Managed state with Redux and Redux Toolkit, using
-                Redux DevTools for debugging.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Built applications with microservices architecture using React.
-                Ensured application reliability with Jest automated testing.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Designed reusable components with customization capabilities.
-                Troubleshot and debugged front-end issues, ensuring
-                cross-browser compatibility.
-              </p>
-              <p className="text-md mb-2 text-justify flex items-start">
-                <span className="mr-2">•</span>
-                Enhanced website performance by optimizing load times and page
-                speed. Managed projects from initiation to completion, ensuring
-                timely delivery.
-              </p>
-            </div>
-            <div className="flex flex-col space-y-4 p-2">
-              <div className="md:w-fullflex justify-center items-center">
-                {/* <img
-                  src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
-                  className="w-full h-auto object-cover"
-                /> */}
-              </div>
-              <p className="text-2xl font-medium text-[#57d5ff] dark:text-[#57d5ff]">
-                Technologies Used
-              </p>
-              <div className="flex items-center space-x-4 p-4 border rounded-lg">
-                {/* hover:bg-gray-100 */}
-                {/* <FiArrowLeft className="text-blue-500" /> */}
-                <div>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      "Git",
-                      "Redux Thunk",
-                      "CSS3",
-                      "Swagger API",
-                      "Storybooks",
-                      "Jira",
-                      "Redux.js",
-                      "Front-End Development",
-                      "React-Router-DOM",
-                      "Material-UI",
-                      "Yarn",
-                      "GraphQL",
-                      "React Hooks",
-                      "JavaScript",
-                      "React.js",
-                      "Jest",
-                      "React Native",
-                      "Postman API",
-                      "React Testing Library",
-                      "HTML5",
-                      "npm",
-                      "TypeScript",
-                      "i18next",
-                      "Bitbucket",
-                    ].map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-2 py-1 border rounded-md text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div></div>
-        </>
+        <div className="pt-6">
+          <ExpertiseSection
+            companyData={FctData}
+            expertiseItems={expertiseItems}
+          />
+        </div>
       )}
     </div>
   );

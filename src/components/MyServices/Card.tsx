@@ -24,19 +24,17 @@ export default function Card({
     >
       {/* Title + Subtitle + Icon */}
       <div className="p-3 relative bg-transparent">
-        <h3 className="text-base font-semibold">
-          {title}
-        </h3>
+        <h3 className="text-base font-semibold">{title}</h3>
         {subtitle && (
           <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
             {subtitle}
           </p>
         )}
         <button
-          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition"
+          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition focus:outline-none focus-visible:outline-none"
           aria-label="linkedin"
         >
-          <HiOutlineExternalLink  size={18} />
+          <HiOutlineExternalLink size={18} />
         </button>
       </div>
 

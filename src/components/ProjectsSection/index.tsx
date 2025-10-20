@@ -84,14 +84,14 @@ const Projects: React.FC = () => {
               aria-label="Previous"
               className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
             >
-              <IoIosArrowRoundBack className="text-xl sm:text-2xl" />
+              <IoIosArrowRoundBack size={16} />
             </button>
             <button
               ref={nextRef}
               aria-label="Next"
               className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
             >
-              <IoIosArrowRoundForward className="text-xl sm:text-2xl" />
+              <IoIosArrowRoundForward size={16}/>
             </button>
           </div>
         </div>
