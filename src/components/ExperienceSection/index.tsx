@@ -115,9 +115,10 @@ export default function Experience() {
                 >
                   <div className="flex justify-center rounded-lg">
                     <img
-                      src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      // src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      src={require("../../assets/ExperienceImages/Ex3.webp")}
                       // className="w-full h-auto object-cover"
-                      className="rounded-lg object-cover"
+                      className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
                     />
                   </div>
@@ -150,7 +151,7 @@ export default function Experience() {
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold">
-                      Software Developer
+                      Associate Developer
                     </h4>
                     <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
                       Cognizant Technology Solutions India Private Limited
@@ -275,9 +276,10 @@ export default function Experience() {
                       style={{ width: "373px", height: "203px" }}
                     /> */}
                     <img
-                      src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      // src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
+                      src={require("../../assets/ExperienceImages/Ex5.webp")}
                       // className="w-full h-auto object-cover"
-                      className="rounded-lg object-cover"
+                      className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
                     />
                   </div>
@@ -297,9 +299,10 @@ export default function Experience() {
                 >
                   <div className="flex justify-center rounded-lg">
                     <img
-                      src={require("../../assets/ExperienceImages/experience.jpg")}
+                      // src={require("../../assets/ExperienceImages/experience.jpg")}
+                      src={require("../../assets/ExperienceImages/Ex4.webp")}
                       alt="Timeline Image"
-                      className="rounded-lg object-cover"
+                      className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
                     />
                   </div>
