@@ -76,13 +76,13 @@ export default function Education() {
               //  shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/10
               //  transition-all duration-100 transform hover:scale-105
               //  hover:shadow-md hover:border-[#57d5ff]/10 cursor-pointer"
-              className="group p-2 rounded-xl text-center transition-all duration-500"
+              className="group p-2 text-center transition-all duration-500"
               // className="group rounded-xl text-center transition-all duration-500
               //            transform hover:scale-105 hover:bg-[#57d5ff]/10 dark:hover:bg-[rgb(17,24,39)] cursor-pointer"
               variants={cardFadeUp}
             >
               {/* Card inner with corner borders */}
-              <div className="relative p-6 rounded-xl border border-transparent hover:border-[#595859]/10 cursor-pointer">
+              <div className="relative p-6 border border-transparent hover:border-[#595859]/10 cursor-pointer">
                 {/* corner borders */}
                 <span className="absolute left-0 top-0 w-0.5 h-6 bg-[rgb(87,213,255)] scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300"></span>
                 <span className="absolute left-0 top-0 w-6 h-0.5 bg-[rgb(87,213,255)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
