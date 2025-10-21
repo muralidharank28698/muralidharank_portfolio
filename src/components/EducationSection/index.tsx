@@ -1,5 +1,3 @@
-
-
 "use client";
 import {
   FaGraduationCap,
@@ -33,7 +31,7 @@ export default function Education() {
       year: "2016",
       place: "Jothi Vallalalar Higher Secondary School",
       title: "HSC",
-      desc: "Higher Secondary with focus on Computer Science and Mathematics.",
+      desc: "Higher Secondary Certificate with Computer Science focus",
       grade: "78%",
     },
     {
@@ -72,12 +70,19 @@ export default function Education() {
           {education.map((edu, index) => (
             <motion.div
               key={index}
-              className="group p-6 rounded-xl text-center transition-all duration-500 
-                         transform hover:scale-105 hover:bg-blue-50 dark:hover:bg-[rgb(17,24,39)] cursor-pointer"
+              //  className="group flex flex-col items-center w-full max-w-xs sm:max-w-sm md:max-w-md
+              //  mx-auto p-4 sm:p-5 md:p-6 rounded-xl
+              //  border border-neutral-200/40 dark:border-neutral-700/10
+              //  shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/10
+              //  transition-all duration-100 transform hover:scale-105
+              //  hover:shadow-md hover:border-[#57d5ff]/10 cursor-pointer"
+              className="group p-2 rounded-xl text-center transition-all duration-500"
+              // className="group rounded-xl text-center transition-all duration-500
+              //            transform hover:scale-105 hover:bg-[#57d5ff]/10 dark:hover:bg-[rgb(17,24,39)] cursor-pointer"
               variants={cardFadeUp}
             >
               {/* Card inner with corner borders */}
-              <div className="relative p-6">
+              <div className="relative p-6 rounded-xl border border-transparent hover:border-[#595859]/10 cursor-pointer">
                 {/* corner borders */}
                 <span className="absolute left-0 top-0 w-0.5 h-6 bg-[rgb(87,213,255)] scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-300"></span>
                 <span className="absolute left-0 top-0 w-6 h-0.5 bg-[rgb(87,213,255)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></span>
@@ -100,9 +105,7 @@ export default function Education() {
                   <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
                     {edu.grade}
                   </p>
-                  <p className="text-sm leading-relaxed">
-                    {edu.desc}
-                  </p>
+                  <p className="text-sm leading-relaxed">{edu.desc}</p>
                 </div>
               </div>
             </motion.div>
@@ -112,4 +115,3 @@ export default function Education() {
     </section>
   );
 }
-

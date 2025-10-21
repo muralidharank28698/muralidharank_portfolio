@@ -89,7 +89,7 @@ export default function Experience() {
               <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
 
               <p className="mt-4 animate-fadeInUp delay-600">
-                Worked across two organizations, gaining expertise in frontend
+                Worked across three organizations, gaining expertise in frontend
                 development and delivering efficient solutions using modern
                 technologies.
               </p>

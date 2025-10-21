@@ -9,7 +9,7 @@ interface IExpertiseSectionProps {
 }
 
 export default function ExpertiseSection(props: IExpertiseSectionProps) {
-  const [activeItem, setActiveItem] = useState("Tech");
+  const [activeItem, setActiveItem] = useState("Work History");
   const techList = props.companyData?.[activeItem] || [];
 
   return (
@@ -30,7 +30,7 @@ export default function ExpertiseSection(props: IExpertiseSectionProps) {
               className={`w-full flex justify-between items-center text-left text-base font-medium px-4 py-4 rounded-full transition-all duration-300 focus:outline-none ${
                 activeItem === item
                   ? "bg-[#57d5ff] text-white border-[#57d5ff]"
-                  : "text-gray-700 hover:bg-blue-100 dark:text-gray-300 dark:hover:text-black"
+                  : "text-gray-700 hover:bg-[#57d5ff]/10 dark:text-gray-300 dark:hover:text-white"
               }`}
             >
               <span>{item}</span>
@@ -73,7 +73,9 @@ export default function ExpertiseSection(props: IExpertiseSectionProps) {
                     <motion.div
                       key={tech?.name ?? i}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="p-2 border border-[#57d5ff] w-full max-w-[200px] h-[50px] flex flex-row items-center justify-center rounded-xl transition"
+                      className="p-2 w-full max-w-[200px] h-[50px] flex flex-row items-center justify-center rounded-xl shadow-[0_0_3px_rgba(87,213,255,0.3)] hover:shadow-[0_0_2px_rgba(87,213,255,0.5)] transition duration-200 hover:bg-[#57d5ff]/10"
+                      // className="p-2 border border-[#57d5ff] w-full max-w-[200px] h-[50px] flex flex-row items-center justify-center rounded-xl transition duration-200 hover:bg-[#57d5ff]/10"
+                      // className="p-2 border border-[#57d5ff] w-full max-w-[200px] h-[50px] flex flex-row items-center justify-center rounded-xl transition"
                     >
                       <p className="text-sm truncate text-center w-auto text-gray-900 dark:text-gray-900">
                         {tech.name}
