@@ -65,10 +65,10 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h2 className="text-2xl text-center  font-bold capitalize pt-12">
+      <h1 className="text-3xl text-center  font-bold capitalize pt-12">
         Projects{" "}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Works</span>
-      </h2>
+      </h1>
       <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
       <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
         {/* Header */}

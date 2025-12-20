@@ -80,12 +80,12 @@ export default function Experience() {
                 </span>
               </h2>
               <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" /> */}
-              <h2 className="text-2xl font-bold capitalize pt-4">
+              <h1 className="text-3xl font-bold capitalize pt-4">
                 Professional{" "}
                 <span className="text-[#57d5ff] dark:text-[#57d5ff]">
                   services
                 </span>
-              </h2>
+              </h1>
               <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
 
               <p className="mt-4 animate-fadeInUp delay-600">
