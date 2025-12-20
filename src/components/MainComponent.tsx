@@ -63,17 +63,29 @@ const MainComponent: React.FC = () => {
       {/* </Headroom> */}
       <section
         ref={introductionRef}
-        className="flex flex-col items-center pt-24 px-5"
+        className="flex flex-col items-center pt-16 px-5"
       >
         <Introduction />
       </section>
-      <section ref={aboutRef} className="flex flex-col items-center px-5 pt-2">
+      <section
+        ref={aboutRef}
+        className="flex flex-col items-center px-5 pt-2 mb-12"
+      >
         <About />
       </section>
-      <section ref={skillsRef} className="flex flex-col items-center px-5">
+      <section
+        ref={skillsRef}
+        className="relative flex flex-col items-center px-5 overflow-hidden"
+      >
+        {/* top-left soft glow */}
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
+        {/* bottom-right soft glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
         <Skills />
-        {/* <Tools /> */}
       </section>
+
       <section
         ref={educationRef}
         className="flex flex-col items-center  dark:bg-transparent"

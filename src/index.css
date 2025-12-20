@@ -28,12 +28,7 @@ html.dark {
   color: white; */
   --line-color: rgba(255, 255, 255, 0.2); /* Line color for dark mode */
   /* background-color: hsl(0deg 0% 1.96%); */
-  background: linear-gradient(
-    90deg,
-    rgb(1, 9, 13) 0%,
-    rgba(1, 8, 11, 1) 35%,
-    rgb(1, 10, 12) 100%
-  );
+  background: oklch(0.18 0 0);
   color: hsl(215, 15%, 75%); /* Text color for dark mode */
 }
 /* html.dark .borderBlack {

@@ -4,9 +4,9 @@ import { useInView } from "react-intersection-observer";
 export const useSectionInView = (
   sectionRef: React.RefObject<HTMLElement | null>,
   setActive: React.Dispatch<
-    React.SetStateAction<"Home" | "About" | "Projects" | "Skills" | "Experience" | "Contact">
+    React.SetStateAction<"Profile" | "About" | "Projects" | "Skills" | "Experience" | "Contact">
   >,
-  sectionName: "Home" | "About" | "Projects" | "Skills" | "Experience" | "Contact" // Restrict to the valid section names
+  sectionName: "Profile" | "About" | "Projects" | "Skills" | "Experience" | "Contact" // Restrict to the valid section names
 ) => {
   const { ref, inView } = useInView();
   console.log(ref, inView, "murali");

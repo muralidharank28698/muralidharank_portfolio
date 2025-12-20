@@ -13,7 +13,7 @@ import { GgMenuRight } from "../../assets/icons";
 
 // Define a union type for valid section names
 type SectionName =
-  | "Home"
+  | "Profile"
   | "About"
   | "Skills"
   | "Education"
@@ -77,7 +77,7 @@ const Header: React.FC<HeaderProps> = ({
 
   const handleScrollToSection = (sectionName: SectionName) => {
     switch (sectionName) {
-      case "Home":
+      case "Profile":
         scrollHandler(refs.introductionRef);
         break;
       case "About":
@@ -166,9 +166,9 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Menu Button for Mobile */}
           <div className="md:hidden">
-            <Link to="#Home" aria-label="Home" onClick={() => {
-              setActiveSection("Home");
-              handleScrollToSection("Home");
+            <Link to="#Profile" aria-label="Profile" onClick={() => {
+              setActiveSection("Profile");
+              handleScrollToSection("Profile");
             }}>
               <div className="h-10 w-10 rounded-full p-0.5 border border-indigo-200 dark:ring-white/10">
                 <img

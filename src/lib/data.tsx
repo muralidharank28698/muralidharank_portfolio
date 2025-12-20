@@ -24,7 +24,7 @@ import {
 
 export const links = [
   {
-    name: "Home",
+    name: "Profile",
     hash: "#home",
   },
   {

@@ -176,7 +176,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TiSocialLinkedin size={18} />
+                <TiSocialLinkedin size={24} />
               </a>
               <a
                 className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
@@ -184,7 +184,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <DiGithubBadge size={18} />
+                <DiGithubBadge size={24} />
               </a>
               <a
                 className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
@@ -192,7 +192,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLogoWhatsapp size={18} />
+                <BiLogoWhatsapp size={24} />
               </a>
             </div>
           </div>
