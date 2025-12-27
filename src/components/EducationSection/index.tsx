@@ -46,7 +46,7 @@ export default function Education() {
 
   return (
     <section id="education" className="py-12 text-center">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         {/* Heading */}
         <h1 className="text-3xl font-bold capitalize pt-12">
           Career {""}
@@ -82,7 +82,7 @@ export default function Education() {
               variants={cardFadeUp}
             >
               {/* Card inner with corner borders */}
-              <div className="relative p-6 border border-transparent hover:border-[#595859]/10 cursor-pointer rounded-[20px] group overflow-hidden">
+                <div className="relative p-6 border border-neutral-200/40 dark:border-neutral-700/40 cursor-pointer rounded-[20px] group overflow-hidden shadow-sm shadow-neutral-200/30 dark:shadow-neutral-800/30">
                 {/* Animated border wrapper */}
                 <div className="pointer-events-none absolute inset-0 rounded-[20px]">
                   {/* corner borders */}
@@ -91,16 +91,16 @@ export default function Education() {
                 {/* Content */}
                 <div className="flex flex-col items-center transform transition-transform duration-500 group-hover:scale-105">
                   <div className="mb-4">{edu.icon}</div>
-                  <h3 className="text-base font-semibold mb-1 text-gray-800 dark:text-[rgb(209,213,219)]">
-                    {edu.title}
+                  <h3 className="text-lg font-semibold mb-1 text-gray-800 dark:text-[rgb(209,213,219)]">
+                  {edu.title}
                   </h3>
-                  <p className="text-sm text-[#rgb(243 110 0)] dark:text-[#rgb(243 110 0)] mb-1">
-                    {edu.place} • {edu.year}
+                  <p className="text-base text-[#rgb(243 110 0)] dark:text-[#rgb(243 110 0)] mb-1">
+                  {edu.place} • {edu.year}
                   </p>
-                  <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-                    {edu.grade}
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                  {edu.grade}
                   </p>
-                  <p className="text-sm leading-relaxed">{edu.desc}</p>
+                  {/* <p className="text-sm leading-relaxed">{edu.desc}</p> */}
                 </div>
               </div>
             </motion.div>

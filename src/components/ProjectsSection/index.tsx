@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
     // <section className="py-8 w-full">
     <motion.section
       // className="py-8 w-full"
-      className="max-w-4xl leading-8 sm:mb-0 scroll-mt-28 pt-12"
+      className="max-w-5xl leading-8 sm:mb-0 scroll-mt-28 pt-12"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}

@@ -9,7 +9,7 @@ import { BiLogoWhatsapp } from "react-icons/bi";
 export default function Contact() {
   return (
     <motion.section
-      className="max-w-5xl mx-auto text-center leading-8 scroll-mt-28 pt-12"
+      className="max-w-5xl mx-auto text-left leading-8 scroll-mt-28 pt-12"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -165,45 +165,67 @@ export default function Contact() {
       {/* Social Footer */}
 
       {/* Social Footer */}
-      <section>
-        <div className="max-w-screen-xl px-4 pt-6 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
-          {/* Border above icons */}
-          <div className="border-t border-neutral-200/40 dark:border-neutral-700/40 pt-6">
-            <div className="flex justify-center mt-8 space-x-4 text-2xl">
-              <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                href="https://www.linkedin.com/in/muralidharank280698/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <TiSocialLinkedin size={24} />
-              </a>
-              <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                href="https://github.com/muralidharank28698"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <DiGithubBadge size={24} />
-              </a>
-              <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                href="https://github.com/muralidharank28698"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <BiLogoWhatsapp size={24} />
-              </a>
+      <section className="py-10">
+        <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-0">
+          <div className="border-t border-neutral-200/40 dark:border-neutral-700/40 pt-10">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+              {/* LEFT SIDE CONTENT */}
+              <div className="space-y-0">
+                <h2 className="text-3xl font-semibold text-[#57d5ff]">
+                  Muralidharan
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300 font-medium tracking-wide">
+                  FRONTEND / SHAREPOINT DEVELOPER
+                </p>
+                <p className="max-w-lg text-gray-600 dark:text-gray-400 py-4">
+                  I turn ideas into clean, scalable interfaces — built to
+                  perform, built to impress.
+                </p>
+                <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
+                  © 2025 Designed & Built by{" "}
+                  <span className="text-[#57d5ff] font-medium">
+                    Muralidharan
+                  </span>
+                  . All rights reserved.
+                </p>
+              </div>
+
+              {/* RIGHT SIDE SOCIAL ICONS */}
+              <div className="flex gap-4">
+                <a
+                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                  href="https://wa.me/918098633412"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BiLogoWhatsapp size={26} className="text-[#25D366]" />
+                </a>
+
+                <a
+                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                  href="https://www.linkedin.com/in/muralidharank280698/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <TiSocialLinkedin size={26} className="text-[#0A66C2]" />
+                </a>
+
+                <a
+                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                  href="https://github.com/muralidharank28698"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <DiGithubBadge
+                    size={26}
+                    className="text-black dark:text-white"
+                  />
+                </a>
+              </div>
             </div>
           </div>
 
-          <p className="mt-4 text-base leading-6 text-center">
-            © 2025 Designed & Built by{" "}
-            <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-              Muralidharan
-            </span>
-            . All rights reserved.
-          </p>
+          {/* COPYRIGHT TEXT */}
         </div>
       </section>
     </motion.section>
