@@ -11,7 +11,7 @@ export default function Introduction() {
   return (
     <section
       id="home"
-      className="max-w-4xl sm:text-left leading-8 sm:mb-0 scroll-mt-28 pt-10"
+      className="max-w-5xl sm:text-left leading-8 sm:mb-0 scroll-mt-28 pt-10"
     >
       {/* Profile Image */}
       {/* Added the comment */}
@@ -155,30 +155,30 @@ export default function Introduction() {
           <Fade duration={3000} delay={500} damping={0.1} direction="up">
             <div className="flex gap-4 md:flex-col">
               <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+                className="border p-2 text-[#57d5ff] flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer bg-white dark:bg-gray-800 dark:border-gray-800"
                 href="https://www.linkedin.com/in/muralidharank280698/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <TiSocialLinkedin size={24} />
+                <TiSocialLinkedin size={24} className="text-[#57d5ff]" />
               </a>
 
               <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
+                className="border p-2 text-[#57d5ff] flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer bg-white dark:bg-gray-800 dark:border-gray-800"
                 href="https://github.com/muralidharank28698"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <DiGithubBadge size={24} />
+                <DiGithubBadge size={24} className="text-[#57d5ff]" />
               </a>
 
               <a
-                className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60"
-                href="https://github.com/muralidharank28698"
+                className="border p-2 text-[#57d5ff] flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer bg-white dark:bg-gray-800 dark:border-gray-800"
+                 href="https://wa.me/918098633412"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <BiLogoWhatsapp size={24} />
+                <BiLogoWhatsapp size={24} className="text-[#57d5ff]" />
               </a>
             </div>
           </Fade>

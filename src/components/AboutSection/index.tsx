@@ -6,7 +6,7 @@ export default function About() {
   return (
     <motion.section
       // className="max-w-4xl leading-8 sm:mb-0 scroll-mt-28 pt-12"
-      className="max-w-4xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
+      className="max-w-5xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
