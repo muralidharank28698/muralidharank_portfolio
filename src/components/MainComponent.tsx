@@ -69,8 +69,15 @@ const MainComponent: React.FC = () => {
       </section>
       <section
         ref={aboutRef}
-        className="flex flex-col items-center px-5 pt-2 mb-12"
+        // className="flex flex-col items-center px-5 pt-2 mb-12"
+        className="relative flex flex-col items-center px-5 overflow-hidden px-5 pt-2 mt-16 pb-12"
       >
+        {/* top-left soft glow */}
+        {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#c7f8ff]/5 blur-[280px]" /> */}
+
+        {/* bottom-right soft glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
         <About />
       </section>
       <section
@@ -88,9 +95,27 @@ const MainComponent: React.FC = () => {
 
       <section
         ref={educationRef}
-        className="flex flex-col items-center  dark:bg-transparent"
+        className="relative flex flex-col items-center overflow-hidden"
       >
+        {/* top-left soft glow */}
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
+        {/* bottom-right soft glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
         <Education />
+      </section>
+      <section ref={experienceRef} 
+      // className="flex flex-col items-center px-4"
+        className="relative flex flex-col items-center overflow-hidden px-4"
+
+      >
+        {/* top-left soft glow */}
+        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+
+        {/* bottom-right soft glow */}
+        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        <Experience />
       </section>
 
       <section ref={projectsRef} className="flex flex-col items-center w-full">
@@ -106,9 +131,6 @@ const MainComponent: React.FC = () => {
         </div>
       </section> */}
 
-      <section ref={experienceRef} className="flex flex-col items-center px-4">
-        <Experience />
-      </section>
       <section
         ref={contactRef}
         // className="flex flex-col items-center w-full

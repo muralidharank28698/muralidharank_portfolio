@@ -23,7 +23,7 @@ const fadeInAnimationVariants = {
 
 export default function Skills() {
   return (
-    <section className="max-w-5xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-12 pb-8">
+    <section className="max-w-5xl text-center leading-8 sm:mb-0 scroll-mt-28 pt-8 pb-16">
       <h1 className="text-3xl font-bold capitalize pt-12">
         Explore{" "}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">My Skillset</span>
@@ -32,8 +32,8 @@ export default function Skills() {
       <div className="pt-2">
         <div className="flex items-center justify-center gap-4 py-2">
           <span className="w-6 h-px bg-gray-300"></span>
-          <h2 className="text-base font-normal capitalize text-center whitespace-nowrap">
-            Technology Stack
+          <h2 className="text-base font-medium capitalize text-center whitespace-nowrap">
+            Frontend Tech Stack & UI Tooling
           </h2>
           <span className="w-6 h-px bg-gray-300"></span>
         </div>
@@ -68,12 +68,23 @@ export default function Skills() {
       <div className="pt-8">
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8 pt-6">
           {/* Left Box: SharePoint SPFx Development Expertise */}
-          <div className="rounded-xl shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 p-4 sm:p-5 md:p-6 flex flex-col items-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+          <div
+            className="
+    rounded-xl shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40
+    border border-neutral-200/40 dark:border-neutral-700/40
+    p-4 sm:p-5 md:p-6
+    flex flex-col items-center
+    w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto
+
+    transition-transform duration-300 ease-out
+    hover:scale-105
+  "
+          >
             <div className="flex flex-col items-center justify-center py-2 w-full">
               <div className="flex items-center justify-center gap-4 w-full">
                 <span className="w-6 h-px bg-gray-300"></span>
-                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words">
-                  Version Control Tools
+                <h2 className="text-base font-medium capitalize text-center whitespace-nowrap">
+                  Professional Tools & Processes
                 </h2>
                 <span className="w-6 h-px bg-gray-300"></span>
               </div>
@@ -113,12 +124,20 @@ export default function Skills() {
 
           {/* <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto"> */}
           {/* Add your second box content here */}
-          <div className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto">
+          <div
+            className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40
+    p-4 sm:p-5 md:p-6
+    flex flex-col items-center justify-center
+    w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto
+    transition-transform duration-300 ease-out
+    hover:scale-105
+  "
+          >
             <div className="flex flex-col items-center justify-center py-2 w-full">
               <div className="flex items-center justify-center gap-4 w-full">
                 <span className="w-6 h-px bg-gray-300"></span>
-                <h2 className="text-base font-normal capitalize text-center whitespace-normal break-words">
-                  SharePoint SPFx
+                <h2 className="text-base font-medium capitalize text-center whitespace-nowrap">
+                  SharePoint Dev Toolkit
                 </h2>
                 <span className="w-6 h-px bg-gray-300"></span>
               </div>

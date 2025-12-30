@@ -20,6 +20,9 @@ import {
   VscodeIconsFileTypeStorybook,
   SkillIconsBitbucket,
   SimpleIconsMicrosoftpowerautomate,
+  Postman,
+  Jira,
+  Prettier,
 } from "../assets/icons";
 
 export const links = [
@@ -40,12 +43,12 @@ export const links = [
     hash: "#education",
   },
   {
-    name: "Projects",
-    hash: "#projects",
-  },
-  {
     name: "Experience",
     hash: "#experience",
+  },
+  {
+    name: "Projects",
+    hash: "#projects",
   },
   {
     name: "Contact",
@@ -162,17 +165,17 @@ export const TechnologyStack: ILibrariesAndFramework[] = [
 export const MicrosoftSharePointSPFXTechnologyStack: ILibrariesAndFramework[] =
   [
     {
+      name: "SPFX List & Libraries",
+      icon: <SimpleIconsLibrariesdotio />,
+    },
+    {
       name: "SPFX Webpart",
       icon: <LucideFileJson2 />,
     },
-    {
-      name: "SPFX List",
-      icon: <SimpleIconsLibrariesdotio />,
-    },
-    {
-      name: "SPFX Libraries",
-      icon: <SimpleIconsLibrariesdotio />,
-    },
+    // {
+    //   name: "SPFX Libraries",
+    //   icon: <SimpleIconsLibrariesdotio />,
+    // },
     {
       name: "Power Automate",
       icon: <SimpleIconsMicrosoftpowerautomate />,
@@ -199,12 +202,24 @@ export const versionControlTools: IEditorTools[] = [
     name: "Git",
     icon: <SkillIconsGit />,
   },
+  // {
+  //   name: "GitHub",
+  //   icon: <SkillIconsGit />,
+  // },
   {
-    name: "GitHub",
-    icon: <SkillIconsGit />,
+    name: "Postman",
+    icon: <Postman />,
   },
   {
     name: "Bitbucket",
     icon: <SkillIconsBitbucket />,
+  },
+  {
+    name: "Jira",
+    icon: <Jira />,
+  },
+  {
+    name: "Prettier",
+    icon: <Prettier />,
   },
 ];
