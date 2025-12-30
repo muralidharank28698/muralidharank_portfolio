@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { DiGithubBadge } from "react-icons/di";
 import { BiLogoWhatsapp } from "react-icons/bi";
+import { Fade } from "react-awesome-reveal";
 
 export default function Contact() {
   return (
@@ -14,9 +15,14 @@ export default function Contact() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
+      <h1 className="text-3xl text-center  font-bold capitalize">
+        Get In <span className="text-[#57d5ff] dark:text-[#57d5ff]">Touch</span>
+      </h1>
+      <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
+
       <section
         id="contact"
-        className="bg-gray-900 text-[hsl(215,15%,75%)] py-20 px-6 relative overflow-hidden rounded-3xl"
+        className="bg-gray-900 text-[hsl(215,15%,75%)] py-20 px-6 relative overflow-hidden rounded-3xl mt-10"
       >
         {/* Background Image */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 md:left-0 md:translate-x-0">
@@ -191,36 +197,57 @@ export default function Contact() {
               </div>
 
               {/* RIGHT SIDE SOCIAL ICONS */}
-              <div className="flex gap-4">
-                <a
-                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                  href="https://wa.me/918098633412"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <BiLogoWhatsapp size={26} className="text-[#25D366]" />
-                </a>
+              <div className="flex flex-col md:items-end gap-6">
+                <div className="flex gap-4">
+                  <a
+                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                    href="https://wa.me/918098633412"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <BiLogoWhatsapp size={26} className="text-[#25D366]" />
+                  </a>
 
-                <a
-                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                  href="https://www.linkedin.com/in/muralidharank280698/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <TiSocialLinkedin size={26} className="text-[#0A66C2]" />
-                </a>
+                  <a
+                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                    href="https://www.linkedin.com/in/muralidharank280698/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <TiSocialLinkedin size={26} className="text-[#0A66C2]" />
+                  </a>
 
-                <a
-                  className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                  href="https://github.com/muralidharank28698"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <DiGithubBadge
-                    size={26}
-                    className="text-black dark:text-white"
-                  />
-                </a>
+                  <a
+                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
+                    href="https://github.com/muralidharank28698"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <DiGithubBadge
+                      size={26}
+                      className="text-black dark:text-white"
+                    />
+                  </a>
+                </div>
+                <Fade direction="up" duration={1800} delay={100} damping={0.15}>
+                  <a
+                    href={require("../../assets/Resume/Resume.pdf")}
+                    download
+                    className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden"
+                  >
+                    Initiate Chat
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 19"
+                      className="w-6 h-6 bg-gray-50 text-gray-800 rounded-full border border-gray-400 p-1 ml-1 rotate-0 group-hover:rotate-90 transition-transform duration-300"
+                    >
+                      <path
+                        className="fill-gray-800"
+                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
+                      />
+                    </svg>
+                  </a>
+                </Fade>
               </div>
             </div>
           </div>

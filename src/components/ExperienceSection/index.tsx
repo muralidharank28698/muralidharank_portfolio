@@ -57,7 +57,7 @@ export default function Experience() {
 
   return (
     <motion.section
-      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-16"
+      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
@@ -67,9 +67,9 @@ export default function Experience() {
           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <div className="section-title text-center">
               {/* <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2"> */}
-              <h6 className="sub-title text-sm font-semibold uppercase">
+              {/* <h6 className="sub-title text-sm font-semibold uppercase">
                 Services
-              </h6>
+              </h6> */}
               {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
                 Professional <span>services</span>
               </h4> */}
@@ -96,7 +96,7 @@ export default function Experience() {
             </div>
           </div>
         </div>
-        <section id="process" className="process-section pt-18 pb-24">
+        <section id="process" className="process-section pt-18 pb-12">
           <div className="container mx-auto px-4 relative">
             {/* Vertical Line */}
             <div className="-translate-x-1/2 absolute bg-gray-300 h-full hidden left-1/2 lg:block top-0 transform w-[1px]"></div>
