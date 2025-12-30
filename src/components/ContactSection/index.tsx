@@ -231,8 +231,8 @@ export default function Contact() {
                 </div>
                 <Fade direction="up" duration={1800} delay={100} damping={0.15}>
                   <a
-                    href={require("../../assets/Resume/Resume.pdf")}
-                    download
+                    href="https://www.linkedin.com/in/muralidharank280698/"
+                    target="_blank"
                     className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden"
                   >
                     Initiate Chat
