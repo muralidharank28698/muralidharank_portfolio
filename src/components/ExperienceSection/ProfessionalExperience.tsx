@@ -162,6 +162,7 @@ export const ProfessionalExperience: React.FC = () => {
         onClick={handleBack}
         size={32}
         color="rgb(87 213 255)"
+        className="cursor-pointer hover:opacity-80 transition duration-200"
       />
       {sectionId === "Cognizant" && (
         <>

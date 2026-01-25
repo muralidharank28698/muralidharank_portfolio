@@ -7,6 +7,7 @@ interface CardProps {
   image?: string;
   price?: string;
   des?: string;
+  url?: string;
 }
 
 export default function Card({
@@ -14,7 +15,7 @@ export default function Card({
   subtitle,
   image,
   des,
-  price = "$2,900",
+  url,
 }: CardProps) {
   return (
     <div
@@ -54,12 +55,14 @@ export default function Card({
         {/* <span className="text-xs text-gray-600 dark:text-gray-300 truncate">
           {des}
         </span> */}
-        <button
+        <a
+          href={url}
+          target="_blank"
           className="ml-auto bg-[rgb(87,213,255)] text-white text-xs font-semibold px-3 py-1.5 rounded-md transition 
-             hover:bg-[rgb(87,193,245)] focus:outline-none"
+           hover:bg-[rgb(87,193,245)] focus:outline-none"
         >
           Explore
-        </button>
+        </a>
       </div>
     </div>
   );

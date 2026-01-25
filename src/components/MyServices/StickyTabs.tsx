@@ -20,6 +20,7 @@ const cardData: any = {
       subtitle: "Web Design Showcase",
       description: "A clean and modern portfolio design to showcase your work.",
       image: require("../../assets/portfolio-images/PF1.png"),
+      url: "https://car-booking-eight.vercel.app/",
     },
     {
       title: "Admin Dashboard",
@@ -123,6 +124,7 @@ export default function SegmentedTabs() {
                 subtitle={card.subtitle}
                 image={card.image}
                 des={card.description}
+                url={card.url}  
               />
             </motion.div>
           ) : activeTab === 2 ? (

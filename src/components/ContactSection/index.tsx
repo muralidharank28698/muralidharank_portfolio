@@ -6,8 +6,88 @@ import { TiSocialLinkedin } from "react-icons/ti";
 import { DiGithubBadge } from "react-icons/di";
 import { BiLogoWhatsapp } from "react-icons/bi";
 import { Fade } from "react-awesome-reveal";
+import emailjs from "@emailjs/browser";
+import Alert from "../../Common/Alert";
 
 export default function Contact() {
+  const [formData, setFormData] = React.useState({
+    firstname: "",
+    lastname: "",
+    email: "",
+    company: "",
+    message: "",
+  });
+  const [status, setStatus] = React.useState("");
+  const [errors, setErrors] = React.useState<{ [key: string]: string }>({});
+  const handleChange = (e: any) => {
+    const { name, value } = e.target;
+
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+
+    let newErrors: { [key: string]: string } = {};
+
+    if (!formData.firstname.trim()) {
+      newErrors.firstname = "First name is required.";
+    }
+    if (!formData.lastname.trim()) {
+      newErrors.lastname = "Last name is required.";
+    }
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required.";
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email)) {
+        newErrors.email = "Please enter a valid email address.";
+      }
+    }
+    if (!formData.company.trim()) {
+      newErrors.company = "Company / Project name is required.";
+    }
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required.";
+    }
+
+    // If errors exist, stop submission
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+
+    setStatus("Sending...");
+
+    // Replace these with your actual EmailJS credentials
+    const SERVICE_ID = "service_4sdqvzx";
+    const TEMPLATE_ID = "template_y9g94p1";
+    const PUBLIC_KEY = "RwEWjLHQw99_Z6lZQ";
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setStatus("Message sent successfully!");
+        setFormData({
+          firstname: "",
+          lastname: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      },
+      (err) => {
+        console.error("FAILED...", err);
+        setStatus("Failed to send message.");
+      },
+    );
+  };
+
   return (
     <motion.section
       className="max-w-5xl mx-auto text-left leading-8 scroll-mt-28 pt-12"
@@ -87,83 +167,107 @@ export default function Contact() {
                 <MdEmail className="text-[#57d5ff]" />
                 muralidharank28698@gmail.com
               </p>
-              {/* <p className="flex items-start gap-2">
-                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
-                <span className="leading-snug">
-                  Open to: Freelance, Remote & Full-time opportunities
-                </span>
-              </p>
-
-              <p className="flex items-start gap-2">
-                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
-                <span className="leading-snug">Based in: Chennai, India</span>
-              </p>
-
-              <p className="flex items-start gap-2">
-                <MdEmail className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
-                <span className="leading-snug">muralidharan@example.com</span>
-              </p> */}
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="bg-white text-gray-900 rounded-3xl shadow-lg p-4 sm:p-6 md:p-8">
-            <form action="#" method="POST" className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {/* First Name */}
                 <input
                   type="text"
                   name="firstname"
-                  placeholder="First name*"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 
-                   focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                  placeholder={
+                    errors.firstname ? errors.firstname : "First name*"
+                  }
+                  className={`w-full px-4 py-3 rounded-xl border border-gray-300 
+    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
+    ${errors.firstname ? "placeholder-red-500" : "placeholder-gray-400"}`}
+                  value={formData.firstname}
+                  onChange={handleChange}
                 />
 
+                {/* Last Name */}
                 <input
                   type="text"
                   name="lastname"
-                  placeholder="Last name*"
-                  required
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 
-                   focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                  placeholder={errors.lastname ? errors.lastname : "Last name*"}
+                  className={`w-full px-4 py-3 rounded-xl border border-gray-300 
+    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
+    ${errors.lastname ? "placeholder-red-500" : "placeholder-gray-400"}`}
+                  value={formData.lastname}
+                  onChange={handleChange}
                 />
               </div>
 
+              {/* Email */}
               <input
                 type="email"
                 name="email"
-                placeholder="Your email*"
-                required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 
-                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                placeholder={errors.email ? errors.email : "Your email*"}
+                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
+    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
+    ${errors.email ? "placeholder-red-500" : "placeholder-gray-400"}`}
+                value={formData.email}
+                onChange={handleChange}
               />
 
+              {/* Company */}
               <input
                 type="text"
                 name="company"
-                placeholder="Company / Project name"
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 
-                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
+                placeholder={
+                  errors.company ? errors.company : "Company / Project name"
+                }
+                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
+    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
+    ${errors.company ? "placeholder-red-500" : "placeholder-gray-400"}`}
+                value={formData.company}
+                onChange={handleChange}
               />
 
+              {/* Message */}
               <textarea
                 name="message"
-                placeholder="Tell me about your project*"
-                required
+                placeholder={
+                  errors.message
+                    ? errors.message
+                    : "Tell me about your project*"
+                }
                 rows={4}
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 
-                 focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff]"
-              ></textarea>
+                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
+    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
+    ${errors.message ? "placeholder-red-500" : "placeholder-gray-400"}`}
+                value={formData.message}
+                onChange={handleChange}
+              />
 
+              {/* Submit Button */}
               <button
                 type="submit"
                 className="w-full py-3 px-6 text-white font-semibold rounded-xl shadow-md transition 
-                 focus:outline-none focus:ring-0 active:outline-none active:ring-0"
+      focus:outline-none focus:ring-0 active:outline-none active:ring-0"
                 style={{ backgroundColor: "#57d5ff" }}
               >
                 Send Message
               </button>
             </form>
+            {status && (
+              <div className="fixed bottom-6 left-6 right-6 z-50 md:bottom-6 md:left-6 md:right-auto md:w-[90%] md:max-w-xl mx-auto md:mx-0 md:translate-x-0">
+                <Alert
+                  type={
+                    status === "Message sent successfully!"
+                      ? "success"
+                      : status === "Failed to send message."
+                        ? "error"
+                        : "info"
+                  }
+                  message={status}
+                  onClose={() => setStatus("")}
+                />
+              </div>
+            )}
           </div>
         </div>
       </section>
