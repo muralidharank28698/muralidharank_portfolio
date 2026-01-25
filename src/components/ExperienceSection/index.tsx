@@ -2,42 +2,42 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Experience.css";
 import { Link } from "react-router-dom";
-import { TiSocialLinkedin } from "react-icons/ti";
+// import { TiSocialLinkedin } from "react-icons/ti";
 import { RiComputerLine } from "react-icons/ri";
 
-interface CardContent {
-  title: string;
-  description: string;
-  buttonText: string;
-  backgroundImage: string;
-}
+// interface CardContent {
+//   title: string;
+//   description: string;
+//   buttonText: string;
+//   backgroundImage: string;
+// }
 
-const cardData: CardContent[] = [
-  {
-    title: "FocusCraft Tech Private Limited",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-    buttonText: "Explore",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-  },
-  {
-    title: "ConvergePoint India Private Limited",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-    buttonText: "Explore",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-  },
-  {
-    title: "ConvergePoint India Private Limited",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-    buttonText: "Explore",
-    backgroundImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-  },
-];
+// const cardData: CardContent[] = [
+//   {
+//     title: "FocusCraft Tech Private Limited",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
+//     buttonText: "Explore",
+//     backgroundImage:
+//       "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
+//   },
+//   {
+//     title: "ConvergePoint India Private Limited",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
+//     buttonText: "Explore",
+//     backgroundImage:
+//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
+//   },
+//   {
+//     title: "ConvergePoint India Private Limited",
+//     description:
+//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
+//     buttonText: "Explore",
+//     backgroundImage:
+//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
+//   },
+// ];
 
 export default function Experience() {
   // const fadeInLeft = {
@@ -120,6 +120,7 @@ export default function Experience() {
                       // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
+                      alt="Experience Image"
                     />
                   </div>
                 </motion.div>
@@ -147,7 +148,7 @@ export default function Experience() {
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18} />
+                        <RiComputerLine size={18}  className="text-[#57d5ff] dark:text-[#57d5ff]" />
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold">
@@ -204,7 +205,7 @@ export default function Experience() {
                   <div className="lg:text-right lg:pr-8 text-left">
                     <div className="flex items-center justify-start lg:justify-end my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18} />
+                        <RiComputerLine size={18} className="text-[#57d5ff] dark:text-[#57d5ff]" />
                       </span>
                     </div>
                     <h4 className="text-xl font-semibold">
@@ -281,6 +282,7 @@ export default function Experience() {
                       // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
+                      alt="Experience Image"
                     />
                   </div>
                 </motion.div>
@@ -331,7 +333,7 @@ export default function Experience() {
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18} />
+                        <RiComputerLine size={18} className="text-[#57d5ff] dark:text-[#57d5ff]" />
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold ">

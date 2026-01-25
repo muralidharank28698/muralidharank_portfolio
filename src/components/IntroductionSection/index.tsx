@@ -45,15 +45,23 @@ export default function Introduction() {
           </motion.span>
 
           <motion.span
-            className="absolute bottom-5 right-5 text-2xl"
+            className="absolute bottom-4 right-5 text-4xl"
             initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              stiffness: 125,
-              delay: 0.4,
-              ease: "easeInOut",
-              duration: 1.2,
+            animate={{
+              opacity: 1,
+              scale: 1,
+              rotate: [0, 12, -10, 12, -6, 8, 0],
             }}
+            transition={{
+              opacity: { duration: 0.6, ease: "easeOut" },
+              scale: { duration: 0.6, ease: "backOut" },
+              rotate: {
+                duration: 1.4,
+                ease: "easeInOut",
+                repeat: Infinity, // 🔁 continuous
+              },
+            }}
+            style={{ transformOrigin: "70% 70%" }}
           >
             👋
           </motion.span>
@@ -174,7 +182,7 @@ export default function Introduction() {
 
               <a
                 className="border p-2 text-[#57d5ff] flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer bg-white dark:bg-gray-800 dark:border-gray-800"
-                 href="https://wa.me/918098633412"
+                href="https://wa.me/918098633412"
                 target="_blank"
                 rel="noopener noreferrer"
               >
