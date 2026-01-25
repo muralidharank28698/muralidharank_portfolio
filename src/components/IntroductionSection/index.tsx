@@ -14,7 +14,6 @@ export default function Introduction() {
       className="max-w-5xl sm:text-left leading-8 sm:mb-0 scroll-mt-28 pt-10"
     >
       {/* Profile Image */}
-      {/* Added the comment */}
       <div className="flex items-center justify-center mb-8">
         <div className="relative">
           <motion.span
