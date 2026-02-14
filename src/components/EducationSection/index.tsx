@@ -1,6 +1,5 @@
 "use client";
 import {
-  FaGraduationCap,
   FaSchool,
   FaUniversity,
   FaBook,

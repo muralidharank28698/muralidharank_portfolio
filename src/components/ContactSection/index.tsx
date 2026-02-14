@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaSearchLocation, FaBriefcase, FaLaptopCode } from "react-icons/fa";
+import { FaSearchLocation, FaLaptopCode } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { DiGithubBadge } from "react-icons/di";

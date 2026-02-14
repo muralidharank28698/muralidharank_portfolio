@@ -1,14 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import ThemeContextProvider from "./context/theme-context";
 import ThemeSwitch from "./components/theme-switch";
-import Header from "./components/HeaderSection";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ActiveSectionContextProvider, {
-  useActiveSectionContext,
 } from "./context/active-section-context";
-import Introduction from "./components/IntroductionSection";
-import About from "./components/AboutSection";
-import { useSectionInView } from "./lib/hooks";
 import MainComponent from "./components/MainComponent";
 import "./index.css";
 import { ProjectsDetails } from "./components/ProjectsSection/Projects/ProjectsDetails";
