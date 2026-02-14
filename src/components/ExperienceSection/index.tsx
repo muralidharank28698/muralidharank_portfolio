@@ -120,7 +120,7 @@ export default function Experience() {
                       // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
-                      alt="Experience Image"
+                      alt="Experience logo"
                     />
                   </div>
                 </motion.div>
@@ -282,7 +282,7 @@ export default function Experience() {
                       // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
-                      alt="Experience Image"
+                      alt="Experience logo"
                     />
                   </div>
                 </motion.div>
@@ -303,7 +303,7 @@ export default function Experience() {
                     <img
                       // src={require("../../assets/ExperienceImages/experience.jpg")}
                       src={require("../../assets/ExperienceImages/Ex4.webp")}
-                      alt="Timeline Image"
+                      alt="Timeline logo"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
                     />
