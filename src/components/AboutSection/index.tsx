@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Fade } from "react-awesome-reveal";
 
 export default function About() {
   return (

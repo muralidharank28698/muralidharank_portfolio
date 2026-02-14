@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { DiGithubBadge } from "react-icons/di";
 import { BiLogoWhatsapp } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import { Fade } from "react-awesome-reveal";
 import Typewriter from "typewriter-effect";
 

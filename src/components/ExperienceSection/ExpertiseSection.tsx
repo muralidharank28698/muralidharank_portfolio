@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { IoArrowBackCircleOutline } from "react-icons/io5";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 
 interface IExpertiseSectionProps {

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { links } from "../../lib/data";
 import clsx from "clsx";
-import Headroom from "react-headroom";
 import { MobileViewMenu } from "./MobileViewMenu";
 import { NavigationLinks } from "./NavigationLinks";
 import { GgMenuRight } from "../../assets/icons";
@@ -42,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
   scrollHandler,
   refs,
 }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const toggleMenu = () => {

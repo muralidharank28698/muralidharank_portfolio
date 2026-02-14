@@ -1,6 +1,5 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FiArrowLeft } from "react-icons/fi"; // Using react-icons for the back arrow
 
 export const ProjectsDetails: React.FC = () => {
   const location = useLocation();
