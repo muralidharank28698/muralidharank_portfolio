@@ -57,6 +57,7 @@ export default function Card({
         </span> */}
         <a
           href={url}
+          rel="noopener noreferrer"
           target="_blank"
           className="ml-auto bg-[rgb(87,213,255)] text-white text-xs font-semibold px-3 py-1.5 rounded-md transition 
            hover:bg-[rgb(87,193,245)] focus:outline-none"

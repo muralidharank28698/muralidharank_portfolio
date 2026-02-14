@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import aa from "../assets/Profile/logo_m.png";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 // import { BsArrowBarRight } from "react-icons/bs";
 import { RiArrowRightSLine } from "react-icons/ri";
@@ -51,7 +50,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 const Projects: React.FC = () => {
-  const [activeTab, setActiveTab] = React.useState<any>("policy");
 
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
