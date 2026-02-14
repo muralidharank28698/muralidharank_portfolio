@@ -110,7 +110,7 @@ export default function Introduction() {
               <span className="inline-block">
                 <Typewriter
                   options={{
-                    strings: ["Frontend", "Sharepoint"],
+                    strings: ["Frontend", "Sharepoint SPFx"],
                     autoStart: true,
                     loop: true,
                     delay: 80,
