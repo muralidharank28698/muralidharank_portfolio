@@ -6,19 +6,19 @@ import {
 } from "../../lib/data";
 import "./index.css";
 import LogoLoop from "../LogoLoop";
-const fadeInAnimationVariants = {
-  initial: {
-    opacity: 0,
-    y: 100,
-  },
-  animate: (index: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.05 * index,
-    },
-  }),
-};
+// const fadeInAnimationVariants = {
+//   initial: {
+//     opacity: 0,
+//     y: 100,
+//   },
+//   animate: (index: number) => ({
+//     opacity: 1,
+//     y: 0,
+//     transition: {
+//       delay: 0.05 * index,
+//     },
+//   }),
+// };
 
 export default function Skills() {
   const frontendLogos = (TechnologyStack ?? []).map((item) => ({

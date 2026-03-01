@@ -1,58 +1,58 @@
 import React, { useRef } from "react";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+// import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 // import { BsArrowBarRight } from "react-icons/bs";
-import { RiArrowRightSLine } from "react-icons/ri";
+// import { RiArrowRightSLine } from "react-icons/ri";
 
 // Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import StickyTabs from "../MyServices/StickyTabs";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-}
+// interface BlogPost {
+//   id: string;
+//   title: string;
+//   description: string;
+//   image: string;
+// }
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "policy-management",
-    title: "SP Policy Center",
-    description: `Microsoft 365 SharePoint for streamlined, scalable, secure Policy Center.`,
-    image:
-      "https://compass365.com/wp-content/uploads/2024/04/Top-3-Insights-from-the-2024-Gartner-Digital-Workplace-Summit.jpg",
-  },
-  {
-    id: "contract-management",
-    title: "SP Contract Portal",
-    description: `SharePoint contract portal streamlining and automating the lifecycle from request to signature.`,
-    image:
-      "https://images.squarespace-cdn.com/content/v1/5ab688b21aef1d55f061696c/1607122679047-TBVGSN5XW5IN2UHLLQJA/shutterstock_1818362339.jpg",
-  },
-  {
-    id: "incident-management",
-    title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
-    image:
-      "https://www.hospitalmanagementasia.com/wp-content/uploads/2023/11/Apollo-2.jpg",
-  },
-  {
-    id: "contract-management",
-    title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
-    image:
-      "https://media.istockphoto.com/id/1350606689/photo/business-woman-using-a-laptop-with-digital-graph-to-document-management-software-online.jpg?s=612x612&w=0&k=20&c=vV2qXwIybbg-eJBCmIlGkTA-V5nB1xjDWveXEKXVK-g=",
-  },
-];
+// const blogPosts: BlogPost[] = [
+//   {
+//     id: "policy-management",
+//     title: "SP Policy Center",
+//     description: `Microsoft 365 SharePoint for streamlined, scalable, secure Policy Center.`,
+//     image:
+//       "https://compass365.com/wp-content/uploads/2024/04/Top-3-Insights-from-the-2024-Gartner-Digital-Workplace-Summit.jpg",
+//   },
+//   {
+//     id: "contract-management",
+//     title: "SP Contract Portal",
+//     description: `SharePoint contract portal streamlining and automating the lifecycle from request to signature.`,
+//     image:
+//       "https://images.squarespace-cdn.com/content/v1/5ab688b21aef1d55f061696c/1607122679047-TBVGSN5XW5IN2UHLLQJA/shutterstock_1818362339.jpg",
+//   },
+//   {
+//     id: "incident-management",
+//     title: "SP Incident Tracker",
+//     description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
+//     image:
+//       "https://www.hospitalmanagementasia.com/wp-content/uploads/2023/11/Apollo-2.jpg",
+//   },
+//   {
+//     id: "contract-management",
+//     title: "SP Incident Tracker",
+//     description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
+//     image:
+//       "https://media.istockphoto.com/id/1350606689/photo/business-woman-using-a-laptop-with-digital-graph-to-document-management-software-online.jpg?s=612x612&w=0&k=20&c=vV2qXwIybbg-eJBCmIlGkTA-V5nB1xjDWveXEKXVK-g=",
+//   },
+// ];
 
 const Projects: React.FC = () => {
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  // const prevRef = useRef<HTMLButtonElement>(null);
+  // const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     // <section className="py-8 w-full">
