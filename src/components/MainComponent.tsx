@@ -10,7 +10,7 @@ import Education from "./EducationSection";
 import Projects from "./ProjectsSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
-import StickyTabs from "./MyServices/StickyTabs";
+// import StickyTabs from "./MyServices/StickyTabs";
 // import Tools from "./Tools";
 // import TestimonialSection from "./EducationSection";
 // import "./MainComponent.css";
