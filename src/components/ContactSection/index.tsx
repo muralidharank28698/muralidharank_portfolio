@@ -284,7 +284,7 @@ export default function Contact() {
                 <h2 className="text-3xl font-semibold text-[#57d5ff]">
                   Muralidharan
                 </h2>
-                <p className="text-gray-600 dark:text-gray-300 font-medium tracking-wide">
+                <p className="text-gray-600 dark:text-gray-300 font-xs tracking-wide font-mono">
                   FRONTEND / SHAREPOINT DEVELOPER
                 </p>
                 <p className="max-w-lg text-gray-600 dark:text-gray-400 py-4">

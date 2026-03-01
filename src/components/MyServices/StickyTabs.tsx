@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Card from "./Card";
 import { fadeInUp, staggerContainer2 } from "../../Common/Variants";
 import { motion } from "framer-motion";
+import FAQAccordion from "./Documentation";
 
 const tabs = ["Documentation", "Projects", "Resources"];
 
@@ -54,7 +55,7 @@ export default function SegmentedTabs() {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className="w-full flex flex-col items-center mt-16 pt-20">
+    <div className="w-full flex flex-col items-center pt-6">
       {/* Tab List */}
       <div className="inline-flex rounded-full p-1 border border-neutral-200/40 dark:border-neutral-700/40">
         {tabs.map((tab, index) => (
@@ -81,7 +82,7 @@ export default function SegmentedTabs() {
         initial="hidden"
         whileInView="show" // triggers when scroll into view
         viewport={{ once: true, amount: 0.2 }}
-        className="mt-6 w-full rounded-lg p-4 md:p-6 max-w-4xl mx-auto flex flex-wrap gap-4 justify-center"
+        className="w-full rounded-lg   md:p-6 max-w-4xl mx-auto flex flex-wrap gap-4 justify-center"
       >
         {cardData[tabs[activeTab]].map((card: any, idx: number) =>
           activeTab === 0 ? (
@@ -91,9 +92,10 @@ export default function SegmentedTabs() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="w-full p-6 sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800"
+              // className="w-full p-8 bg-transparent rounded-lg  dark:border-neutral-800"
+              className="w-full p-4 sm:p-8 bg-transparent rounded-lg dark:border-neutral-800"
             >
-              <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+              {/* <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                 Getting Started with Our Documentation
               </h2>
               <p className="text-sm sm:text-base mb-3">
@@ -111,13 +113,14 @@ export default function SegmentedTabs() {
                 section will serve as a roadmap to understand the core
                 components and workflows of the project. Explore, learn, and
                 implement with confidence.
-              </p>
+              </p> */}
+              <FAQAccordion />
             </motion.div>
           ) : activeTab === 1 ? (
             <motion.div
               key={`${tabs[activeTab]}-${idx}`}
               variants={fadeInUp}
-              className="w-full sm:w-[260px]"
+              className="w-full sm:w-[260px] mt-6 p-4 md:p-6"
             >
               <Card
                 title={card.title}
@@ -134,7 +137,7 @@ export default function SegmentedTabs() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="w-full p-6 sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800"
+              className="w-full p-6 sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800 mt-6 p-4 md:p-6"
             >
               <p className="text-sm sm:text-base mb-3">
                 Welcome to the resourses tab. Here, you will find Resourse

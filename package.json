@@ -5,6 +5,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
+    "@radix-ui/react-tooltip": "^1.2.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -16,6 +17,7 @@
     "class-variance-authority": "^0.7.1",
     "emailjs": "^5.0.0",
     "flowbite": "^2.5.2",
+    "flowbite-react": "^0.4.0",
     "framer-motion": "^5.6.0",
     "gsap": "^3.12.5",
     "hamburger-react": "^2.5.1",

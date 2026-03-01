@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import StickyTabs from "../MyServices/StickyTabs";
 
 interface BlogPost {
   id: string;
@@ -50,7 +51,6 @@ const blogPosts: BlogPost[] = [
 ];
 
 const Projects: React.FC = () => {
-
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -63,19 +63,17 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h1 className="text-3xl text-center  font-bold capitalize pt-12">
-        Projects{" "}
+      <h1 className="text-3xl text-center  font-bold capitalize pt-8">
+        Projects {""}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Works</span>
       </h1>
       <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
-      <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
-        {/* Header */}
+      {/* <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
         <div className="flex flex-col gap-4 items-start justify-between sm:flex-row sm:items-center">
           <p className="mb-2 text-base sm:mb-3 sm:text-lg font-semibold">
             Key Projects
           </p>
 
-          {/* Custom arrows */}
           <div className="flex items-center gap-1">
             <button
               ref={prevRef}
@@ -89,12 +87,11 @@ const Projects: React.FC = () => {
               aria-label="Next"
               className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
             >
-              <IoIosArrowRoundForward size={16}/>
+              <IoIosArrowRoundForward size={16} />
             </button>
           </div>
         </div>
 
-        {/* Swiper */}
         <Swiper
           modules={[Navigation]}
           onInit={(swiper: any) => {
@@ -143,7 +140,8 @@ const Projects: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
+      <StickyTabs />
     </motion.section>
   );
 };
