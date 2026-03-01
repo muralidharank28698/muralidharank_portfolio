@@ -73,8 +73,8 @@ export default function Introduction() {
             {/* Desktop: Vertical Name */}
             <div className="hidden md:flex md:-rotate-90 md:origin-top-left md:translate-y-[40%] items-center justify-center h-full">
               <div className="px-4 py-1 rounded-full bg-sky-100/40 dark:bg-sky-900/30 border border-sky-300/60 dark:border-sky-400/30 backdrop-blur-md shadow-sm">
-                <span className="text-base font-semibold leading-relaxed sm:text-lg text-sky-300 dark:text-sky-200 whitespace-nowrap">
-                  Frontend / Sharepoint &lt;/&gt;
+                <span className="text-base font-normal leading-relaxed sm:text-md text-sky-300 dark:text-sky-200 whitespace-nowrap">
+                  Frontend / Sharepoint SPFx &lt;/&gt;
                 </span>
               </div>
             </div>
@@ -82,8 +82,8 @@ export default function Introduction() {
             {/* Mobile: Horizontal Name */}
             <div className="flex md:hidden items-center justify-center w-full text-center">
               <div className="px-4 py-1 rounded-full bg-sky-100/40 dark:bg-sky-900/30 border border-sky-300/60 dark:border-sky-400/30 backdrop-blur-md shadow-sm">
-                <span className="text-base font-semibold leading-relaxed text-sky-300 dark:text-sky-200 whitespace-nowrap">
-                  Frontend / Sharepoint &lt;/&gt;
+                <span className="text-base font-normal leading-relaxed text-sky-300 dark:text-sky-200 whitespace-nowrap">
+                  Frontend / Sharepoint SPFx &lt;/&gt;
                 </span>
               </div>
             </div>
@@ -131,6 +131,9 @@ export default function Introduction() {
               that drives real impact.
             </p>
           </Fade>
+            {/* <button className="border border-[#57d5ff] text-[#57d5ff] px-6 py-3 rounded-lg font-medium hover:bg-[#57d5ff] hover:text-white transition duration-300">
+              Download Resume
+            </button> */}
 
           {/* Button */}
           {/* <Fade duration={2000} delay={500} damping={0.1}> */}
@@ -138,7 +141,7 @@ export default function Introduction() {
             <a
               href={require("../../assets/Resume/Resume.pdf")}
               download
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden hover:scale-95 active:scale-90"
             >
               Download CV
               <svg

@@ -10,7 +10,7 @@ import Education from "./EducationSection";
 import Projects from "./ProjectsSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
-import StickyTabs from "./MyServices/StickyTabs";
+// import StickyTabs from "./MyServices/StickyTabs";
 // import Tools from "./Tools";
 // import TestimonialSection from "./EducationSection";
 // import "./MainComponent.css";
@@ -61,20 +61,20 @@ const MainComponent: React.FC = () => {
       {/* </Headroom> */}
       <section
         ref={introductionRef}
-        className="flex flex-col items-center pt-16 px-5"
+        className="flex flex-col items-center py-16 px-5"
       >
         <Introduction />
       </section>
       <section
         ref={aboutRef}
         // className="flex flex-col items-center px-5 pt-2 mb-12"
-        className="relative flex flex-col items-center px-5 overflow-hidden px-5 pt-2 mt-16 pb-12"
+        className="relative flex flex-col items-center px-5 overflow-hidden px-5"
       >
         {/* top-left soft glow */}
         {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#c7f8ff]/5 blur-[280px]" /> */}
 
         {/* bottom-right soft glow */}
-        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         <About />
       </section>
@@ -83,23 +83,24 @@ const MainComponent: React.FC = () => {
         className="relative flex flex-col items-center px-5 overflow-hidden"
       >
         {/* top-left soft glow */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         {/* bottom-right soft glow */}
-        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         <Skills />
       </section>
 
       <section
         ref={educationRef}
-        className="relative flex flex-col items-center overflow-hidden"
+        // className="relative flex flex-col items-center overflow-hidden"
+        className="relative flex flex-col items-center px-5 overflow-hidden"
       >
         {/* top-left soft glow */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         {/* bottom-right soft glow */}
-        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         <Education />
       </section>
@@ -109,10 +110,10 @@ const MainComponent: React.FC = () => {
 
       >
         {/* top-left soft glow */}
-        <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
         {/* bottom-right soft glow */}
-        <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" />
+        {/* <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
         <Experience />
       </section>
 
@@ -120,7 +121,6 @@ const MainComponent: React.FC = () => {
         <div className="w-full sm:max-w-4xl">
           {/* full width on mobile, max 4xl on desktop */}
           <Projects />
-          <StickyTabs />
         </div>
       </section>
       {/* <section ref={projectsRef} className="flex flex-col items-center w-full">

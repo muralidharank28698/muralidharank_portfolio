@@ -110,55 +110,55 @@ export const links = [
 export const TechnologyStack: ILibrariesAndFramework[] = [
   {
     name: "HTML",
-    icon: <AkarIconsHtmlFill />,
+    icon: <AkarIconsHtmlFill width={38} height={38} />,
   },
   {
     name: "CSS",
-    icon: <AkarIconsCssFill />,
+    icon: <AkarIconsCssFill width={38} height={38} />,
   },
   {
     name: "Javascript (ES6+)",
-    icon: <AkarIconsJavascriptFill />,
+    icon: <AkarIconsJavascriptFill width={38} height={38} />,
   },
   {
     name: "React",
-    icon: <DeviconReact />,
+    icon: <DeviconReact width={38} height={38} />,
   },
   {
     name: "React Storybook",
-    icon: <VscodeIconsFileTypeStorybook />,
+    icon: <VscodeIconsFileTypeStorybook width={38} height={38} />,
   },
   {
     name: "TypeScript",
-    icon: <LogosTypescriptIcon />,
+    icon: <LogosTypescriptIcon width={38} height={38} />,
   },
   {
     name: "Redux",
-    icon: <SkillIconsRedux />,
+    icon: <SkillIconsRedux width={38} height={38} />,
   },
   {
     name: "React Native",
-    icon: <TablerBrandReactNative />,
+    icon: <TablerBrandReactNative width={38} height={38} />,
   },
   {
     name: "Material UI",
-    icon: <SkillIconsMaterialuiLight />,
+    icon: <SkillIconsMaterialuiLight width={38} height={38} />,
   },
   {
     name: "Fluent UI",
-    icon: <FluentFluent24Regular />,
+    icon: <FluentFluent24Regular width={38} height={38} />,
   },
   {
     name: "Tailwind CSS",
-    icon: <SkillIconsTailwindcssLight />,
+    icon: <SkillIconsTailwindcssLight width={38} height={38} />,
   },
   {
     name: "Bootstrap",
-    icon: <DeviconBootstrap />,
+    icon: <DeviconBootstrap width={38} height={38} />,
   },
   {
     name: "PNP JS",
-    icon: <LucideFileJson2 />,
+    icon: <LucideFileJson2 width={38} height={38} />,
   },
 ];
 
@@ -166,11 +166,11 @@ export const MicrosoftSharePointSPFXTechnologyStack: ILibrariesAndFramework[] =
   [
     {
       name: "SPFX List & Libraries",
-      icon: <SimpleIconsLibrariesdotio />,
+      icon: <SimpleIconsLibrariesdotio width={38} height={38} />,
     },
     {
       name: "SPFX Webpart",
-      icon: <LucideFileJson2 />,
+      icon: <LucideFileJson2 width={38} height={38} />,
     },
     // {
     //   name: "SPFX Libraries",
@@ -178,29 +178,29 @@ export const MicrosoftSharePointSPFXTechnologyStack: ILibrariesAndFramework[] =
     // },
     {
       name: "Power Automate",
-      icon: <SimpleIconsMicrosoftpowerautomate />,
+      icon: <SimpleIconsMicrosoftpowerautomate width={38} height={38} />,
     },
     {
       name: "Azure AI services",
-      icon: <DeviconAzure />,
+      icon: <DeviconAzure width={38} height={38} />,
     },
   ];
 
 export const EditorTools: IEditorTools[] = [
   {
     name: "Visual Studio Code",
-    icon: <MdiMicrosoftSharepoint />,
+    icon: <MdiMicrosoftSharepoint width={38} height={38} />,
   },
   {
     name: "VS Code",
-    icon: <AkarIconsCssFill />,
+    icon: <AkarIconsCssFill width={38} height={38} />,
   },
 ];
 
 export const versionControlTools: IEditorTools[] = [
   {
     name: "Git",
-    icon: <SkillIconsGit />,
+    icon: <SkillIconsGit width={38} height={38} />,
   },
   // {
   //   name: "GitHub",
@@ -208,18 +208,18 @@ export const versionControlTools: IEditorTools[] = [
   // },
   {
     name: "Postman",
-    icon: <Postman />,
+    icon: <Postman width={38} height={38} />,
   },
   {
     name: "Bitbucket",
-    icon: <SkillIconsBitbucket />,
+    icon: <SkillIconsBitbucket width={38} height={38} />,
   },
   {
     name: "Jira",
-    icon: <Jira />,
+    icon: <Jira width={38} height={38} />,
   },
   {
     name: "Prettier",
-    icon: <Prettier />,
+    icon: <Prettier width={38} height={38} />,
   },
 ];

@@ -1,58 +1,58 @@
-import React, { useRef } from "react";
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import React from "react";
+// import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
 // import { BsArrowBarRight } from "react-icons/bs";
-import { RiArrowRightSLine } from "react-icons/ri";
+// import { RiArrowRightSLine } from "react-icons/ri";
 
 // Swiper
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+// import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import StickyTabs from "../MyServices/StickyTabs";
 
-interface BlogPost {
-  id: string;
-  title: string;
-  description: string;
-  image: string;
-}
+// interface BlogPost {
+//   id: string;
+//   title: string;
+//   description: string;
+//   image: string;
+// }
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "policy-management",
-    title: "SP Policy Center",
-    description: `Microsoft 365 SharePoint for streamlined, scalable, secure Policy Center.`,
-    image:
-      "https://compass365.com/wp-content/uploads/2024/04/Top-3-Insights-from-the-2024-Gartner-Digital-Workplace-Summit.jpg",
-  },
-  {
-    id: "contract-management",
-    title: "SP Contract Portal",
-    description: `SharePoint contract portal streamlining and automating the lifecycle from request to signature.`,
-    image:
-      "https://images.squarespace-cdn.com/content/v1/5ab688b21aef1d55f061696c/1607122679047-TBVGSN5XW5IN2UHLLQJA/shutterstock_1818362339.jpg",
-  },
-  {
-    id: "incident-management",
-    title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
-    image:
-      "https://www.hospitalmanagementasia.com/wp-content/uploads/2023/11/Apollo-2.jpg",
-  },
-  {
-    id: "contract-management",
-    title: "SP Incident Tracker",
-    description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
-    image:
-      "https://media.istockphoto.com/id/1350606689/photo/business-woman-using-a-laptop-with-digital-graph-to-document-management-software-online.jpg?s=612x612&w=0&k=20&c=vV2qXwIybbg-eJBCmIlGkTA-V5nB1xjDWveXEKXVK-g=",
-  },
-];
+// const blogPosts: BlogPost[] = [
+//   {
+//     id: "policy-management",
+//     title: "SP Policy Center",
+//     description: `Microsoft 365 SharePoint for streamlined, scalable, secure Policy Center.`,
+//     image:
+//       "https://compass365.com/wp-content/uploads/2024/04/Top-3-Insights-from-the-2024-Gartner-Digital-Workplace-Summit.jpg",
+//   },
+//   {
+//     id: "contract-management",
+//     title: "SP Contract Portal",
+//     description: `SharePoint contract portal streamlining and automating the lifecycle from request to signature.`,
+//     image:
+//       "https://images.squarespace-cdn.com/content/v1/5ab688b21aef1d55f061696c/1607122679047-TBVGSN5XW5IN2UHLLQJA/shutterstock_1818362339.jpg",
+//   },
+//   {
+//     id: "incident-management",
+//     title: "SP Incident Tracker",
+//     description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
+//     image:
+//       "https://www.hospitalmanagementasia.com/wp-content/uploads/2023/11/Apollo-2.jpg",
+//   },
+//   {
+//     id: "contract-management",
+//     title: "SP Incident Tracker",
+//     description: `Microsoft 365 SharePoint tracker for simplified reporting, compliance, and collaboration.`,
+//     image:
+//       "https://media.istockphoto.com/id/1350606689/photo/business-woman-using-a-laptop-with-digital-graph-to-document-management-software-online.jpg?s=612x612&w=0&k=20&c=vV2qXwIybbg-eJBCmIlGkTA-V5nB1xjDWveXEKXVK-g=",
+//   },
+// ];
 
 const Projects: React.FC = () => {
-
-  const prevRef = useRef<HTMLButtonElement>(null);
-  const nextRef = useRef<HTMLButtonElement>(null);
+  // const prevRef = useRef<HTMLButtonElement>(null);
+  // const nextRef = useRef<HTMLButtonElement>(null);
 
   return (
     // <section className="py-8 w-full">
@@ -63,19 +63,17 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h1 className="text-3xl text-center  font-bold capitalize pt-12">
-        Projects{" "}
+      <h1 className="text-3xl text-center  font-bold capitalize pt-8">
+        Projects {""}
         <span className="text-[#57d5ff] dark:text-[#57d5ff]">Works</span>
       </h1>
       <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
-      <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
-        {/* Header */}
+      {/* <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
         <div className="flex flex-col gap-4 items-start justify-between sm:flex-row sm:items-center">
           <p className="mb-2 text-base sm:mb-3 sm:text-lg font-semibold">
             Key Projects
           </p>
 
-          {/* Custom arrows */}
           <div className="flex items-center gap-1">
             <button
               ref={prevRef}
@@ -89,12 +87,11 @@ const Projects: React.FC = () => {
               aria-label="Next"
               className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
             >
-              <IoIosArrowRoundForward size={16}/>
+              <IoIosArrowRoundForward size={16} />
             </button>
           </div>
         </div>
 
-        {/* Swiper */}
         <Swiper
           modules={[Navigation]}
           onInit={(swiper: any) => {
@@ -143,7 +140,8 @@ const Projects: React.FC = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </div> */}
+      <StickyTabs />
     </motion.section>
   );
 };

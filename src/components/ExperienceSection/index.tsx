@@ -62,7 +62,7 @@ export default function Experience() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <div className="pt-8">
+      <div className="pt-4">
         <div className="flex justify-center pb-12">
           <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
             <div className="section-title text-center">
@@ -89,9 +89,8 @@ export default function Experience() {
               <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
 
               <p className="mt-4 animate-fadeInUp delay-600">
-                Worked across three organizations, gaining expertise in frontend
-                development and delivering efficient solutions using modern
-                technologies.
+                Worked across three organizations, delivering efficient
+                solutions with modern technologies.
               </p>
             </div>
           </div>
@@ -148,7 +147,10 @@ export default function Experience() {
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18}  className="text-[#57d5ff] dark:text-[#57d5ff]" />
+                        <RiComputerLine
+                          size={18}
+                          className="text-[#57d5ff] dark:text-[#57d5ff]"
+                        />
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold">
@@ -162,9 +164,14 @@ export default function Experience() {
                       and libraries
                     </p>
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-500 text-sm">
+                      {/* <span className="text-gray-500 text-sm">
                         jul 2025 - present
-                      </span>
+                      </span> */}
+                      <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
+                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
+                          jul 2025 - present
+                        </span>
+                      </button>
                       <motion.div
                         whileHover={{
                           scale: 1.05,
@@ -205,7 +212,10 @@ export default function Experience() {
                   <div className="lg:text-right lg:pr-8 text-left">
                     <div className="flex items-center justify-start lg:justify-end my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18} className="text-[#57d5ff] dark:text-[#57d5ff]" />
+                        <RiComputerLine
+                          size={18}
+                          className="text-[#57d5ff] dark:text-[#57d5ff]"
+                        />
                       </span>
                     </div>
                     <h4 className="text-xl font-semibold">
@@ -220,9 +230,14 @@ export default function Experience() {
                     </p>
 
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-500 text-sm">
+                      {/* <span className="text-gray-500 text-sm">
                         feb 2024 - jul 2025
-                      </span>
+                      </span> */}
+                      <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
+                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
+                          feb 2024 - jul 2025
+                        </span>
+                      </button>
                       <motion.div
                         whileHover={{
                           scale: 1.05,
@@ -281,7 +296,7 @@ export default function Experience() {
                       src={require("../../assets/ExperienceImages/Ex5.webp")}
                       // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
-                      style={{ width: "373px", height: "203px" }}
+                      style={{ width: "373px", height: "140px" }}
                       alt="Experience logo"
                     />
                   </div>
@@ -333,7 +348,10 @@ export default function Experience() {
                   <div className="lg:text-left lg:pl-8 text-left">
                     <div className="flex items-center justify-start lg:justify-start my-3">
                       <span className="bg-white p-2 text-gray-700 hover:text-gray-950 flex items-center justify-center rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10 dark:text-white/60">
-                        <RiComputerLine size={18} className="text-[#57d5ff] dark:text-[#57d5ff]" />
+                        <RiComputerLine
+                          size={18}
+                          className="text-[#57d5ff] dark:text-[#57d5ff]"
+                        />
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold ">
@@ -346,9 +364,14 @@ export default function Experience() {
                       React | TypeScript | React Native | Redux | Story Book
                     </p>
                     <div className="flex justify-between items-center mt-2">
-                      <span className="text-gray-500 text-sm">
+                      {/* <span className="text-gray-500 text-sm">
                         nov 2021 - dec 2023
-                      </span>
+                      </span> */}
+                      <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
+                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
+                           nov 2021 - dec 2023
+                        </span>
+                      </button>
                       <motion.div
                         whileHover={{
                           scale: 1.05,
