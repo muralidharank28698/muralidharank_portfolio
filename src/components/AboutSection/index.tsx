@@ -10,8 +10,8 @@ export default function About() {
       </h1>
       <div
         className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-6 items-center md:px-4 pt-6 text-center md:text-left overflow-hidden
-        [mask-image:linear-gradient(to_right,transparent,black_2%,black_90%,transparent)]
-        [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+        md:[mask-image:linear-gradient(to_right,transparent,black_2%,black_90%,transparent)]
+        md:[-webkit-mask-image:linear-gradient(to_right,transparent,black_2%,black_90%,transparent)]"
       >
         {/* LEFT CONTENT */}
         <motion.div
