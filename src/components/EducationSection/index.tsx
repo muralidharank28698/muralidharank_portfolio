@@ -1,5 +1,5 @@
 "use client";
-import { FaSchool, FaUniversity, FaBook } from "react-icons/fa";
+import { FaUniversity } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { cardFadeUp, staggerContainer } from "../../Common/Variants";
 
