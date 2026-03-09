@@ -4,10 +4,10 @@ import { fadeInUp, staggerContainer2 } from "../../Common/Variants";
 import { motion } from "framer-motion";
 import FAQAccordion from "./Documentation";
 
-const tabs = ["Documentation", "Projects", "Resources"];
+const tabs = ["FAQs", "Projects", "Resources"];
 
 const cardData: any = {
-  Documentation: [
+  FAQs: [
     {
       title: "Getting Started",
       subtitle: "Guidelines & Docs",
@@ -127,7 +127,7 @@ export default function SegmentedTabs() {
                 subtitle={card.subtitle}
                 image={card.image}
                 des={card.description}
-                url={card.url}  
+                url={card.url}
               />
             </motion.div>
           ) : activeTab === 2 ? (
@@ -145,7 +145,7 @@ export default function SegmentedTabs() {
                 started with our project.
               </p>
             </motion.div>
-          ) : null
+          ) : null,
         )}
       </motion.div>
     </div>

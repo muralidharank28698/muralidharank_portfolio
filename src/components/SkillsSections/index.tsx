@@ -5,7 +5,7 @@ import {
   versionControlTools,
 } from "../../lib/data";
 import "./index.css";
-import LogoLoop from "../LogoLoop";
+import LogoLoop from "./LogoLoop";
 // const fadeInAnimationVariants = {
 //   initial: {
 //     opacity: 0,
@@ -62,7 +62,6 @@ export default function Skills() {
       </h1>
       <div
         className="
-    pt-2
     rounded-xl sm:rounded-none
     sm:p-0 sm:p-5
     md:p-6
@@ -81,7 +80,7 @@ export default function Skills() {
           </h2>
           <span className="w-4 h-px bg-gray-300"></span>
         </div> */}
-        <div className="flex items-center justify-center gap-2 py-1">
+        <div className="flex items-center justify-center gap-2">
           <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
             <span className="text-xs font-medium capitalize whitespace-nowrap">
               Development Tools
@@ -89,7 +88,7 @@ export default function Skills() {
           </button>
         </div>
         <div
-          className="pt-6 w-full overflow-hidden
+          className="pt-2 w-full overflow-hidden
         [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
         [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
       "
@@ -103,7 +102,7 @@ export default function Skills() {
           />
         </div>
       </div>
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-8">
+      <div className="flex flex-col md:grid md:grid-cols-2 md:gap-8">
         {/* Left Box: SharePoint SPFx Development Expertise */}
         <div
           className="
@@ -124,7 +123,7 @@ export default function Skills() {
           </div> */}
           <div
             className="
-          relative w-full pt-6 overflow-hidden
+          relative w-full overflow-hidden
           [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
           [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
         "
@@ -139,10 +138,7 @@ export default function Skills() {
           </div>
         </div>
         {/* Right Box: You can add another box here for grid layout */}
-        {/* <article className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 overflow-hidden"> */}
 
-        {/* <div className="rounded-xl border border-gray-200 dark:border-gray-700 p-4 sm:p-5 md:p-6 flex flex-col items-center justify-center w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto"> */}
-        {/* Add your second box content here */}
         <div
           className="rounded-lg
           sm:p-4 sm:p-5 md:p-6
@@ -161,7 +157,7 @@ export default function Skills() {
           </div> */}
           <div
             className="
-        relative w-full pt-6 overflow-hidden
+        relative w-full overflow-hidden
         [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
         [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
         "

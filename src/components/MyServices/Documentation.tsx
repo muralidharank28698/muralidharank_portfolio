@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 type FAQItem = {
   category: string;
@@ -7,36 +8,64 @@ type FAQItem = {
 };
 
 const faqData: FAQItem[] = [
+  // {
+  //   category: "ABOUT ME",
+  //   question: "Who is Muralidharan K?",
+  //   answer:
+  //     "I am a Software Developer with around 3.8+ years of experience specializing in Frontend development. I work extensively with React.js, TypeScript, and the SharePoint SPFx framework to build scalable and user-friendly web applications. Currently, I work at Cognizant where I develop enterprise-level SharePoint solutions and modern UI applications.",
+  // },
   {
-    category: "GENERAL",
-    question: "What does “lifetime access” mean exactly?",
+    category: "Quick FAQs",
+    question: "What technologies do you specialize in?",
     answer:
-      "Tailwind Plus products are a one-time purchase, with no recurring subscription. When you purchase any Tailwind Plus product, you have access to all of the content in that product forever.",
+      "My primary expertise includes React.js, TypeScript, JavaScript (ES6+), SharePoint SPFx, and Microsoft 365 technologies. I also work with tools and libraries such as Redux Toolkit, Tailwind CSS, Material UI, Fluent UI, PnP JS, REST APIs, GraphQL, Power Automate, and Git for building scalable and maintainable applications.",
   },
   {
-    category: "GENERAL",
-    question: "What does “free updates” include?",
+    category: "Quick FAQs",
+    question: "What kind of projects do you build?",
     answer:
-      "Free updates include all improvements, bug fixes, and new features added to the product after your purchase.",
+      "I build modern web applications, custom SharePoint web parts, enterprise dashboards, and responsive UI components. My work focuses on creating reusable components, scalable architecture, and clean user interfaces that improve user experience and business productivity.",
   },
   {
-    category: "COMPATIBILITY",
-    question: "Are Figma, Sketch, or Adobe XD files included?",
+    category: "Quick FAQs",
+    question: "What professional experience do you have?",
     answer:
-      "Design files are not included. The product focuses on Tailwind CSS components and code.",
+      "I have worked with companies like Cognizant, ConvergePoint, and FocusCraft Tech as a Software Developer. My experience includes building SharePoint solutions using SPFx, developing React applications, integrating backend APIs, and implementing automation using Power Automate and Power Apps.",
   },
   {
-    category: "COMPATIBILITY",
-    question: "What JS framework is used?",
+    category: "Quick FAQs",
+    question: "Do you have experience with SharePoint development?",
     answer:
-      "The components are framework-agnostic, but examples are provided for React.",
+      "Yes. I have strong experience developing SharePoint solutions using the SPFx framework with React and TypeScript. I have built custom web parts, integrated SharePoint lists and libraries using PnP JS and CAML queries, and developed automated workflows using Power Automate.",
   },
   {
-    category: "COMPATIBILITY",
-    question: "What version of Tailwind CSS is used?",
-    answer: "The latest stable version of Tailwind CSS is used.",
+    category: "Quick FAQs",
+    question: "What UI technologies and frameworks do you use?",
+    answer:
+      "For building modern user interfaces, I use React.js along with UI libraries like Material UI, Fluent UI, and Tailwind CSS. I focus on responsive design using Flexbox, CSS Grid, and media queries to ensure applications work smoothly across different devices.",
+  },
+  {
+    category: "Quick FAQs",
+    question: "How do you approach building scalable applications?",
+    answer:
+      "I follow a component-based architecture and focus on writing clean, reusable, and maintainable code. I use modern development practices such as React Hooks, Redux Toolkit for state management, modular architecture, and API-driven development to ensure applications are scalable and efficient.",
+  },
+  {
+    category: "Quick FAQs",
+    question: "What are your current learning goals?",
+    answer:
+      "I am continuously improving my knowledge in advanced frontend architecture and exploring mobile application development using React Native. I am also interested in integrating AI capabilities into applications using Azure AI services to build smarter digital experiences.",
   },
 ];
+// Group items by category outside the component to avoid recalculation on every render
+const grouped = faqData.reduce(
+  (acc, item) => {
+    acc[item.category] = acc[item.category] || [];
+    acc[item.category].push(item);
+    return acc;
+  },
+  {} as Record<string, FAQItem[]>,
+);
 
 const FAQAccordion: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -45,80 +74,78 @@ const FAQAccordion: React.FC = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  // Group items by category
-  const grouped = faqData.reduce(
-    (acc, item) => {
-      acc[item.category] = acc[item.category] || [];
-      acc[item.category].push(item);
-      return acc;
-    },
-    {} as Record<string, FAQItem[]>,
-  );
-
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto px-2 sm:px-0">
       {Object.entries(grouped).map(([category, items]) => (
-        <div key={category} className="mb-8">
-          <h2 className="text-lg font-semibold mb-4">{category}</h2>
-          <div className="space-y-3">
+        <div key={category} className="mb-10">
+          <h2 className="text-lg font-bold mb-5 text-gray-800 dark:text-gray-100 tracking-wide">
+            {category}
+          </h2>
+          <div className="space-y-4">
             {items.map((item, index) => {
               const globalIndex = faqData.indexOf(item);
+              const isOpen = openIndex === globalIndex;
               return (
                 <div
                   key={globalIndex}
-                  className="border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm overflow-hidden bg-transparent"
+                  className={`border rounded-xl transition-all duration-300 overflow-hidden ${
+                    isOpen
+                      ? "border-[rgb(87,213,255)] bg-white/5 dark:bg-neutral-800/30 shadow-md"
+                      : "border-gray-200 dark:border-gray-700 bg-transparent hover:border-gray-300 dark:hover:border-gray-600"
+                  }`}
                 >
                   <button
                     onClick={() => toggle(globalIndex)}
-                    // className="w-full flex justify-between items-center px-4 py-3 text-left
-                    //     bg-transparent
-                    //     focus:outline-none transition-colors duration-300
-                    //     shadow-[0_1px_2px_rgba(0,0,0,0.08)]
-                    //     dark:shadow-[0_1px_2px_rgba(255,255,255,0.08)]"
-                    className="w-full flex justify-between items-center px-4 py-3 text-left
-             bg-transparent
-             focus:outline-none transition-colors duration-300
-             shadow-[0_1px_2px_rgba(0,0,0,0.04)]
-             dark:shadow-[0_1px_2px_rgba(255,255,255,0.04)]"
+                    className="w-full flex justify-between items-center px-5 py-4 text-left focus:outline-none"
+                    aria-expanded={isOpen}
                   >
-                    {/* hover:bg-[rgb(186_230_253_/_20%)]
-                      dark:hover:bg-[rgb(31_63_73_/_20%)] */}
                     <span
-                      // className="font-medium text-sm"
-                      className={`font-medium text-sm transition-colors duration-300 dark:hover:text-[rgb(87_213_255)] hover:text-[rgb(87_213_255)] ${
-                        openIndex === globalIndex
+                      className={`font-medium text-base transition-colors duration-300 ${
+                        isOpen
                           ? "text-[rgb(87_213_255)]"
-                          : "text-gray-800 dark:text-gray-200"
+                          : "text-gray-700 dark:text-gray-200 hover:text-[rgb(87,213,255)] dark:hover:text-[rgb(87,213,255)]"
                       }`}
                     >
                       {item.question}
                     </span>
-                    <svg
-                      className={`w-5 h-5 transform transition-transform duration-300 ${
-                        openIndex === globalIndex ? "rotate-180" : "rotate-0"
-                      } text-gray-600 dark:text-gray-300`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className={`text-gray-500 dark:text-gray-400 ${
+                        isOpen ? "text-[rgb(87,213,255)]" : ""
+                      }`}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
+                      <svg
+                        className="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </motion.div>
                   </button>
 
-                  <div
-                    className={`transition-all duration-500 overflow-hidden ${
-                      openIndex === globalIndex
-                        ? "max-h-40 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <div className="px-4 py-3 text-sm">{item.answer}</div>
-                  </div>
+                  {/* <AnimatePresence initial={false}> */}
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-5 pb-5 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                        {item.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                  {/* </AnimatePresence> */}
                 </div>
               );
             })}

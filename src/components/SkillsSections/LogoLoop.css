@@ -1,7 +1,7 @@
 .logoloop {
   position: relative;
   overflow: hidden;
-  padding: 32px 0; /* add vertical breathing space */
+  padding: 12px 0; /* add vertical breathing space */
   --logoloop-gap: 32px;
   --logoloop-logoHeight: 28px;
   --logoloop-fadeColorAuto: #ffffff;
@@ -197,32 +197,4 @@
   .logoloop__node {
     transition: none !important;
   }
-}
-
-.logoloop__item {
-  position: relative;
-}
-
-.logoloop__tooltip {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 8px;
-  padding: 4px 8px;
-  background-color: #333;
-  color: #fff;
-  font-size: 12px;
-  border-radius: 4px;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.logoloop__item:hover .logoloop__tooltip {
-  opacity: 1;
-  visibility: visible;
 }
