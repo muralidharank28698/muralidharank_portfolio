@@ -21,22 +21,22 @@ export default function Education() {
       desc: "Bachelor’s in Computer Applications with core knowledge in databases and web tech.",
       grade: "6.12 CGPA",
     },
-    {
-      icon: <FaSchool className="text-3xl text-sky-300 transition" />,
-      year: "2016",
-      place: "Jothi Vallalalar Higher Secondary School",
-      title: "HSC",
-      desc: "Higher Secondary Certificate with Computer Science focus",
-      grade: "78%",
-    },
-    {
-      icon: <FaBook className="text-3xl text-sky-300 transition" />,
-      year: "2014",
-      place: "Amala Higher Secondary School",
-      title: "SSLC",
-      desc: "Secondary School Leaving Certificate with distinction.",
-      grade: "86%",
-    },
+    // {
+    //   icon: <FaSchool className="text-3xl text-sky-300 transition" />,
+    //   year: "2016",
+    //   place: "Jothi Vallalalar Higher Secondary School",
+    //   title: "HSC",
+    //   desc: "Higher Secondary Certificate with Computer Science focus",
+    //   grade: "78%",
+    // },
+    // {
+    //   icon: <FaBook className="text-3xl text-sky-300 transition" />,
+    //   year: "2014",
+    //   place: "Amala Higher Secondary School",
+    //   title: "SSLC",
+    //   desc: "Secondary School Leaving Certificate with distinction.",
+    //   grade: "86%",
+    // },
   ];
 
   return (

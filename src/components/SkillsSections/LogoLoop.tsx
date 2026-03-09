@@ -9,6 +9,7 @@ import {
   CSSProperties,
 } from "react";
 import "./LogoLoop.css";
+import { Tooltip } from "./Tooltip";
 
 /* ================= TYPES ================= */
 
@@ -132,28 +133,34 @@ const LogoLoopComponent = ({
         width={item.width}
         height={item.height}
         draggable={false}
+        className="block"
       />
     );
 
+    const logoContent =
+      "href" in item && item.href ? (
+        <a
+          href={item.href}
+          target="_blank"
+          rel="noreferrer"
+          className="inline-flex items-center justify-center"
+        >
+          {content}
+        </a>
+      ) : (
+        content
+      );
+
     return (
       <li className="logoloop__item" key={key}>
-        {"href" in item && item.href ? (
-          <p>
-            {content}
-          </p>
+        {item.title ? (
+          <div className="pt-10 w-full">
+            <Tooltip content={item.title}>{logoContent}</Tooltip>
+          </div>
         ) : (
-          content
+          logoContent
         )}
       </li>
-
-      // <li className="logoloop__item" key={key}>
-      //   <div className="flex relative items-center justify-center w-full shadow-sm border border-transparent hover:border-[0.5px] hover:border-[rgb(87,213,255)] transition-all duration-500 p-2 rounded-lg">
-      //     {content}
-      //   </div>
-      //   {("href" in item && item.href) && (
-      //     <a href={item.href} target="_blank" rel="noreferrer" className="absolute inset-0 rounded-lg" />
-      //   )}
-      // </li>
     );
   }, []);
 
@@ -163,7 +170,7 @@ const LogoLoopComponent = ({
     () =>
       Array.from({ length: copyCount }, (_, copyIndex) => (
         <ul
-          className="logoloop__list"
+          className="logoloop__list flex items-center justify-center"
           key={`copy-${copyIndex}`}
           ref={copyIndex === 0 ? seqRef : undefined}
           style={{ gap }}

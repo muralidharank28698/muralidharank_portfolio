@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+// import LoginForm from "../LoginForm";
 
 export default function About() {
   return (
     <section className="relative overflow-hidden from-[#f4f9ff] via-transparent to-[#eef6ff] dark:from-[#0f172a] dark:via-[#111827] dark:to-[#0f172a] pt-20">
+     {/* <LoginForm /> */}
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-center">
         About <span className="text-[#57d5ff]">My Journey</span>
         <hr className="w-16 h-1 my-4 bg-[#57d5ff] border-0 mx-auto" />{" "}
