@@ -16,7 +16,15 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
   setActiveSection,
 }) => {
   return (
-    <ul className="py-1 flex space-x-4 rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+    // <ul className="py-1 flex space-x-4 rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+    <ul
+      className="py-1 flex space-x-4 rounded-full 
+bg-white/30 dark:bg-zinc-900/30
+backdrop-blur-xl
+px-3 text-sm font-medium text-zinc-800 dark:text-zinc-200
+shadow-lg
+ring-1 ring-black/5 dark:ring-white/10 sticky top-4"
+    >
       {links.map((link: any, index: any) => (
         <li key={index}>
           <Link
@@ -31,7 +39,7 @@ export const NavigationLinks: React.FC<NavigationLinksProps> = ({
               {
                 "hover:text-[#57d5ff] dark:hover:text-[#57d5ff]":
                   activeSection !== link.name,
-              }
+              },
             )}
             onClick={() => {
               setActiveSection(link.name);
