@@ -149,7 +149,7 @@ function Modal({
             className="fixed inset-0 z-50"
             style={{
               background: "rgba(0,0,0,0.5)",
-              backdropFilter: "blur(10px)",
+              // backdropFilter: "blur(10px)",
             }}
           />
 

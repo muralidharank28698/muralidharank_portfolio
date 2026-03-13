@@ -2,106 +2,77 @@ import React from "react";
 import { motion } from "framer-motion";
 import "./Experience.css";
 import { Link } from "react-router-dom";
-// import { TiSocialLinkedin } from "react-icons/ti";
 import { RiComputerLine } from "react-icons/ri";
 
-// interface CardContent {
-//   title: string;
-//   description: string;
-//   buttonText: string;
-//   backgroundImage: string;
-// }
-
-// const cardData: CardContent[] = [
-//   {
-//     title: "FocusCraft Tech Private Limited",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-//     buttonText: "Explore",
-//     backgroundImage:
-//       "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-//   },
-//   {
-//     title: "ConvergePoint India Private Limited",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-//     buttonText: "Explore",
-//     backgroundImage:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-//   },
-//   {
-//     title: "ConvergePoint India Private Limited",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis magna quis lectus fermentum, quis scelerisque orci pellentesque. Duis id porta justo. Sed ac enim id justo tincidunt hendrerit id ac lectus. Pellentesque maximus posuere tortor vitae consequat.",
-//     buttonText: "Explore",
-//     backgroundImage:
-//       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800", // Replace with your image
-//   },
-// ];
-
 export default function Experience() {
-  // const fadeInLeft = {
-  //   hidden: { opacity: 0, x: -50 },
-  //   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  // };
-
-  // const fadeInRight = {
-  //   hidden: { opacity: 0, x: 50 },
-  //   visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
-  // };
-
   const fadeInBottomToTop = {
-    hidden: { opacity: 0, y: 50 }, // Start from below with reduced opacity
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }, // Animate to original position
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   return (
     <motion.section
-      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12"
+      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12 sm:px-4 md:px-32 lg:px-8 px-4 sm:px-6 md:px-8"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <div className="pt-4">
-        <div className="flex justify-center pb-12">
-          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl">
-            <div className="section-title text-center">
-              {/* <h6 className="sub-title text-sm font-semibold uppercase text-gray-600 pb-2"> */}
-              {/* <h6 className="sub-title text-sm font-semibold uppercase">
-                Services
-              </h6> */}
-              {/* <h4 className="title text-xl md:text-2xl lg:text-3xl font-bold">
-                Professional <span>services</span>
-              </h4> */}
-              {/* <h2 className="text-3xl font-bold capitalize text-center text-gray-800 dark:text-gray-200">
-                Professional{" "}
-                <span className="text-blue-600 dark:text-blue-400">
-                  services
-                </span>
-              </h2>
-              <hr className="w-16 h-1 mx-auto my-4 bg-blue-600 border-0" /> */}
-              <h1 className="text-3xl font-bold capitalize pt-4">
-                Professional{" "}
-                <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-                  services
-                </span>
-              </h1>
-              <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
-
-              <p className="mt-4 animate-fadeInUp delay-600">
-                Worked across three organizations, delivering efficient
-                solutions with modern technologies.
-              </p>
-            </div>
+      <div className="pt-6 sm:pt-10 md:pt-12">
+        {/* ===== HEADING SECTION ===== */}
+        <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
+          {/* Pill badge */}
+          <div
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full
+            bg-sky-400/10 dark:bg-sky-400/10
+            border border-sky-400/25
+            mb-4 sm:mb-6"
+          >
+            <span className="text-xs">💼</span>
+            <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-sky-400">
+              Professional Experience
+            </span>
           </div>
+
+          {/* Main heading */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+            <span className="text-neutral-900 dark:text-white transition-colors duration-300">
+              Professional{" "}
+            </span>
+            <span
+              style={{
+                background: "linear-gradient(90deg, #38bdf8, #34d399)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Services
+            </span>
+          </h1>
+
+          {/* Underline accent */}
+          <div className="w-10 sm:w-14 md:w-16 h-0.5 sm:h-1 mt-3 sm:mt-4 mb-3 sm:mb-5 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#34d399]" />
+
+          {/* Subtitle */}
+          <p
+            className="text-xs sm:text-sm md:text-base
+            text-neutral-500 dark:text-neutral-400
+            max-w-[260px] sm:max-w-sm md:max-w-md
+            leading-relaxed transition-colors duration-300 animate-fadeInUp delay-600"
+          >
+            Worked across three organizations, delivering efficient solutions
+            with modern technologies.
+          </p>
         </div>
+
+        {/* ===== TIMELINE SECTION ===== */}
         <section id="process" className="process-section pt-18 pb-12">
           <div className="container mx-auto px-4 relative">
             {/* Vertical Line */}
             <div className="-translate-x-1/2 absolute bg-gray-300 h-full hidden left-1/2 lg:block top-0 transform w-[1px]"></div>
+
             {/* Timeline */}
             <div className="timeline relative">
-              {/* First Timeline Item */}
+              {/* ===== First Timeline Item — Cognizant ===== */}
               <motion.div
                 className="flex flex-wrap items-center mb-12 relative"
                 initial="hidden"
@@ -114,15 +85,15 @@ export default function Experience() {
                 >
                   <div className="flex justify-center rounded-lg">
                     <img
-                      // src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
                       src={require("../../assets/ExperienceImages/Ex3.webp")}
-                      // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "203px" }}
                       alt="Experience logo"
                     />
                   </div>
                 </motion.div>
+
+                {/* Center icon */}
                 <div className="w-full lg:w-2/12 relative">
                   <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center leading-none group">
                     <svg
@@ -164,18 +135,13 @@ export default function Experience() {
                       and libraries
                     </p>
                     <div className="flex justify-between items-center mt-2">
-                      {/* <span className="text-gray-500 text-sm">
-                        jul 2025 - present
-                      </span> */}
                       <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
-                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
+                        <span className="capitalize whitespace-nowrap text-gray-500 text-xs">
                           jul 2025 - present
                         </span>
                       </button>
                       <motion.div
-                        whileHover={{
-                          scale: 1.05,
-                        }}
+                        whileHover={{ scale: 1.05 }}
                         className="inline-block"
                       >
                         <Link
@@ -198,7 +164,8 @@ export default function Experience() {
                   </div>
                 </motion.div>
               </motion.div>
-              {/* Second Timeline Item */}
+
+              {/* ===== Second Timeline Item — ConvergePoint ===== */}
               <motion.div
                 className="flex flex-wrap items-center mb-12 relative"
                 initial="hidden"
@@ -228,20 +195,14 @@ export default function Experience() {
                       SharePoint Developer | SPFx Framework | SharePoint list
                       and libraries
                     </p>
-
                     <div className="flex justify-between items-center mt-2">
-                      {/* <span className="text-gray-500 text-sm">
-                        feb 2024 - jul 2025
-                      </span> */}
                       <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
-                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
+                        <span className="capitalize whitespace-nowrap text-gray-500 text-xs">
                           feb 2024 - jul 2025
                         </span>
                       </button>
                       <motion.div
-                        whileHover={{
-                          scale: 1.05,
-                        }}
+                        whileHover={{ scale: 1.05 }}
                         className="inline-block"
                       >
                         <Link
@@ -263,13 +224,15 @@ export default function Experience() {
                     </div>
                   </div>
                 </motion.div>
+
+                {/* Center icon */}
                 <div className="w-full lg:w-2/12 relative">
                   <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center transition-all duration-300 group">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 16 16"
                       fill="#57d5ff"
-                      className="h-4 w-4 text-blue-600 transform transition-transform duration-300 ease-out group-hover:scale-150"
+                      className="h-4 w-4 transform transition-transform duration-300 ease-out group-hover:scale-150"
                     >
                       <path
                         fillRule="evenodd"
@@ -285,16 +248,8 @@ export default function Experience() {
                   variants={fadeInBottomToTop}
                 >
                   <div className="flex justify-center rounded-lg">
-                    {/* <img
-                      src={require("../../assets/ExperienceImages/experience.jpg")}
-                      alt="Timeline Image"
-                      className="rounded-lg object-cover"
-                      style={{ width: "373px", height: "203px" }}
-                    /> */}
                     <img
-                      // src="https://www.sokawakata.com/med/SPOLUEALF_prd_1280x720-1024x576.jpg"
                       src={require("../../assets/ExperienceImages/Ex5.webp")}
-                      // className="w-full h-auto object-cover"
                       className="rounded-lg object-contain"
                       style={{ width: "373px", height: "140px" }}
                       alt="Experience logo"
@@ -303,7 +258,7 @@ export default function Experience() {
                 </motion.div>
               </motion.div>
 
-              {/* Third Timeline Item */}
+              {/* ===== Third Timeline Item — FocusCraft ===== */}
               <motion.div
                 className="flex flex-wrap items-center mb-12 relative"
                 initial="hidden"
@@ -316,7 +271,6 @@ export default function Experience() {
                 >
                   <div className="flex justify-center rounded-lg">
                     <img
-                      // src={require("../../assets/ExperienceImages/experience.jpg")}
                       src={require("../../assets/ExperienceImages/Ex4.webp")}
                       alt="Timeline logo"
                       className="rounded-lg object-contain"
@@ -324,6 +278,8 @@ export default function Experience() {
                     />
                   </div>
                 </motion.div>
+
+                {/* Center icon */}
                 <div className="w-full lg:w-2/12 relative">
                   <div className="hidden lg:flex h-8 w-8 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border items-center justify-center leading-none group">
                     <svg
@@ -354,7 +310,7 @@ export default function Experience() {
                         />
                       </span>
                     </div>
-                    <h4 className="text-lg font-semibold ">
+                    <h4 className="text-lg font-semibold">
                       Software Developer
                     </h4>
                     <small className="text-sm text-[#57d5ff] dark:text-[#57d5ff]">
@@ -364,18 +320,13 @@ export default function Experience() {
                       React | TypeScript | React Native | Redux | Story Book
                     </p>
                     <div className="flex justify-between items-center mt-2">
-                      {/* <span className="text-gray-500 text-sm">
-                        nov 2021 - dec 2023
-                      </span> */}
                       <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
-                        <span className="capitalize whitespace-nowrap  text-gray-500 text-xs">
-                           nov 2021 - dec 2023
+                        <span className="capitalize whitespace-nowrap text-gray-500 text-xs">
+                          nov 2021 - dec 2023
                         </span>
                       </button>
                       <motion.div
-                        whileHover={{
-                          scale: 1.05,
-                        }}
+                        whileHover={{ scale: 1.05 }}
                         className="inline-block"
                       >
                         <Link

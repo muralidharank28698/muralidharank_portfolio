@@ -17,28 +17,30 @@ const cardData: any = {
   ],
   Projects: [
     {
-      title: "Portfolio UI",
-      subtitle: "Web Design Showcase",
-      description: "A clean and modern portfolio design to showcase your work.",
+      title: "TaskTrackr Pro",
+      subtitle: "TaskTrackr Pro Showcase",
+      description:
+        "A simple and efficient task tracking app to add, organize, and complete your daily tasks effortlessly.",
+      image: require("../../assets/portfolio-images/PF2.png"),
+      url: "https://task-trackr-pro.vercel.app/",
+    },
+    {
+      title: "Car Booking App",
+      subtitle: "Car Rental & Booking Platform",
+      description:
+        "A modern car booking web application that allows users to browse available cars, view details, and book vehicles easily through a clean and responsive interface.",
       image: require("../../assets/portfolio-images/PF1.png"),
       url: "https://car-booking-eight.vercel.app/",
     },
-    {
-      title: "Admin Dashboard",
-      subtitle: "React Admin Panel",
-      description:
-        "An interactive admin dashboard built with React and Tailwind.",
-      image:
-        "https://bizify.ae/wp-content/uploads/2024/12/Digital-Marketing-Trends-2025-1024x585.jpg",
-    },
-    {
-      title: "E-commerce UI",
-      subtitle: "Shop Web App",
-      description:
-        "A responsive e-commerce UI for a seamless shopping experience.",
-      image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD1ijBsrro9PsDcVmiYAIfQRSqASrb_8U_UgKTY1j2V4RWi_KSLk5zubdH6uWQ_LgBEY0&usqp=CAU",
-    },
+    // {
+    //   title: "Admin Dashboard",
+    //   subtitle: "React Admin Panel",
+    //   description:
+    //     "An interactive admin dashboard built with React and Tailwind.",
+    //   image:
+    //     "https://bizify.ae/wp-content/uploads/2024/12/Digital-Marketing-Trends-2025-1024x585.jpg",
+    //   url: "https://car-booking-eight.vercel.app/",
+    // },
   ],
 
   Resources: [

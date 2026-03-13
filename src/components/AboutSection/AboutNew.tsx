@@ -177,7 +177,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
 // ── Main Component ─────────────────────────────────────────────────────────────
 export default function About() {
   return (
-    <>
+    <div className="relative overflow-hidden pt-8 sm:pt-10 md:pt-12">
       {/* ── Font import ── */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@700;800;900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap');
@@ -249,18 +249,23 @@ export default function About() {
         <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
           {/* ── 1. Eyebrow label ── */}
           <motion.div
-            className="flex items-center justify-center gap-3 mb-6 pt-10"
+            className="flex items-center justify-center mb-6 pt-8"
             initial="hidden"
             whileInView="show"
             viewport={VP}
             variants={reveal}
             custom={0}
           >
-            <span className="block w-6 h-px bg-[#57d5ff]" />
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#2eafd6] dark:text-[#57d5ff]">
-              About <span className="text-[#57d5ff]">My Journey</span>
-            </span>
-            <span className="block w-6 h-px bg-[#57d5ff]" />
+            <div
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-full
+    bg-sky-400/10 dark:bg-sky-400/10
+    border border-sky-400/25"
+            >
+              <span className="text-xs">✨</span>
+              <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-sky-400">
+                About My Journey
+              </span>
+            </div>
           </motion.div>
 
           {/* ── 2. Headline ── */}
@@ -431,6 +436,6 @@ export default function About() {
         </div>
         {/* end centered wrapper */}
       </section>
-    </>
+    </div>
   );
 }
