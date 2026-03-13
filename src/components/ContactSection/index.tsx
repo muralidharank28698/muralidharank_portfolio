@@ -1,365 +1,690 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaSearchLocation, FaLaptopCode } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { TiSocialLinkedin } from "react-icons/ti";
 import { DiGithubBadge } from "react-icons/di";
 import { BiLogoWhatsapp } from "react-icons/bi";
-import { Fade } from "react-awesome-reveal";
 import emailjs from "@emailjs/browser";
-import Alert from "../../Common/Alert";
 
+/* ─────────────────────────────────────────────────────────────────────────────
+   TYPES
+───────────────────────────────────────────────────────────────────────────── */
+interface ContactFormData {
+  firstname: string;
+  lastname: string;
+  email: string;
+  company: string;
+  message: string;
+}
+type EmailJSParams = Record<string, unknown>;
+interface FormErrors {
+  [key: string]: string;
+}
+type AlertType = "success" | "error" | "info";
+const EMPTY: ContactFormData = {
+  firstname: "",
+  lastname: "",
+  email: "",
+  company: "",
+  message: "",
+};
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ANIMATION SYSTEM
+───────────────────────────────────────────────────────────────────────────── */
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+function useReveal(margin = "-48px") {
+  const ref = useRef<HTMLDivElement>(null);
+  const [on, setOn] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setOn(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: margin }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [margin]);
+  return { ref, on };
+}
+
+const Reveal: React.FC<{
+  children: React.ReactNode;
+  delay?: number;
+  y?: number;
+  className?: string;
+}> = ({ children, delay = 0, y = 24, className }) => {
+  const { ref, on } = useReveal();
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y }}
+      animate={on ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration: 0.7, delay, ease: EASE }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const StaggerWrap: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+  gap?: number;
+}> = ({ children, className, gap = 0.09 }) => {
+  const { ref, on } = useReveal("-32px");
+  return (
+    <motion.div
+      ref={ref}
+      className={className}
+      initial="off"
+      animate={on ? "on" : "off"}
+      variants={{ off: {}, on: { transition: { staggerChildren: gap } } }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const Stag: React.FC<{
+  children: React.ReactNode;
+  className?: string;
+  y?: number;
+}> = ({ children, className, y = 20 }) => (
+  <motion.div
+    className={className}
+    variants={{
+      off: { opacity: 0, y },
+      on: { opacity: 1, y: 0, transition: { duration: 0.65, ease: EASE } },
+    }}
+  >
+    {children}
+  </motion.div>
+);
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TOAST
+───────────────────────────────────────────────────────────────────────────── */
+const Toast: React.FC<{
+  type: AlertType;
+  message: string;
+  onClose: () => void;
+}> = ({ type, message, onClose }) => {
+  useEffect(() => {
+    const t = setTimeout(onClose, 4500);
+    return () => clearTimeout(t);
+  }, [onClose]);
+
+  const cfg: Record<AlertType, { stripe: string; text: string; bg: string }> = {
+    success: {
+      stripe: "bg-emerald-400",
+      text: "text-emerald-300",
+      bg: "bg-neutral-950/95",
+    },
+    error: {
+      stripe: "bg-red-400",
+      text: "text-red-300",
+      bg: "bg-neutral-950/95",
+    },
+    info: {
+      stripe: "bg-[#57d5ff]",
+      text: "text-[#57d5ff]",
+      bg: "bg-neutral-950/95",
+    },
+  };
+  const c = cfg[type];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 32, scale: 0.95 }}
+      animate={{ opacity: 1, x: 0, scale: 1 }}
+      exit={{ opacity: 0, x: 32, scale: 0.95 }}
+      transition={{ duration: 0.3, ease: EASE }}
+      className={`flex items-stretch rounded-2xl overflow-hidden border border-white/[0.07]
+        ${c.bg} backdrop-blur-2xl shadow-[0_12px_48px_rgba(0,0,0,0.55)]
+        max-w-[calc(100vw-3rem)]`}
+    >
+      <div className={`w-[3px] flex-shrink-0 ${c.stripe}`} />
+      <div
+        className={`flex items-center gap-3 px-4 py-3 text-xs font-medium ${c.text}`}
+      >
+        <span>{message}</span>
+        <button
+          onClick={onClose}
+          className="ml-1 opacity-30 hover:opacity-80 transition-opacity flex-shrink-0"
+        >
+          <svg
+            className="w-3 h-3"
+            viewBox="0 0 10 10"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" d="M1 1l8 8M9 1L1 9" />
+          </svg>
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FIELD
+───────────────────────────────────────────────────────────────────────────── */
+interface FieldProps {
+  name: string;
+  label: string;
+  type?: string;
+  value: string;
+  error?: string;
+  autoComplete?: string;
+  onChange: (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  multiline?: boolean;
+  rows?: number;
+}
+
+const Field: React.FC<FieldProps> = ({
+  name,
+  label,
+  type = "text",
+  value,
+  error,
+  autoComplete,
+  onChange,
+  multiline = false,
+  rows = 4,
+}) => {
+  const hasErr = !!error;
+
+  const base =
+    "w-full rounded-xl border px-4 py-3 text-[14px] transition-all duration-200 outline-none";
+
+  const style = hasErr
+    ? "border-red-400 focus:border-red-400 focus:ring-2 focus:ring-red-400/20"
+    : "border-neutral-300 dark:border-neutral-700 focus:border-[#57d5ff] focus:ring-2 focus:ring-[#57d5ff]/20";
+
+  const colors =
+    "bg-white dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400";
+
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label
+        htmlFor={name}
+        className={`text-[12px] font-medium tracking-wide ${
+          hasErr
+            ? "text-red-400"
+            : "text-neutral-500 dark:text-neutral-400"
+        }`}
+      >
+        {hasErr ? error : label}
+      </label>
+
+      {multiline ? (
+        <textarea
+          id={name}
+          name={name}
+          value={value}
+          rows={rows}
+          autoComplete={autoComplete}
+          onChange={onChange}
+          placeholder={label}
+          className={`${base} ${style} ${colors} resize-none`}
+        />
+      ) : (
+        <input
+          id={name}
+          name={name}
+          type={type}
+          value={value}
+          autoComplete={autoComplete}
+          onChange={onChange}
+          placeholder={label}
+          className={`${base} ${style} ${colors}`}
+          /* prevent iOS zoom on focus (font-size must be >= 16px equivalent) */
+          style={{ fontSize: "16px" }}
+        />
+      )}
+    </div>
+  );
+};
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SOCIAL PILL
+───────────────────────────────────────────────────────────────────────────── */
+const SocialPill: React.FC<{
+  href: string;
+  label: string;
+  icon: React.ReactNode;
+}> = ({ href, label, icon }) => (
+  <motion.a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ y: -2 }}
+    whileTap={{ scale: 0.96 }}
+    transition={{ duration: 0.18 }}
+    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-medium
+      border border-neutral-200 dark:border-neutral-700/70
+      text-neutral-600 dark:text-neutral-400
+      hover:text-neutral-900 dark:hover:text-white
+      hover:border-neutral-400 dark:hover:border-neutral-500
+      transition-colors duration-200 select-none
+      min-h-[44px]"
+  >
+    {icon}
+    {label}
+  </motion.a>
+);
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   MAIN COMPONENT
+───────────────────────────────────────────────────────────────────────────── */
 export default function Contact() {
-  const [formData, setFormData] = React.useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    company: "",
-    message: "",
-  });
-  const [status, setStatus] = React.useState("");
-  const [errors, setErrors] = React.useState<{ [key: string]: string }>({});
-  const handleChange = (e: any) => {
-    const { name, value } = e.target;
+  const [form, setForm] = useState<ContactFormData>({ ...EMPTY });
+  const [status, setStatus] = useState("");
+  const [alertType, setAlert] = useState<AlertType>("info");
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [busy, setBusy] = useState(false);
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setForm((p) => ({ ...p, [name]: value }));
+    if (errors[name]) setErrors((p) => ({ ...p, [name]: "" }));
   };
 
-  const handleSubmit = (e: any) => {
+  const validate = (): FormErrors => {
+    const e: FormErrors = {};
+    if (!form.firstname.trim()) e.firstname = "First name required";
+    if (!form.lastname.trim()) e.lastname = "Last name required";
+    if (!form.email.trim()) e.email = "Email required";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email))
+      e.email = "Enter a valid email";
+    if (!form.company.trim()) e.company = "Company / project required";
+    if (!form.message.trim()) e.message = "Message required";
+    return e;
+  };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-
-    let newErrors: { [key: string]: string } = {};
-
-    if (!formData.firstname.trim()) {
-      newErrors.firstname = "First name is required.";
-    }
-    if (!formData.lastname.trim()) {
-      newErrors.lastname = "Last name is required.";
-    }
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required.";
-    } else {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Please enter a valid email address.";
-      }
-    }
-    if (!formData.company.trim()) {
-      newErrors.company = "Company / Project name is required.";
-    }
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required.";
-    }
-
-    // If errors exist, stop submission
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
+    const errs = validate();
+    if (Object.keys(errs).length) {
+      setErrors(errs);
       return;
     }
-
     setErrors({});
-
-    setStatus("Sending...");
-
-    // Replace these with your actual EmailJS credentials
-    const SERVICE_ID = "service_4sdqvzx";
-    const TEMPLATE_ID = "template_y9g94p1";
-    const PUBLIC_KEY = "RwEWjLHQw99_Z6lZQ";
-
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, formData, PUBLIC_KEY).then(
-      (response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setStatus("Message sent successfully!");
-        setFormData({
-          firstname: "",
-          lastname: "",
-          email: "",
-          company: "",
-          message: "",
-        });
-      },
-      (err) => {
-        console.error("FAILED...", err);
-        setStatus("Failed to send message.");
-      },
-    );
+    setBusy(true);
+    const params: EmailJSParams = { ...form };
+    emailjs
+      .send("service_4sdqvzx", "template_y9g94p1", params, "RwEWjLHQw99_Z6lZQ")
+      .then(() => {
+        setAlert("success");
+        setStatus("Message sent! I'll be in touch soon.");
+        setForm({ ...EMPTY });
+        setBusy(false);
+      })
+      .catch(() => {
+        setAlert("error");
+        setStatus("Couldn't send — please try again.");
+        setBusy(false);
+      });
   };
 
   return (
-    <motion.section
-      className="max-w-5xl mx-auto text-left leading-8 scroll-mt-28 pt-12"
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.175 }}
-    >
-      <h1 className="text-3xl text-center  font-bold capitalize">
-        Get In <span className="text-[#57d5ff] dark:text-[#57d5ff]">Touch</span>
-      </h1>
-      <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
+    <section className="relative scroll-mt-24 pt-14 pb-16 sm:pt-20 sm:pb-20 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Ambient glow */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2
+          w-[min(600px,100vw)] h-[360px] rounded-full bg-[#57d5ff]
+          opacity-[0.05] dark:opacity-[0.08] blur-[110px]"
+      />
 
-      <section
-        id="contact"
-        className="bg-gray-900 text-[hsl(215,15%,75%)] py-20 px-6 relative overflow-hidden rounded-3xl mt-10"
-      >
-        {/* Background Image */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15 md:left-0 md:translate-x-0">
-          <img
-            src={require("../../assets/Profile/Footer.png")}
-            alt="Laptop Illustration"
-            className="max-w-md md:max-w-xl"
-          />
-        </div>
+      {/* ── HEADER ─────────────────────────────────────────────────── */}
+      <StaggerWrap className="mb-10 sm:mb-14">
+        <Stag>
+          <p
+            className="inline-flex items-center gap-2.5 text-[11px] font-semibold
+              tracking-[0.25em] uppercase text-[#57d5ff] mb-5 sm:mb-6 select-none"
+          >
+            <span className="w-5 h-px bg-[#57d5ff] opacity-70" />
+            Get in touch
+          </p>
+        </Stag>
 
-        <div className="container mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Side Content */}
-          <div className="space-y-6 text-left">
-            <h2 className="text-3xl md:text-4xl font-bold leading-snug">
-              Let’s build something amazing{" "}
-              <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-                together
-              </span>
-            </h2>
-            <p className="max-w-md">
-              I’m{" "}
-              <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-                Muralidharan
-              </span>
-              , a passionate{" "}
-              <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-                Software Developer
-              </span>{" "}
-              specializing in creating modern, responsive, and user-friendly web
-              applications. Whether you have a project, an idea, or just want to
-              connect—drop me a message!
-            </p>
-
-            {/* Profile Section */}
-            <div className="flex items-center space-x-4 pt-4">
-              <img
-                src={require("../../assets/Profile/myProfile.jpg")}
-                alt="Muralidharan logo"
-                className="w-20 h-20 rounded-full shadow-lg object-cover"
-              />
-              <p>
-                <span className="font-semibold">Muralidharan</span>
-                <br />
-                <span className="text-[#57d5ff] dark:text-[#57d5ff]">
-                  Software Developer
-                </span>
-              </p>
-            </div>
-
-            <div className="space-y-3 pt-2">
-              <p className="flex items-center gap-2">
-                <FaSearchLocation className="text-[#57d5ff] dark:text-[#57d5ff]" />
-                Based in: Chennai, India
-              </p>
-              <p className="flex items-start gap-2">
-                <FaLaptopCode className="text-[#57d5ff] text-lg flex-shrink-0 mt-1" />
-                <span className="leading-snug">
-                  Open to: Freelance, Remote & Full-time opportunities
-                </span>
-              </p>
-              <p className="flex items-center gap-2">
-                <MdEmail className="text-[#57d5ff]" />
-                muralidharank28698@gmail.com
-              </p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <div className="bg-white text-gray-900 rounded-3xl shadow-lg p-4 sm:p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* First Name */}
-                <input
-                  type="text"
-                  name="firstname"
-                  placeholder={
-                    errors.firstname ? errors.firstname : "First name*"
-                  }
-                  className={`w-full px-4 py-3 rounded-xl border border-gray-300 
-    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
-    ${errors.firstname ? "placeholder-red-500" : "placeholder-gray-400"}`}
-                  value={formData.firstname}
-                  onChange={handleChange}
-                />
-
-                {/* Last Name */}
-                <input
-                  type="text"
-                  name="lastname"
-                  placeholder={errors.lastname ? errors.lastname : "Last name*"}
-                  className={`w-full px-4 py-3 rounded-xl border border-gray-300 
-    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
-    ${errors.lastname ? "placeholder-red-500" : "placeholder-gray-400"}`}
-                  value={formData.lastname}
-                  onChange={handleChange}
-                />
-              </div>
-
-              {/* Email */}
-              <input
-                type="email"
-                name="email"
-                placeholder={errors.email ? errors.email : "Your email*"}
-                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
-    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
-    ${errors.email ? "placeholder-red-500" : "placeholder-gray-400"}`}
-                value={formData.email}
-                onChange={handleChange}
-              />
-
-              {/* Company */}
-              <input
-                type="text"
-                name="company"
-                placeholder={
-                  errors.company ? errors.company : "Company / Project name"
-                }
-                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
-    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
-    ${errors.company ? "placeholder-red-500" : "placeholder-gray-400"}`}
-                value={formData.company}
-                onChange={handleChange}
-              />
-
-              {/* Message */}
-              <textarea
-                name="message"
-                placeholder={
-                  errors.message
-                    ? errors.message
-                    : "Tell me about your project*"
-                }
-                rows={4}
-                className={`w-full px-4 py-3 rounded-xl border border-gray-300 
-    focus:border-[#57d5ff] focus:ring-1 focus:ring-[#57d5ff] 
-    ${errors.message ? "placeholder-red-500" : "placeholder-gray-400"}`}
-                value={formData.message}
-                onChange={handleChange}
-              />
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                className="w-full py-3 px-6 text-white font-semibold rounded-xl shadow-md transition 
-      focus:outline-none focus:ring-0 active:outline-none active:ring-0"
-                style={{ backgroundColor: "#57d5ff" }}
+        <Stag y={28}>
+          <h1
+            className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight
+              leading-[1.05] text-neutral-900 dark:text-white mb-5 sm:mb-6"
+          >
+            Let's work
+            <br />
+            <span className="relative inline-block">
+              together
+              <svg
+                aria-hidden
+                className="absolute -bottom-2 left-0 w-full"
+                viewBox="0 0 340 10"
+                fill="none"
+                preserveAspectRatio="none"
               >
-                Send Message
-              </button>
-            </form>
-            {status && (
-              <div className="fixed bottom-6 left-6 right-6 z-50 md:bottom-6 md:left-6 md:right-auto md:w-[90%] md:max-w-xl mx-auto md:mx-0 md:translate-x-0">
-                <Alert
-                  type={
-                    status === "Message sent successfully!"
-                      ? "success"
-                      : status === "Failed to send message."
-                        ? "error"
-                        : "info"
-                  }
-                  message={status}
-                  onClose={() => setStatus("")}
+                <motion.path
+                  d="M2 7 C 60 2, 120 9, 180 5 S 280 1, 338 6"
+                  stroke="#57d5ff"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  fill="none"
+                  initial={{ pathLength: 0, opacity: 0 }}
+                  whileInView={{ pathLength: 1, opacity: 0.6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1.2, delay: 0.5, ease: "easeInOut" }}
+                />
+              </svg>
+            </span>
+          </h1>
+        </Stag>
+
+        <Stag>
+          <p className="text-base sm:text-lg text-neutral-500 dark:text-neutral-400 max-w-lg leading-relaxed">
+            Whether you have a product idea, need a new web experience, or just
+            want to say hi — my inbox is always open.
+          </p>
+        </Stag>
+      </StaggerWrap>
+
+      {/* ── SPLIT GRID ─────────────────────────────────────────────── */}
+      {/*
+        Mobile: single column (form below info)
+        Desktop (lg): two-column side-by-side
+        items-start keeps both columns top-aligned
+      */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-20 items-start">
+
+        {/* LEFT — profile + info + socials */}
+        <div>
+          {/* Profile card */}
+          <Reveal delay={0.12}>
+            <div className="flex items-center gap-4 mb-8 sm:mb-10">
+              <div className="relative flex-shrink-0">
+                <img
+                  src={require("../../assets/Profile/PA3.png")}
+                  alt="Muralidharan"
+                  className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl object-cover"
+                />
+                <span
+                  className="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 rounded-full
+                    bg-emerald-400 border-2 border-white dark:border-neutral-950 shadow-sm"
                 />
               </div>
-            )}
-          </div>
-        </div>
-      </section>
-
-      {/* Social Footer */}
-
-      {/* Social Footer */}
-      <section className="py-10">
-        <div className="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-0">
-          <div className="border-t border-neutral-200/40 dark:border-neutral-700/40 pt-10">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
-              {/* LEFT SIDE CONTENT */}
-              <div className="space-y-0">
-                <h2 className="text-3xl font-semibold text-[#57d5ff]">
+              <div>
+                <p className="font-semibold text-neutral-900 dark:text-white text-sm sm:text-base">
                   Muralidharan
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 font-xs tracking-wide font-mono">
-                  FRONTEND / SHAREPOINT DEVELOPER
                 </p>
-                <p className="max-w-lg text-gray-600 dark:text-gray-400 py-4">
-                  I turn ideas into clean, scalable interfaces — built to
-                  perform, built to impress.
+                <p className="text-xs sm:text-sm text-[#57d5ff] font-medium mt-0.5">
+                  Software Developer · Available for work
                 </p>
-                <p className="mt-8 text-sm text-gray-500 dark:text-gray-400">
-                  © 2025 Designed & Built by{" "}
-                  <span className="text-[#57d5ff] font-medium">
-                    Muralidharan
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Info items */}
+          <div className="space-y-6 sm:space-y-7 mb-10 sm:mb-12">
+            {[
+              {
+                icon: <FaSearchLocation size={13} />,
+                label: "Location",
+                value: "Chennai, India",
+                delay: 0.14,
+              },
+              {
+                icon: <FaLaptopCode size={13} />,
+                label: "Open to",
+                value: "Freelance, Remote & Full-time",
+                delay: 0.17,
+              },
+              {
+                icon: <MdEmail size={13} />,
+                label: "Email",
+                value: (
+                  <a
+                    href="mailto:muralidharank28698@gmail.com"
+                    className="hover:text-[#57d5ff] transition-colors duration-200 break-all"
+                  >
+                    muralidharank28698@gmail.com
+                  </a>
+                ),
+                delay: 0.2,
+              },
+            ].map(({ icon, label, value, delay }) => (
+              <Reveal key={label} delay={delay}>
+                <div className="flex items-start gap-4">
+                  <span
+                    className="flex-shrink-0 w-8 h-8 sm:w-7 sm:h-7 flex items-center justify-center
+                      rounded-lg bg-[#57d5ff]/10 text-[#57d5ff] mt-0.5"
+                  >
+                    {icon}
                   </span>
-                  . All rights reserved.
+                  <div className="min-w-0">
+                    <p
+                      className="text-[10px] font-semibold tracking-[0.18em] uppercase
+                        text-neutral-400 dark:text-neutral-500 mb-0.5"
+                    >
+                      {label}
+                    </p>
+                    <p className="text-sm text-neutral-700 dark:text-neutral-300 break-words">
+                      {value}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Socials */}
+          <Reveal delay={0.23}>
+            <p
+              className="text-[10px] font-semibold tracking-[0.18em] uppercase
+                text-neutral-400 dark:text-neutral-500 mb-4"
+            >
+              Elsewhere
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <SocialPill
+                href="https://wa.me/918098633412"
+                label="WhatsApp"
+                icon={<BiLogoWhatsapp size={16} className="text-[#25D366]" />}
+              />
+              <SocialPill
+                href="https://www.linkedin.com/in/muralidharank280698/"
+                label="LinkedIn"
+                icon={<TiSocialLinkedin size={17} className="text-[#0A66C2]" />}
+              />
+              <SocialPill
+                href="https://github.com/muralidharank28698"
+                label="GitHub"
+                icon={
+                  <DiGithubBadge
+                    size={17}
+                    className="text-neutral-700 dark:text-neutral-300"
+                  />
+                }
+              />
+            </div>
+          </Reveal>
+        </div>
+
+        {/* RIGHT — contact form card */}
+        <Reveal delay={0.1} y={32}>
+          <div
+            className="relative rounded-2xl border border-neutral-200 dark:border-neutral-800
+              bg-white dark:bg-neutral-900 overflow-hidden
+              shadow-[0_2px_24px_rgba(0,0,0,0.06)] dark:shadow-[0_4px_32px_rgba(0,0,0,0.3)]"
+          >
+            {/* Brand accent bar */}
+            <div className="h-[2px] bg-gradient-to-r from-transparent via-[#57d5ff]/60 to-transparent" />
+
+            {/* Glow orb — hidden on small screens for performance */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-16 -right-16
+                w-48 h-48 rounded-full bg-[#57d5ff]/[0.07] blur-3xl hidden sm:block"
+            />
+
+            <div className="p-3 sm:p-7">
+              {/* Form header */}
+              <div className="mb-5 sm:mb-6">
+                <h2
+                  className="text-base sm:text-[15px] font-semibold text-neutral-900 dark:text-white
+                    tracking-tight"
+                >
+                  Send a message
+                </h2>
+                <p className="text-xs text-neutral-400 dark:text-neutral-600 mt-0.5">
+                  I typically reply within 24 hours.
                 </p>
               </div>
 
-              {/* RIGHT SIDE SOCIAL ICONS */}
-              <div className="flex flex-col md:items-end gap-6">
-                <div className="flex gap-4">
-                  <a
-                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                    href="https://wa.me/918098633412"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <BiLogoWhatsapp size={26} className="text-[#25D366]" />
-                  </a>
-
-                  <a
-                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                    href="https://www.linkedin.com/in/muralidharank280698/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <TiSocialLinkedin size={26} className="text-[#0A66C2]" />
-                  </a>
-
-                  <a
-                    className="border p-3 rounded-2xl bg-white dark:bg-gray-800 dark:border-gray-800 shadow-sm hover:shadow-md transition"
-                    href="https://github.com/muralidharank28698"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <DiGithubBadge
-                      size={26}
-                      className="text-black dark:text-white"
-                    />
-                  </a>
+              {/* ── FIELDS ── */}
+              <div className="space-y-4">
+                {/*
+                  Name row:
+                  - Mobile: stacks vertically (grid-cols-1)
+                  - sm+: side by side (grid-cols-2)
+                */}
+                <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
+                  <Field
+                    name="firstname"
+                    label="First name"
+                    value={form.firstname}
+                    error={errors.firstname}
+                    onChange={handleChange}
+                    autoComplete="given-name"
+                  />
+                  <Field
+                    name="lastname"
+                    label="Last name"
+                    value={form.lastname}
+                    error={errors.lastname}
+                    onChange={handleChange}
+                    autoComplete="family-name"
+                  />
                 </div>
-                <Fade direction="up" duration={1800} delay={100} damping={0.15}>
-                  <a
-                    href="https://www.linkedin.com/in/muralidharank280698/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[rgb(87,213,255)] text-white font-semibold shadow-xl transition-all duration-300 group relative overflow-hidden"
+
+                <Field
+                  name="email"
+                  label="Work email"
+                  type="email"
+                  value={form.email}
+                  error={errors.email}
+                  onChange={handleChange}
+                  autoComplete="email"
+                />
+
+                <Field
+                  name="company"
+                  label="Company / Project"
+                  value={form.company}
+                  error={errors.company}
+                  onChange={handleChange}
+                  autoComplete="organization"
+                />
+
+                <Field
+                  name="message"
+                  label="How can I help you?"
+                  value={form.message}
+                  error={errors.message}
+                  onChange={handleChange}
+                  multiline
+                  rows={4}
+                />
+
+                {/* Submit */}
+                <div className="pt-1">
+                  <motion.button
+                    onClick={handleSubmit}
+                    disabled={busy}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="
+                      w-full h-12 sm:h-12 rounded-xl
+                      bg-[#57d5ff]
+                      text-sm font-semibold text-white
+                      flex items-center justify-center gap-2
+                      shadow-lg shadow-[#57d5ff]/30
+                      hover:shadow-[#57d5ff]/50
+                      transition-all duration-200
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                      min-h-[48px]
+                    "
                   >
-                    Initiate Chat
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 19"
-                      className="w-6 h-6 bg-gray-50 text-gray-800 rounded-full border border-gray-400 p-1 ml-1 rotate-0 group-hover:rotate-90 transition-transform duration-300"
-                    >
-                      <path
-                        className="fill-gray-800"
-                        d="M7 18C7 18.5523 7.44772 19 8 19C8.55228 19 9 18.5523 9 18H7ZM8.70711 0.292893C8.31658 -0.0976311 7.68342 -0.0976311 7.29289 0.292893L0.928932 6.65685C0.538408 7.04738 0.538408 7.68054 0.928932 8.07107C1.31946 8.46159 1.95262 8.46159 2.34315 8.07107L8 2.41421L13.6569 8.07107C14.0474 8.46159 14.6805 8.46159 15.0711 8.07107C15.4616 7.68054 15.4616 7.04738 15.0711 6.65685L8.70711 0.292893ZM9 18L9 1H7L7 18H9Z"
-                      />
-                    </svg>
-                  </a>
-                </Fade>
+                    {busy ? "Sending..." : "Send Message"}
+                  </motion.button>
+
+                  <p className="mt-3 text-center text-[11px] text-neutral-400 dark:text-neutral-600">
+                    Your details stay private and are never shared.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+        </Reveal>
+      </div>
 
-          {/* COPYRIGHT TEXT */}
+      {/* ── FOOTER ─────────────────────────────────────────────────── */}
+      <Reveal delay={0.05}>
+        <div
+          className="mt-16 sm:mt-24 pt-6 sm:pt-8 border-t border-neutral-200/70 dark:border-neutral-800
+            flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6"
+        >
+          <div>
+            <p className="text-base font-bold tracking-tight text-neutral-900 dark:text-white">
+              Muralidharan
+            </p>
+            <p
+              className="text-xs font-mono tracking-widest uppercase
+                text-neutral-400 dark:text-neutral-600 mt-1"
+            >
+              Frontend · SharePoint Developer
+            </p>
+          </div>
+          <p className="text-xs text-neutral-400 dark:text-neutral-600">
+            © 2025 <span className="text-[#57d5ff]">Muralidharan</span>. All
+            rights reserved.
+          </p>
         </div>
-      </section>
-    </motion.section>
+      </Reveal>
+
+      {/* ── TOAST ── */}
+      {/* <AnimatePresence> */}
+        {status && (
+          <motion.div
+            key="contact-toast"
+            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 max-w-[calc(100vw-2rem)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <Toast
+              type={alertType}
+              message={status}
+              onClose={() => setStatus("")}
+            />
+          </motion.div>
+        )}
+      {/* </AnimatePresence> */}
+    </section>
   );
 }

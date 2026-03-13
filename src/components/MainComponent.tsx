@@ -4,12 +4,13 @@ import { useActiveSectionContext } from "../context/active-section-context";
 // import { useSectionInView } from "../lib/hooks";
 import Header from "./HeaderSection";
 import Introduction from "./IntroductionSection";
-import About from "./AboutSection";
+// import About from "./AboutSection";
 import Skills from "./SkillsSections";
 import Education from "./EducationSection";
 import Projects from "./ProjectsSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
+import AboutNew from "./AboutSection/AboutNew";
 // import StickyTabs from "./MyServices/StickyTabs";
 // import Tools from "./Tools";
 // import TestimonialSection from "./EducationSection";
@@ -61,14 +62,14 @@ const MainComponent: React.FC = () => {
       {/* </Headroom> */}
       <section
         ref={introductionRef}
-        className="flex flex-col items-center py-16 px-5"
+        // className="flex flex-col items-center py-16 px-5"
       >
         <Introduction />
       </section>
       <section
         ref={aboutRef}
         // className="flex flex-col items-center px-5 pt-2 mb-12"
-        className="relative flex flex-col items-center px-5 overflow-hidden px-5"
+        // className="relative flex flex-col items-center px-5 overflow-hidden px-5"
       >
         {/* top-left soft glow */}
         {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#c7f8ff]/5 blur-[280px]" /> */}
@@ -76,7 +77,8 @@ const MainComponent: React.FC = () => {
         {/* bottom-right soft glow */}
         {/* <div className="pointer-events-none absolute -bottom-40 -right-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
 
-        <About />
+        {/* <About /> */}
+        <AboutNew />
       </section>
       <section
         ref={skillsRef}
@@ -94,7 +96,7 @@ const MainComponent: React.FC = () => {
       <section
         ref={educationRef}
         // className="relative flex flex-col items-center overflow-hidden"
-        className="relative flex flex-col items-center px-5 overflow-hidden"
+        // className="relative flex flex-col items-center px-5 overflow-hidden"
       >
         {/* top-left soft glow */}
         {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
@@ -104,10 +106,10 @@ const MainComponent: React.FC = () => {
 
         <Education />
       </section>
-      <section ref={experienceRef} 
-      // className="flex flex-col items-center px-4"
+      <section
+        ref={experienceRef}
+        // className="flex flex-col items-center px-4"
         className="relative flex flex-col items-center overflow-hidden px-4"
-
       >
         {/* top-left soft glow */}
         {/* <div className="pointer-events-none absolute -top-40 -left-40 w-[500px] h-[500px] rounded-full bg-[#57d5ff]/5 blur-[160px]" /> */}
@@ -135,8 +137,8 @@ const MainComponent: React.FC = () => {
         //      border border-gray-200 dark:border-gray-700
         //      py-10 px-4 rounded-t-[4rem]"
         className="flex flex-col items-center w-full 
-             border border-neutral-200/40 dark:border-neutral-700/40 
-             py-10 px-4 rounded-t-[4rem] 
+             border border-neutral-200/40 dark:border-neutral-900/40 
+             py-10 rounded-t-[4rem] 
              shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40"
       >
         <Contact />
@@ -146,4 +148,3 @@ const MainComponent: React.FC = () => {
 };
 
 export default MainComponent;
-
