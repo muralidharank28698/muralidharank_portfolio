@@ -328,7 +328,7 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="relative overflow-hidden py-20 sm:py-28"
+      className="relative overflow-hidden pt-20 scroll-mt-28"
     >
       {/* Scoped keyframes */}
       <style>{`

@@ -57,90 +57,57 @@ const Projects: React.FC = () => {
   return (
     // <section className="py-8 w-full">
     <motion.section
-      // className="py-8 w-full"
-      className="max-w-5xl leading-8 sm:mb-0 scroll-mt-28 pt-12"
+      className="w-full max-w-5xl mx-auto leading-8 sm:mb-0 scroll-mt-28 pt-4 sm:pt-6 md:pt-8 px-4 sm:px-6 md:px-8"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <h1 className="text-3xl text-center  font-bold capitalize pt-8">
-        Projects {""}
-        <span className="text-[#57d5ff] dark:text-[#57d5ff]">Works</span>
-      </h1>
-      <hr className="w-16 h-1 mx-auto my-4 bg-[#57d5ff] border-0" />
-      {/* <div className="relative px-4 w-full sm:mx-auto sm:max-w-6xl">
-        <div className="flex flex-col gap-4 items-start justify-between sm:flex-row sm:items-center">
-          <p className="mb-2 text-base sm:mb-3 sm:text-lg font-semibold">
-            Key Projects
-          </p>
-
-          <div className="flex items-center gap-1">
-            <button
-              ref={prevRef}
-              aria-label="Previous"
-              className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
-            >
-              <IoIosArrowRoundBack size={16} />
-            </button>
-            <button
-              ref={nextRef}
-              aria-label="Next"
-              className="rounded-full border border-neutral-400 bg-white dark:bg-neutral-800 dark:border-neutral-600 p-1"
-            >
-              <IoIosArrowRoundForward size={16} />
-            </button>
-          </div>
+      {/* Header */}
+      <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
+        {/* Pill badge */}
+        <div
+          className="inline-flex items-center gap-1.5 px-3 rounded-full 
+  bg-sky-400/10 dark:bg-sky-400/10 
+  border border-sky-400/25 
+  mb-4 sm:mb-6"
+        >
+          <span className="text-xs">🛠️</span>
+          <span className="text-[10px] font-bold tracking-[0.12em] uppercase text-sky-400">
+            Projects
+          </span>
         </div>
 
-        <Swiper
-          modules={[Navigation]}
-          onInit={(swiper: any) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          slidesPerView={1} // Mobile: 1 card
-          spaceBetween={16}
-          breakpoints={{
-            768: { slidesPerView: 2, spaceBetween: 16 }, // Tablet: 2 cards
-            1024: { slidesPerView: 3, spaceBetween: 20 }, // Desktop: 3 cards
-          }}
-          className="mt-4 w-full"
+        {/* Main heading */}
+        <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+          <span className="text-neutral-900 dark:text-white transition-colors duration-300">
+            Projects{" "}
+          </span>
+          <span
+            style={{
+              background: "linear-gradient(90deg, #38bdf8, #34d399)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Works
+          </span>
+        </h1>
+
+        {/* Underline accent */}
+        <div className="w-10 sm:w-14 md:w-16 h-0.5 sm:h-1 mt-3 sm:mt-4 mb-3 sm:mb-5 rounded-full bg-gradient-to-r from-[#38bdf8] to-[#34d399]" />
+
+        {/* Subtitle */}
+        <p
+          className="text-xs sm:text-sm md:text-base 
+          text-neutral-500 dark:text-neutral-400 
+          max-w-[260px] sm:max-w-sm md:max-w-md 
+          leading-relaxed transition-colors duration-300"
         >
-          {blogPosts.map((post, idx) => (
-            <SwiperSlide key={idx} className="w-full">
-              <article className="rounded-lg shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 border border-neutral-200/40 dark:border-neutral-700/40 overflow-hidden">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full sm:h-60 object-cover transition-transform duration-500 ease-in-out hover:scale-105"
-                />
-                <div className="p-4">
-                  <div className="flex flex-col items-start gap-2">
-                    <Link
-                      to={`/allProjects`}
-                      state={{ sectionId: post.id }}
-                      className="inline-flex items-center gap-1 rounded-md border border-neutral-200/40 dark:border-neutral-700/40 shadow-sm shadow-neutral-200/40 dark:shadow-neutral-800/40 px-3 py-1 text-xs sm:text-sm text-neutral-500 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors duration-200"
-                    >
-                      more info
-                      <RiArrowRightSLine className="text-lg sm:text-xl" />
-                    </Link>
+          A snapshot of my key projects — from concept and design to development
+          and deployment.
+        </p>
+      </div>
 
-                    <h3 className="text-base sm:text-lg font-medium leading-snug">
-                      {post.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-xs sm:text-sm text-[#8b949e] pt-2">
-                    {post.description}
-                  </p>
-                </div>
-              </article>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div> */}
       <StickyTabs />
     </motion.section>
   );

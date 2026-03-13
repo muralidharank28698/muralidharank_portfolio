@@ -196,7 +196,7 @@ export default function Introduction() {
     <section
       id="home"
       ref={ref}
-      className="relative min-h-[92vh] flex flex-col items-center justify-center scroll-mt-20 overflow-hidden px-4 py-20"
+      className="relative min-h-[92vh] flex flex-col items-center justify-center scroll-mt-20 overflow-hidden px-4 py-2 pt-20"
     >
       {/* ── Background ── */}
       <div className="absolute inset-0 -z-10">
