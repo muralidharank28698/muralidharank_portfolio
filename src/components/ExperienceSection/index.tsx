@@ -346,13 +346,13 @@ const ExperienceCard: React.FC<{
 export default function Experience() {
   return (
     <motion.section
-      className="relative max-w-5xl mx-auto sm:px-6 lg:px-8 pt-10 pb-20 scroll-mt-28"
+      className="relative max-w-5xl mx-auto sm:px-6 lg:px-8 pt-20 pb-20 scroll-mt-28"
       initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
       {/* Ambient glows */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
         <div className="absolute -top-20 left-1/4 w-96 h-96 rounded-full opacity-[0.04] dark:opacity-[0.06] blur-3xl bg-sky-400" />
         <div className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full opacity-[0.04] dark:opacity-[0.07] blur-3xl bg-emerald-400" />
         <div className="absolute bottom-24 left-1/3 w-72 h-72 rounded-full opacity-[0.03] dark:opacity-[0.05] blur-3xl bg-indigo-400" />
@@ -368,7 +368,7 @@ export default function Experience() {
           transition={{ delay: 0.1, duration: 0.5 }}
         >
           <span className="text-xs">💼</span>
-          <span className="text-[10px] font-bold tracking-[0.14em] uppercase text-sky-500 dark:text-sky-400">
+          <span className="text-[10px] py-1.5 font-bold tracking-[0.14em] uppercase text-sky-500 dark:text-sky-400">
             Professional Experience
           </span>
         </motion.div>

@@ -249,7 +249,7 @@ export default function About() {
         <div className="relative max-w-3xl mx-auto flex flex-col items-center text-center">
           {/* ── 1. Eyebrow label ── */}
           <motion.div
-            className="flex items-center justify-center mb-6 pt-8"
+            className="flex items-center justify-center mb-6 pt-10 lg:pt-8"
             initial="hidden"
             whileInView="show"
             viewport={VP}

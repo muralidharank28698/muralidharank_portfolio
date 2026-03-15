@@ -57,13 +57,13 @@ const Projects: React.FC = () => {
   return (
     // <section className="py-8 w-full">
     <motion.section
-      className="w-full max-w-5xl mx-auto leading-8 sm:mb-0 scroll-mt-28 px-4 sm:px-6 md:px-8 pt-20"
+      className="w-full max-w-5xl mx-auto leading-8 sm:mb-0 scroll-mt-28 sm:px-6 md:px-8 pt-20"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
       {/* Header */}
-      <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
+      <div className="flex flex-col items-center text-center mb-4 sm:mb-10">
         {/* Pill badge */}
         <div
           className="inline-flex items-center gap-1.5 px-3 rounded-full 
@@ -80,7 +80,7 @@ const Projects: React.FC = () => {
         {/* Main heading */}
         <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
           <span className="text-neutral-900 dark:text-white transition-colors duration-300">
-            Projects{" "}
+            Project{" "}
           </span>
           <span
             style={{

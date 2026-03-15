@@ -120,7 +120,7 @@ const MainComponent: React.FC = () => {
       </section>
 
       <section ref={projectsRef} className="flex flex-col items-center w-full">
-        <div className="w-full sm:max-w-4xl px-4 sm:px-6 md:px-8">
+        <div className="w-full sm:max-w-4xl px-2 sm:px-6 md:px-8">
           {/* full width on mobile, max 4xl on desktop */}
           <Projects />
         </div>

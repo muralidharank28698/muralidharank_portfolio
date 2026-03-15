@@ -99,7 +99,7 @@ export default function SegmentedTabs() {
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
               // className="w-full p-8 bg-transparent rounded-lg  dark:border-neutral-800"
-              className="w-full p-4 sm:p-8 bg-transparent rounded-lg dark:border-neutral-800"
+              className="w-full pt-4 sm:p-8 bg-transparent rounded-lg dark:border-neutral-800 mt-6"
             >
               {/* <h2 className="text-2xl sm:text-3xl font-bold mb-4">
                 Getting Started with Our Documentation
@@ -126,7 +126,7 @@ export default function SegmentedTabs() {
             <motion.div
               key={`${tabs[activeTab]}-${idx}`}
               variants={fadeInUp}
-              className="w-full sm:w-[260px] mt-6 p-4 md:p-6"
+              className="w-full sm:w-[260px] mt-6 p-2 md:p-6"
             >
               <Card
                 title={card.title}
@@ -145,7 +145,7 @@ export default function SegmentedTabs() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.2 }}
-              className="w-full p-6 sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800 mt-6 p-4 md:p-6"
+              className="w-full sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800 mt-6 p-2 md:p-6"
             >
               <p className="text-sm sm:text-base mb-3">
                 Here, you will find Resourse guides, examples, and best
