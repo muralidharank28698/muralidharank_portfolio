@@ -48,7 +48,7 @@ interface CTAButtonProps {
   download?: boolean;
   primary?: boolean;
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 /* ─── Animated gradient orbs ─── */
@@ -184,7 +184,7 @@ function CTAButton({
 /* ══════════════════════════════
    Main Component
 ══════════════════════════════ */
-export default function Introduction() {
+export default function Introduction({ setActiveSection, scrollHandler }: any) {
   const ref = useRef<HTMLElement>(null);
   const controls = useAnimation();
 
@@ -332,7 +332,7 @@ export default function Introduction() {
             </svg>
             Download CV
           </CTAButton>
-          <CTAButton href="#contact">
+          <CTAButton href="#Contact">
             Get in Touch
             <svg
               xmlns="http://www.w3.org/2000/svg"

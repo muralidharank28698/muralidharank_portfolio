@@ -12,12 +12,12 @@ export default function Experience() {
 
   return (
     <motion.section
-      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-12 sm:px-4 md:px-32 lg:px-8 px-4 sm:px-6 md:px-8"
+      className="max-w-5xl mx-auto text-center leading-8 sm:mb-0 scroll-mt-28 pt-8 sm:px-4 md:px-32 lg:px-8 px-4 sm:px-6 md:px-8"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.175 }}
     >
-      <div className="pt-6 sm:pt-10 md:pt-12">
+      <div className="pt-12 md:pt-12">
         {/* ===== HEADING SECTION ===== */}
         <div className="flex flex-col items-center text-center mb-8 sm:mb-10">
           {/* Pill badge */}

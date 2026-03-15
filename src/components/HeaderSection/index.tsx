@@ -11,13 +11,13 @@ import { GgMenuRight } from "../../assets/icons";
 
 // Define a union type for valid section names
 type SectionName =
-  | "Profile"
-  | "About"
+  | "Intro"
+  | "Story"
   | "Skills"
   | "Education"
-  | "Projects"
-  | "Experience"
-  | "Contact";
+  | "Journey"
+  | "Work"
+  | "Connect";
 
 interface HeaderProps {
   activeSection: SectionName;
@@ -75,10 +75,10 @@ const Header: React.FC<HeaderProps> = ({
 
   const handleScrollToSection = (sectionName: SectionName) => {
     switch (sectionName) {
-      case "Profile":
+      case "Intro":
         scrollHandler(refs.introductionRef);
         break;
-      case "About":
+      case "Story":
         scrollHandler(refs.aboutRef);
         break;
       case "Skills":
@@ -87,13 +87,13 @@ const Header: React.FC<HeaderProps> = ({
       case "Education":
         scrollHandler(refs.educationRef);
         break;
-      case "Projects":
-        scrollHandler(refs.projectsRef);
-        break;
-      case "Experience":
+      case "Journey":
         scrollHandler(refs.experienceRef);
         break;
-      case "Contact":
+      case "Work":
+        scrollHandler(refs.projectsRef);
+        break;
+      case "Connect":
         scrollHandler(refs.contactRef);
         break;
       default:
@@ -103,16 +103,16 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <div className="px-3">
-      <header 
-      // className={clsx("relative z-50", { hidden: !isVisible })}
-      
-      className={clsx(
-        "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 mx-4",
-        // {
-        //   "transform translate-y-0": isVisible, // Menu is visible when scrolling up
-        //   "transform -translate-y-full": !isVisible, // Menu is hidden when scrolling down
-        // }
-      )}
+      <header
+        // className={clsx("relative z-50", { hidden: !isVisible })}
+
+        className={clsx(
+          "fixed top-0 left-0 right-0 z-50 transition-transform duration-300 mx-4",
+          // {
+          //   "transform translate-y-0": isVisible, // Menu is visible when scrolling up
+          //   "transform -translate-y-full": !isVisible, // Menu is hidden when scrolling down
+          // }
+        )}
       >
         <div className="flex items-center justify-between h-16 pt-5">
           <div className="flex items-center">
@@ -164,10 +164,14 @@ const Header: React.FC<HeaderProps> = ({
 
           {/* Menu Button for Mobile */}
           <div className="md:hidden">
-            <Link to="#Profile" aria-label="Profile" onClick={() => {
-              setActiveSection("Profile");
-              handleScrollToSection("Profile");
-            }}>
+            <Link
+              to="#Intro"
+              aria-label="Intro"
+              onClick={() => {
+                setActiveSection("Intro");
+                handleScrollToSection("Intro");
+              }}
+            >
               <div className="h-10 w-10 rounded-full p-0.5 border border-indigo-200 dark:ring-white/10">
                 <img
                   alt="Logo"

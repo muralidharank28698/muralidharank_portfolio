@@ -33,9 +33,9 @@ export default function Skills() {
         leading-8
         sm:mb-0
         scroll-mt-28
-        sm:px-4 md:px-32 lg:px-8
         pt-20
         text-center
+        px-6 sm:px-8 md:px-10 lg:px-12
       "
     >
       {/* ===== HEADING SECTION ===== */}
@@ -85,30 +85,20 @@ export default function Skills() {
       </div>
 
       {/* ===== DEVELOPMENT TOOLS LOOP ===== */}
-      <div
-        className="
-          rounded-xl sm:rounded-none
-          sm:p-0 sm:p-5
-          md:p-6
-          md:px-8
-          flex flex-col items-center
-          sm:flex sm:flex-col
-          w-full sm:w-auto
-          max-w-xs sm:max-w-none
-          mx-auto sm:mx-0
-        "
-      >
-        {/* <div className="flex items-center justify-center gap-2">
-          <button className="flex items-center gap-2 rounded-full border border-gray-300 dark:border-gray-600 px-4 py-1">
-            <span className="text-xs font-medium capitalize whitespace-nowrap">
-              Development Tools
-            </span>
-          </button>
-        </div> */}
+      {/*
+        Key fix: remove overflow-hidden from the outer wrapper so the LogoLoop's
+        own px padding is not clipped. The mask handles the fade edges — it does
+        NOT need overflow-hidden on the parent to work.
+        The mask's transparent stops (10% / 90%) naturally leave breathing room
+        on both sides, but we also add mx-auto + a negative mx trick so the
+        fade reaches the padded edge of the section.
+      */}
+      <div className="w-full mt-8">
         <div
-          className="w-full overflow-hidden
-            [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
-            [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+          className="
+            w-full
+            [mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
+            [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
           "
         >
           <LogoLoop
@@ -116,7 +106,6 @@ export default function Skills() {
             speed={10}
             direction="left"
             pauseOnHover
-            scaleOnHover
           />
         </div>
       </div>
@@ -124,19 +113,12 @@ export default function Skills() {
       {/* ===== TWO COLUMN LOGO LOOPS ===== */}
       <div className="flex flex-col md:grid md:grid-cols-2 md:gap-8">
         {/* Left: Version Control Tools */}
-        <div
-          className="
-            rounded-xl
-            sm:p-4 sm:p-5 md:p-6
-            flex flex-col items-center
-            w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto
-          "
-        >
+        <div className="w-full">
           <div
             className="
-              relative w-full overflow-hidden
-              [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
-              [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+              w-full
+              [mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
+              [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
             "
           >
             <LogoLoop
@@ -144,25 +126,17 @@ export default function Skills() {
               speed={10}
               direction="right"
               pauseOnHover
-              scaleOnHover
             />
           </div>
         </div>
 
         {/* Right: SharePoint SPFx Toolkit */}
-        <div
-          className="
-            rounded-lg
-            sm:p-4 sm:p-5 md:p-6
-            flex flex-col items-center justify-center
-            w-full max-w-xs sm:max-w-sm md:max-w-md mx-auto
-          "
-        >
+        <div className="w-full">
           <div
             className="
-              relative w-full overflow-hidden
-              [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
-              [-webkit-mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]
+              w-full
+              [mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
+              [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]
             "
           >
             <LogoLoop
@@ -170,7 +144,6 @@ export default function Skills() {
               speed={10}
               direction="left"
               pauseOnHover
-              scaleOnHover
             />
           </div>
         </div>

@@ -157,27 +157,41 @@ export const ProfessionalExperience: React.FC = () => {
 
   return (
     <div className="p-10 p-4 md:p-10">
-      <IoArrowBackCircleOutline
+      <button
         onClick={handleBack}
-        size={32}
-        color="rgb(87 213 255)"
-        className="cursor-pointer hover:opacity-80 transition duration-200"
-      />
+        onMouseDown={(e) => e.preventDefault()}
+        className="group inline-flex items-center gap-2.5 px-4 py-2 rounded-xl
+    bg-white dark:bg-slate-900
+    border border-slate-200/60 dark:border-slate-700/50
+    shadow-sm hover:shadow-md hover:shadow-sky-500/10
+    hover:border-sky-300/60 dark:hover:border-sky-700/50
+    hover:bg-sky-50/50 dark:hover:bg-sky-950/30
+    transition-all duration-200 cursor-pointer
+    focus:outline-none focus:ring-0 focus-visible:outline-none focus-visible:ring-0"
+      >
+        <IoArrowBackCircleOutline
+          size={20}
+          className="text-sky-400 group-hover:text-sky-500 group-hover:-translate-x-0.5 transition-all duration-200"
+        />
+        <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 tracking-tight transition-colors duration-200">
+          Back
+        </span>
+      </button>
       {sectionId === "Cognizant" && (
-        <>
+        <div className="pt-6">
           <ExpertiseSection
             companyData={CognizantData}
             expertiseItems={expertiseItems}
           />
-        </>
+        </div>
       )}
       {sectionId === "ConvergePoint" && (
-        <>
+        <div className="pt-6">
           <ExpertiseSection
             companyData={ConvergePointData}
             expertiseItems={expertiseItems}
           />
-        </>
+        </div>
       )}
       {sectionId === "FocusCraftTech" && (
         <div className="pt-6">
