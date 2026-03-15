@@ -343,7 +343,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative scroll-mt-24 pt-14 pb-16 sm:pt-20 sm:pb-20 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="Contact" className="relative scroll-mt-24 pt-14 pb-16 sm:pt-20 sm:pb-20 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Ambient glow */}
       <div
         aria-hidden

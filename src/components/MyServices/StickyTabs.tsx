@@ -21,16 +21,20 @@ const cardData: any = {
       subtitle: "TaskTrackr Pro Showcase",
       description:
         "A simple and efficient task tracking app to add, organize, and complete your daily tasks effortlessly.",
-      image: require("../../assets/portfolio-images/PF2.png"),
+      image: require("../../assets/portfolio-images/PF6.png"),
       url: "https://task-trackr-pro.vercel.app/",
+      repoUrl: "https://github.com/muralidharank28698/TaskTrackrPro",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     },
     {
       title: "Car Booking App",
       subtitle: "Car Rental & Booking Platform",
       description:
         "A modern car booking web application that allows users to browse available cars, view details, and book vehicles easily through a clean and responsive interface.",
-      image: require("../../assets/portfolio-images/PF1.png"),
+      image: require("../../assets/portfolio-images/PF3.png"),
       url: "https://car-booking-eight.vercel.app/",
+      repoUrl: "https://github.com/muralidharank28698/car_booking",
+      techStack: ["React", "Node.js", "Tailwind CSS", "REST API"],
     },
     // {
     //   title: "Admin Dashboard",
@@ -130,6 +134,8 @@ export default function SegmentedTabs() {
                 image={card.image}
                 des={card.description}
                 url={card.url}
+                repoUrl={card.repoUrl}
+                techStack={card.techStack}
               />
             </motion.div>
           ) : activeTab === 2 ? (
@@ -142,9 +148,8 @@ export default function SegmentedTabs() {
               className="w-full p-6 sm:p-8 bg-transparent rounded-lg  dark:border-neutral-800 mt-6 p-4 md:p-6"
             >
               <p className="text-sm sm:text-base mb-3">
-                Welcome to the resourses tab. Here, you will find Resourse
-                guides, examples, and best practices to help you quickly get
-                started with our project.
+                Here, you will find Resourse guides, examples, and best
+                practices to help you quickly get started with our project.
               </p>
             </motion.div>
           ) : null,

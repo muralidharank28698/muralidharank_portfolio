@@ -5,7 +5,7 @@ import { motion, useMotionTemplate, useMotionValue } from "framer-motion";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { SiGithub } from "react-icons/si";
 import { IoClose } from "react-icons/io5";
-import { LuArrowUpRight, LuPlay } from "react-icons/lu";
+import { LuArrowUpRight, LuExternalLink, LuPlay } from "react-icons/lu";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -27,10 +27,12 @@ export interface CardProps {
   /** Short description shown on the card */
   des?: string;
   url?: string;
+  repoUrl?: string;
   tags?: Tag[];
   links?: ExternalLink[];
   /** Longer description shown only inside the modal */
   longDescription?: string;
+  techStack?: string[];
 }
 
 // ─── Animation Variants ───────────────────────────────────────────────────────
@@ -133,6 +135,9 @@ function Modal({
   longDescription,
   tags,
   links,
+  url,
+  repoUrl,
+  techStack,
 }: ModalProps) {
   return (
     <>
@@ -148,8 +153,8 @@ function Modal({
             onClick={onClose}
             className="fixed inset-0 z-50"
             style={{
-              background: "rgba(0,0,0,0.5)",
-              // backdropFilter: "blur(10px)",
+              background: "rgba(0,0,0,0.55)",
+              backdropFilter: "blur(6px)",
             }}
           />
 
@@ -162,27 +167,24 @@ function Modal({
               animate="visible"
               exit="exit"
               onClick={(e) => e.stopPropagation()}
-              className="pointer-events-auto relative w-full max-w-2xl rounded-2xl overflow-hidden shadow-2xl
+              className="pointer-events-auto relative w-full max-w-2xl rounded-2xl overflow-hidden
                 bg-white border border-neutral-200/80
-                dark:bg-[rgba(14,14,22,0.98)] dark:border-white/10"
-              style={{
-                boxShadow:
-                  "0 40px 80px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8)",
-              }}
+                dark:bg-[rgba(14,14,22,0.98)] dark:border-white/10
+                shadow-xl dark:shadow-[0_24px_60px_rgba(0,0,0,0.5)]"
             >
-              {/* Ambient top glow — dark mode only */}
+              {/* Ambient top glow — dark only */}
               <div
-                className="absolute inset-0 opacity-0 dark:opacity-25 pointer-events-none"
+                className="absolute inset-0 opacity-0 dark:opacity-20 pointer-events-none"
                 style={{
                   background:
-                    "radial-gradient(ellipse 60% 40% at 50% 0%, rgba(87,213,255,0.2) 0%, transparent 70%)",
+                    "radial-gradient(ellipse 70% 40% at 50% 0%, rgba(87,213,255,0.25) 0%, transparent 70%)",
                 }}
               />
 
               {/* Close */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full flex items-center justify-center
+                className="absolute top-3 right-3 z-20 w-8 h-8 rounded-full flex items-center justify-center
                   transition-all duration-200
                   bg-neutral-100 hover:bg-neutral-200 border border-neutral-200 text-neutral-500 hover:text-neutral-800
                   dark:bg-white/5 dark:hover:bg-white/10 dark:border-white/10 dark:text-white/60 dark:hover:text-white"
@@ -190,21 +192,23 @@ function Modal({
                 <IoClose size={16} />
               </button>
 
-              {/* Image */}
+              {/* ── Image (reduced height) ── */}
               {image && (
-                <div className="relative w-full h-56 overflow-hidden">
-                  <img
+                <div className="relative w-full h-44 overflow-hidden">
+                  <motion.img
                     src={image}
                     alt={title}
                     className="w-full h-full object-cover"
+                    initial={{ scale: 1.05 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5, ease: "easeOut" }}
                   />
-
                   {/* Gradient fade — light */}
                   <div
                     className="absolute inset-0 dark:hidden"
                     style={{
                       background:
-                        "linear-gradient(to bottom, transparent 40%, rgba(255,255,255,1) 100%)",
+                        "linear-gradient(to bottom, transparent 30%, rgba(255,255,255,1) 100%)",
                     }}
                   />
                   {/* Gradient fade — dark */}
@@ -212,14 +216,12 @@ function Modal({
                     className="absolute inset-0 hidden dark:block"
                     style={{
                       background:
-                        "linear-gradient(to bottom, transparent 40%, rgba(14,14,22,1) 100%)",
+                        "linear-gradient(to bottom, transparent 30%, rgba(14,14,22,1) 100%)",
                     }}
                   />
-
-                  {/* "Project" badge */}
+                  {/* Project badge */}
                   <div
-                    className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg text-[11px] font-semibold
-                      tracking-widest uppercase backdrop-blur-sm"
+                    className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-lg text-[11px] font-semibold tracking-widest uppercase backdrop-blur-sm"
                     style={{
                       background: "rgba(87,213,255,0.15)",
                       border: "1px solid rgba(87,213,255,0.35)",
@@ -231,19 +233,55 @@ function Modal({
                 </div>
               )}
 
-              {/* Content */}
-              <div className="relative z-10 px-6 pb-6 pt-4 space-y-4">
+              {/* ── Content ── */}
+              <div className="relative z-10 px-3 pb-6 pt-3 space-y-4">
+                {/* Title + subtitle */}
                 <div>
-                  <h2 className="text-xl font-bold tracking-tight text-neutral-900 dark:text-white">
+                  <h2 className="text-lg font-bold tracking-tight text-neutral-900 dark:text-white">
                     {title}
                   </h2>
                   {subtitle && (
-                    <p className="text-sm mt-0.5 font-medium text-neutral-400 dark:text-white/40">
+                    <p className="text-xs mt-0.5 font-medium text-neutral-400 dark:text-white/40">
                       {subtitle}
                     </p>
                   )}
                 </div>
 
+                {/* Description */}
+                {(longDescription ?? des) && (
+                  <p className="text-sm leading-relaxed text-neutral-500 dark:text-white/55">
+                    {longDescription ?? des}
+                  </p>
+                )}
+
+                {/* ── Tech Stack ── */}
+                {techStack && techStack.length > 0 && (
+                  <div className="space-y-1">
+                    <p className="text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-white/30">
+                      Tech Stack
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {techStack.map((tech, i) => (
+                        <motion.span
+                          key={i}
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ duration: 0.25, delay: i * 0.05 }}
+                          whileHover={{ scale: 1.06 }}
+                          className="inline-flex items-center px-3 rounded-full text-[11px] font-semibold
+                            border border-[rgba(87,213,255,0.2)] bg-[rgba(87,213,255,0.06)]
+                            text-[rgb(30,155,200)] dark:text-[rgb(87,213,255)]
+                            hover:border-[rgba(87,213,255,0.45)] hover:bg-[rgba(87,213,255,0.12)]
+                            transition-all duration-200 cursor-default"
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Tags */}
                 {tags && tags.length > 0 && (
                   <div className="flex flex-wrap gap-1.5">
                     {tags.map((tag, i) => (
@@ -252,32 +290,42 @@ function Modal({
                   </div>
                 )}
 
-                {(longDescription ?? des) && (
-                  <p className="text-sm leading-relaxed text-neutral-500 dark:text-white/55">
-                    {longDescription ?? des}
-                  </p>
-                )}
-
                 <div className="h-px w-full bg-neutral-100 dark:bg-white/[0.06]" />
 
+                {/* CTA */}
                 <div className="flex flex-wrap gap-2">
                   {links && links.length > 0 ? (
                     links.map((link, i) => <LinkButton key={i} {...link} />)
-                  ) : (
-                    <button
-                      onClick={() => {
-                        // handle live demo action here
-                      }}
+                  ) : url ? (
+                   <>
+                    <a
+                      href={repoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
-  transition-all duration-200
-  bg-[rgba(87,213,255,0.1)] hover:bg-[rgba(87,213,255,0.18)]
-  border border-[rgba(87,213,255,0.3)]
-  text-[rgb(30,155,200)] dark:text-[rgb(87,213,255)]"
+                        transition-all duration-200
+                        bg-[rgba(87,213,255,0.1)] hover:bg-[rgba(87,213,255,0.18)]
+                        border border-[rgba(87,213,255,0.3)]
+                        text-[rgb(30,155,200)] dark:text-[rgb(87,213,255)]"
+                    >
+                        <LuExternalLink size={13} />
+                      GitHub Repo
+                    </a>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold
+                        transition-all duration-200
+                        bg-[rgba(87,213,255,0.1)] hover:bg-[rgba(87,213,255,0.18)]
+                        border border-[rgba(87,213,255,0.3)]
+                        text-[rgb(30,155,200)] dark:text-[rgb(87,213,255)]"
                     >
                       <LuPlay size={13} />
                       Live Demo
-                    </button>
-                  )}
+                    </a>
+                   </>
+                  ) : null}
                 </div>
               </div>
             </motion.div>
@@ -296,9 +344,11 @@ export default function Card({
   image,
   des,
   url,
+  repoUrl,
   tags,
   links,
   longDescription,
+  techStack
 }: CardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -324,18 +374,12 @@ export default function Card({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
         whileHover={{ y: -5, transition: { duration: 0.22, ease: "easeOut" } }}
-        className="
-          relative w-full sm:w-[260px] rounded-2xl overflow-hidden cursor-pointer group
-          transition-shadow duration-300
-          /* Light */
-          bg-white border border-neutral-200/80
-          shadow-[0_2px_16px_rgba(0,0,0,0.06),inset_0_1px_0_rgba(255,255,255,0.9)]
-          hover:shadow-[0_8px_32px_rgba(0,0,0,0.10)]
-          /* Dark */
-          dark:bg-transparent dark:border-white/[0.08]
-          dark:shadow-[0_4px_24px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.06)]
-          dark:hover:shadow-[0_8px_40px_rgba(0,0,0,0.55)]
-        "
+        className="relative w-full sm:w-[260px] rounded-2xl overflow-hidden cursor-pointer group
+  transition-shadow duration-300
+  bg-white border border-neutral-200/80
+  shadow-sm hover:shadow-md
+  dark:bg-transparent dark:border-white/[0.08]
+  dark:shadow-none dark:hover:shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
       >
         {/* Dark glass background */}
         <div
@@ -455,7 +499,7 @@ export default function Card({
           )}
 
           <div className="flex items-center justify-between pt-2 border-t border-neutral-100 dark:border-white/[0.05]">
-            <span className="text-[10px] font-medium tracking-wider uppercase text-neutral-300 dark:text-white/20">
+            <span className="text-[10px] font-medium tracking-wider uppercase text-neutral-400 ">
               Project
             </span>
             <div
@@ -481,6 +525,8 @@ export default function Card({
         tags={tags}
         links={links}
         url={url}
+        repoUrl={repoUrl}
+        techStack={techStack}
       />
     </>
   );
