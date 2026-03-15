@@ -78,9 +78,9 @@ const FAQAccordion: React.FC = () => {
     <div className="w-full max-w-4xl mx-auto px-2 sm:px-0">
       {Object.entries(grouped).map(([category, items]) => (
         <div key={category} className="mb-10">
-          <h2 className="text-lg font-bold mb-5 text-gray-800 dark:text-gray-100 tracking-wide">
+          {/* <h2 className="text-lg font-bold mb-5 text-gray-800 dark:text-gray-100 tracking-wide">
             {category}
-          </h2>
+          </h2> */}
           <div className="space-y-4">
             {items.map((item, index) => {
               const globalIndex = faqData.indexOf(item);
