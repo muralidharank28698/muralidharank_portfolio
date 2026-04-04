@@ -27,14 +27,14 @@ const cardData: any = {
       techStack: ["React", "TypeScript", "Tailwind CSS", "Supabase"],
     },
     {
-      title: "Car Booking App",
+      title: "Zytravo Trvls",
       subtitle: "Car Rental & Booking Platform",
       description:
         "A modern car booking web application that allows users to browse available cars, view details, and book vehicles easily through a clean and responsive interface.",
-      image: require("../../assets/portfolio-images/PF3.png"),
-      url: "https://car-booking-eight.vercel.app/",
-      repoUrl: "https://github.com/muralidharank28698/car_booking",
-      techStack: ["React", "Node.js", "Tailwind CSS", "REST API"],
+      image: require("../../assets/portfolio-images/PF7.png"),
+      url: "https://zytravo.vercel.app/",
+      repoUrl: "https://github.com/muralidharank28698/travpro",
+      techStack: ["NextJS", "React", "Tailwind CSS", "REST API"],
     },
     // {
     //   title: "Admin Dashboard",
